@@ -1,0 +1,22 @@
+
+.navbar-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.navbar-small {
+    width: 40%;
+    margin: auto;
+}
+
+.navbar-small-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.navbar-small-menu li {
+    list-style: none;
+}

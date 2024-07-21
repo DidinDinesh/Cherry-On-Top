@@ -1,0 +1,26 @@
+
+.header {
+    width: 80%;
+    margin: auto;
+    height: 35vw;
+    background: url("/banner_1.jpg") no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 20px;
+    margin-top: 30px
+}
+
+.header-content {
+    position: absolute;
+    gap: 1.5vw;
+    max-width: 50%;
+    top: 10%;
+    left: 6vw;
+    animation: fadeIn 3s;
+}
+
+.header-content h2 {
+    font-weight: 500;
+    color: white;
+    font-size: max(4.5vw,22px);
+}
