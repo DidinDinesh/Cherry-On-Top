@@ -9,6 +9,7 @@
 }
 
 body {
+  padding-top: 18vh;
   min-height: 100vh;
 }
 
@@ -19,6 +20,13 @@ a {
 
 .app {
   margin: auto
+}
+
+@media (max-width:900px) {
+  
+  body {
+    padding-top: 10vh;
+  }
 }
 
 @keyframes fadeIn {

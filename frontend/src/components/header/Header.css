@@ -2,7 +2,7 @@
 .header {
     width: 80%;
     margin: auto;
-    height: 35vw;
+    height: 30vw;
     background: url("/banner_1.jpg") no-repeat;
     background-size: cover;
     position: relative;
@@ -22,5 +22,5 @@
 .header-content h2 {
     font-weight: 500;
     color: white;
-    font-size: max(4.5vw,22px);
+    font-size: max(4vw,22px);
 }

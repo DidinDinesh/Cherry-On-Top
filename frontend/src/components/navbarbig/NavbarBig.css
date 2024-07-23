@@ -1,0 +1,277 @@
+.navbar-1 {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+}
+
+.navbar-big {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    padding: 20px 0;
+}
+
+.navbar-big .logo {
+    width: 200px;
+    margin-top: 10px;
+}
+
+.navbar-left {
+    width: 300px;
+    padding: 10px;
+}
+
+.navbar-search {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border: 1px solid tomato;
+    border-radius: 30px;
+}
+
+.navbar-search input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size:15px;
+    font-weight: 500;
+    padding: 0 5px;
+}
+
+.navbar-search .search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar-search img {
+    width: 30px;
+    height: 25px;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 16px;
+}
+
+.navbar-middle .navbar-close {
+    display: none;
+}
+
+.navbar-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-right button {
+    background: transparent;
+    font-size: 15PX;
+    border: 1px solid tomato;
+    padding: 7px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navbar-right button:hover { 
+    background-color: #fff4f2;
+}
+
+.navbar-cart {
+    position: relative;
+}
+
+.navbar-cart img {
+    width: 35px;
+}
+
+.navbar-cart .dot {
+    position: absolute;
+    min-height: 10px;
+    min-width: 10px;
+    background-color: tomato;
+    border-radius: 5px;
+    top: -7px;
+    right: -2px;
+}
+
+.navbar-right .toggle-icon {
+    display: none;
+}
+
+@media (max-width:1100px) {
+    
+    .navbar-big .logo {
+        width: 160px;
+    }
+
+    .navbar-left {
+        width: 200px;
+        padding: 5px;
+    }
+
+    .navbar-search input {
+        width: 20px;
+    }
+
+
+    .navbar-right {
+       width: 120px;
+       gap: 5px;
+    }
+
+    .navbar-right button {
+        padding: 7px 8px;
+    }
+
+    .navbar-cart img {
+        width: 30px;
+    }
+}
+
+@media (max-width:900px) {
+
+    .navbar-big {
+        height: 8vh;
+    }
+
+    .navbar-big .logo {
+        width: 130px;
+    }
+
+    .navbar-search {
+        height: 25px;
+    }
+
+    .navbar-search input {
+        font-size: 10px;
+    }
+
+    .navbar-search img {
+        width: 18px;
+        padding-top: 5px;
+    }
+
+    .navbar-middle {
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+        background-color: tomato;
+        width: 40%; 
+        height: 100%;
+        padding: 7rem 3rem;
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .navbar-menu {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3rem;
+    }
+
+    .navbar-middle .navbar-close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 1001;
+        color: black;
+    }
+
+    .navbar-middle .navbar-close img {
+        width: 30px;
+    }
+
+    .navbar-middle.show-menu {
+        transform: translateX(0);
+    }
+
+    .navbar-right {
+        width: 120px;
+    }
+
+    .navbar-right button {
+        font-size: 10px;
+    }
+
+    .navbar-cart img {
+        width: 25px;
+    }
+
+    .navbar-cart .dot {
+        min-height: 8px;
+        min-width: 8px;
+        top: -4px;
+    }
+
+    
+    .navbar-right .toggle-icon {
+        display: flex;
+        align-items: center;
+        width: 25px;
+    }
+}
+
+@media (max-width:600px) {
+
+    .navbar-big{
+        height: 6vh;
+    }
+
+    .navbar-big .logo {
+        width: 90px;
+    }
+
+    .navbar-left {
+        width: 100px;
+    }
+
+    .navbar-search {
+        height: 20px;
+    }
+
+    .navbar-search input {
+        font-size: 8px;
+    }
+
+    .navbar-search img {
+        width: 10px;
+        margin-left: 5px;
+    }
+
+    .navbar-right {
+        width: 100px;
+    }
+
+    .navbar-right button {
+        font-size: 8px;
+        height: 20px;
+        padding: 5px;
+    }
+
+    .navbar-cart img {
+        width: 20px;
+    }
+
+    .navbar-cart .dot {
+        min-height: 5px;
+        min-width: 5px;
+    }
+
+    
+    .navbar-right .toggle-icon {
+        width: 20px;
+    }
+}

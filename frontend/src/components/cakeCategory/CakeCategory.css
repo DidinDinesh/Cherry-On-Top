@@ -1,0 +1,131 @@
+
+.cake-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 40px;
+}
+
+.cake-category-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: tomato;
+}
+
+.cake-category-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 20px;
+    padding: 0 20px;
+}
+
+.cake-category-card {
+    width: 180px;
+    padding-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.cake-category-card:hover {
+    transform: scale(1.05);
+}
+
+.cake-category-image {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.cake-category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.cake-category-title {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+@media (max-width: 1200px) {
+    .cake-category-card {
+        width: 160px;
+    }
+
+    .cake-category-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cake-category-title {
+        font-size: 14px;
+        padding-bottom: 5px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .cake-category-card {
+        width: 120px;
+    }
+
+    .cake-category-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .cake-category-title {
+        font-size: 12px;
+        padding-bottom: 3px;
+    }
+}
+
+@media (max-width: 800px) {
+    .cake-category-card {
+        margin: 10px 30px;
+    }
+}
+
+@media (max-width: 650px) {
+    .cake-category-card {
+        margin: 10px 15px;
+    }
+}
+
+@media (max-width: 550px) {
+    .cake-category-header {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .cake-category-wrapper {
+        justify-content: center;
+    }
+
+    .cake-category-card {
+        width: 80px;
+    }
+
+    .cake-category-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cake-category-title {
+        font-size: 10px;
+        padding-bottom: 3px;
+    }
+}
+

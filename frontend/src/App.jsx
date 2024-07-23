@@ -6,7 +6,6 @@ import Cart from './pages/cart/Cart'
 import Footer from './components/footer/Footer'
 import MyOrders from './pages/myOrders/MyOrders'
 import ContactUs from './pages/contactUs/ContactUs'
-import NavbarSmall from "./components/navbarSmall/NavbarSmall"
 
 
 const App = () => {
@@ -14,7 +13,6 @@ const App = () => {
     <>
       <div className="app">
         <Navbar />
-        <NavbarSmall />
         <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/myOrders" element={<MyOrders/>} />

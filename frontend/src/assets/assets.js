@@ -3,6 +3,21 @@ import testLogo from './logo.png'
 import cart_icon from './cart.svg'
 import signin_icon from './SignIn.svg'
 import search_icon from './search.svg'
+import menu_icon from './menu.svg'
+import close_icon from './close.svg'
+
+import cake from './category/cake.png'
+import flowers from './category/flowers.png'
+import gifts from './category/gifts.png'
+import combo from './category/combo.png'
+import occassion from './category/occasion.png'
+
+import cake_cat_1 from './cake_category/regular.png'
+import cake_cat_2 from './cake_category/photocake.png'
+import cake_cat_3 from './cake_category/eggless.png'
+import cake_cat_4 from './cake_category/vanilla.png'
+import cake_cat_5 from './cake_category/choclate.png'
+import cake_cat_6 from './cake_category/butterscotch.png'
 
 
 
@@ -22,8 +37,72 @@ export const assets = {
     testLogo,
     cart_icon,
     signin_icon,
-    search_icon
+    search_icon,
+    menu_icon,
+    close_icon,
+    cake,
+    flowers,
+    gifts,
+    combo,
+    occassion,
+    cake_cat_1,
+    cake_cat_2,
+    cake_cat_3,
+    cake_cat_4,
+    cake_cat_5,
+    cake_cat_6
+
 }
+
+export const menu_list = [
+    {
+        name: "Cake",
+        image: cake
+    },
+    {
+        name: "Flowers",
+        image: flowers
+    },
+    {
+        name: "Gifts",
+        image: gifts
+    },
+    {
+        name: "Combo",
+        image: combo
+    },
+    {
+        name: "Occasion",
+        image: occassion
+    }
+]
+
+export const cake_cat_list = [
+    {
+        name: "Regular",
+        image: cake_cat_1
+    },
+    {
+        name: "Photo cake",
+        image: cake_cat_2
+    },
+    {
+        name: "Eggless",
+        image: cake_cat_3
+    },
+    {
+        name: "Vanilla",
+        image: cake_cat_4
+    },
+    {
+        name: "Choclate",
+        image: cake_cat_5
+    },
+    {
+        name: "Butterscotch",
+        image: cake_cat_6
+    }
+]
 
 
 export const cake_list = [

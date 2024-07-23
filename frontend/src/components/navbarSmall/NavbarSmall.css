@@ -1,22 +1,133 @@
 
-.navbar-2 {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
 .navbar-small {
+    padding-top: 12vh;
     width: 40%;
     margin: auto;
-}
-
-.navbar-small-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px;
+    padding: 10px 0;
+    height: 6vh;
 }
 
-.navbar-small-menu li {
+.nav-menu {
+    position: relative;
+}
+.nav-menu p {
+    cursor: pointer;
+}
+
+.nav-menu p::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: tomato;
+    position: absolute;;
+    bottom: -10px;
+    left: 0;
+    transition: 0.4s all liner;
+}
+
+.nav-menu:hover p::after {
+    width: 100%;
+}
+
+.dropdown {
+    position: absolute;
+    display: none;
+    width: 300px;
+    background-color: #fff2ef;
+    padding: 12px 10px;
+    border-radius: 4px;
+    z-index: 1;
+    left: -100px;
+    top: 31px;
+}
+
+.nav-menu:hover .dropdown {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.dropdown-column-lists {
+    margin-top: 5px;
     list-style: none;
+    cursor: pointer;
+}
+
+.dropdown-column-lists li {
+    margin-bottom: 3px;
+}
+
+@media (max-width:900px) {
+
+    .navbar-small {
+        height: 4vh;
+    }
+
+    .nav-menu p {
+        font-size: 13px;
+    }
+
+    .nav-menu p::after {
+        bottom: -7px;
+    }
+
+    .dropdown {
+        top: 23px;
+    }
+
+    .dropdown strong {
+        font-size: 13px;
+    }
+
+    .dropdown-column-lists li {
+        font-size: 13px;
+    }
+}
+
+@media (max-width:600px) {
+    .navbar-small {
+        width: 60%;
+    }
+
+    .nav-menu p {
+        font-size: 13px;
+    }
+
+    .dropdown {
+        width: 200px;
+        left: -70px;
+    }
+
+    .dropdown strong {
+        font-size: 10px;
+    }
+
+    .dropdown-column-lists li {
+        font-size: 10px;
+    }
+}
+
+@media (max-width:400px) {
+    .nav-menu p {
+        font-size: 10px;
+    }
+
+    .nav-menu p::after {
+        bottom: -8px;
+    }
+
+    .dropdown {
+        width: 150px;
+        left: -50px;
+    }
+
+    .dropdown strong {
+        font-size: 8px;
+    }
+
+    .dropdown-column-lists li{
+        font-size: 8px;
+    }
 }
