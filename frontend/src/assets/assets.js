@@ -19,6 +19,13 @@ import cake_cat_4 from './cake_category/vanilla.png'
 import cake_cat_5 from './cake_category/choclate.png'
 import cake_cat_6 from './cake_category/butterscotch.png'
 
+import flower_cat_1 from './flower_category/roses.png'
+import flower_cat_2 from './flower_category/lillies.png'
+import flower_cat_3 from './flower_category/orchids.png'
+import flower_cat_4 from './flower_category/white_fowers.png'
+import flower_cat_5 from './flower_category/purple_flowers.png'
+import flower_cat_6 from './flower_category/red_fowers.png'
+
 
 
 import cake_1 from './cake_1.png'
@@ -50,7 +57,13 @@ export const assets = {
     cake_cat_3,
     cake_cat_4,
     cake_cat_5,
-    cake_cat_6
+    cake_cat_6,
+    flower_cat_1,
+    flower_cat_2,
+    flower_cat_3,
+    flower_cat_4,
+    flower_cat_5,
+    flower_cat_6
 
 }
 
@@ -101,6 +114,33 @@ export const cake_cat_list = [
     {
         name: "Butterscotch",
         image: cake_cat_6
+    }
+]
+
+export const flower_cat_list = [
+    {
+        name: "Roses",
+        image: flower_cat_1
+    },
+    {
+        name: "Lillies",
+        image: flower_cat_2
+    },
+    {
+        name: "Orchids",
+        image: flower_cat_3
+    },
+    {
+        name: "White flowers",
+        image: flower_cat_4
+    },
+    {
+        name: "Purple flowers",
+        image: flower_cat_5
+    },
+    {
+        name: "Red flowers",
+        image: flower_cat_6
     }
 ]
 
