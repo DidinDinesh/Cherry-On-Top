@@ -19,6 +19,14 @@ import cake_cat_4 from './cake_category/vanilla.png'
 import cake_cat_5 from './cake_category/choclate.png'
 import cake_cat_6 from './cake_category/butterscotch.png'
 
+import gift_cat_1 from './gift_category/jewellary.png'
+import gift_cat_2 from './gift_category/home decor.png'
+import gift_cat_3 from './gift_category/dining and serving.png'
+import gift_cat_4 from './gift_category/for her.png'
+import gift_cat_5 from './gift_category/for him.png'
+import gift_cat_6 from './gift_category/for kids.png'
+
+
 import flower_cat_1 from './flower_category/roses.png'
 import flower_cat_2 from './flower_category/lillies.png'
 import flower_cat_3 from './flower_category/orchids.png'
@@ -26,6 +34,19 @@ import flower_cat_4 from './flower_category/white_fowers.png'
 import flower_cat_5 from './flower_category/purple_flowers.png'
 import flower_cat_6 from './flower_category/red_fowers.png'
 
+import combo_cat_1 from './combo_category/cake & flower.png'
+import combo_cat_2 from './combo_category/cak & gift.png'
+import combo_cat_3 from './combo_category/cake & choclate.png'
+import combo_cat_4 from './combo_category/flower & cake.png'
+import combo_cat_5 from './combo_category/flower & gift.png'
+import combo_cat_6 from './combo_category/flower & choclate.png'
+
+import occ_cat_1 from './occasion_category/birthday.png'
+import occ_cat_2 from './occasion_category/anniversary.png'
+import occ_cat_3 from './occasion_category/valentines day.png'
+import occ_cat_4 from './occasion_category/christmas.png'
+import occ_cat_5 from './occasion_category/newyear.png'
+import occ_cat_6 from './occasion_category/onam.png'
 
 
 import cake_1 from './cake_1.png'
@@ -63,8 +84,25 @@ export const assets = {
     flower_cat_3,
     flower_cat_4,
     flower_cat_5,
-    flower_cat_6
-
+    flower_cat_6,
+    gift_cat_1,
+    gift_cat_2,
+    gift_cat_3,
+    gift_cat_4,
+    gift_cat_5,
+    gift_cat_6,
+    combo_cat_1,
+    combo_cat_2,
+    combo_cat_3,
+    combo_cat_4,
+    combo_cat_5,
+    combo_cat_6,
+    occ_cat_1,
+    occ_cat_2,
+    occ_cat_3,
+    occ_cat_4,
+    occ_cat_5,
+    occ_cat_6
 }
 
 export const menu_list = [
@@ -73,12 +111,12 @@ export const menu_list = [
         image: cake
     },
     {
-        name: "Flowers",
-        image: flowers
-    },
-    {
         name: "Gifts",
         image: gifts
+    },
+    {
+        name: "Flowers",
+        image: flowers
     },
     {
         name: "Combo",
@@ -117,6 +155,33 @@ export const cake_cat_list = [
     }
 ]
 
+export const gift_cat_list = [
+    {
+        name: "Jewellery",
+        image: gift_cat_1
+    },
+    {
+        name: "Home decor",
+        image: gift_cat_2
+    },
+    {
+        name: "Dining & Serving",
+        image: gift_cat_3
+    },
+    {
+        name: "For her",
+        image: gift_cat_4
+    },
+    {
+        name: "For him",
+        image: gift_cat_5
+    },
+    {
+        name: "For kid",
+        image: gift_cat_6
+    }
+]
+
 export const flower_cat_list = [
     {
         name: "Roses",
@@ -144,6 +209,59 @@ export const flower_cat_list = [
     }
 ]
 
+export const combo_cat_list = [
+    {
+        name: "Cake & Flower",
+        image: combo_cat_1
+    },
+    {
+        name: "Cake & Gift",
+        image: combo_cat_2
+    },
+    {
+        name: "Cake & choclate",
+        image: combo_cat_3
+    },
+    {
+        name: "Flower & cake",
+        image: combo_cat_4
+    },
+    {
+        name: "Flower & gift",
+        image: combo_cat_5
+    },
+    {
+        name: "Flower & choclate",
+        image: combo_cat_6
+    }
+]
+
+export const occasion_cat_list = [
+    {
+        name: "Birtday",
+        image: occ_cat_1
+    },
+    {
+        name: "Anniversary",
+        image: occ_cat_2
+    },
+    {
+        name: "Valentines day",
+        image: occ_cat_3
+    },
+    {
+        name: "Christmas",
+        image: occ_cat_4
+    },
+    {
+        name: "New year",
+        image: occ_cat_5
+    },
+    {
+        name: "Onam",
+        image: occ_cat_6
+    }
+]
 
 export const cake_list = [
     {

@@ -1,5 +1,5 @@
 
-.cake-category {
+.occasion-category {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,29 +10,29 @@
     margin-top: 40px;
 }
 
-.cake-category-header {
+.occasion-category-header {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.cake-category-header h3 {
+.occasion-category-header h3 {
     font-size: 24px;
     font-weight: bold;
     color: #333;
 }
 
-.cake-category-header p {
+.occasion-category-header p {
     font-size: 16px;
     color: #777;
 }
 
-.cake-category-wrapper {
+.occasion-category-wrapper {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 20px;
 }
 
-.cake-category-card {
+.occasion-category-card {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -42,24 +42,24 @@
     background-color: #fff;
 }
 
-.cake-category-card:hover {
+.occasion-category-card:hover {
     transform: translateY(-5px);
 }
 
-.cake-category-image {
+.occasion-category-image {
     width: 100%;
     height: 200px; /* Added fixed height */
     border-radius: 10px;
     overflow: hidden;
 }
 
-.cake-category-image img {
+.occasion-category-image img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures all images fit within the container */
 }
 
-.cake-category-title {
+.occasion-category-title {
     font-size: 16px;
     font-weight: 500;
     color: #333;
@@ -68,52 +68,52 @@
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
-    .cake-category-wrapper {
+    .occasion-category-wrapper {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .cake-category-card {
+    .occasion-category-card {
         margin: 0 auto;
     }
 
-    .cake-category-title {
+    .occasion-category-title {
         font-size: 14px;
     }
 }
 
 @media (max-width: 650px) {
-    .cake-category-header h3 {
+    .occasion-category-header h3 {
         font-size: 20px;
     }
 
-    .cake-category-header p {
+    .occasion-category-header p {
         font-size: 14px;
     }
 
-    .cake-category-card {
+    .occasion-category-card {
         width: 100%;
     }
 
-    .cake-category-title {
+    .occasion-category-title {
         font-size: 12px;
     }
 }
 
 @media (max-width: 550px) {
-    .cake-category-header h3 {
+    .occasion-category-header h3 {
         font-size: 18px;
         margin-bottom: 10px;
     }
 
-    .cake-category-header p {
+    .occasion-category-header p {
         font-size: 12px;
     }
 
-    .cake-category-card {
+    .occasion-category-card {
         width: 100%;
     }
 
-    .cake-category-title {
+    .occasion-category-title {
         font-size: 10px;
     }
 }

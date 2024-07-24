@@ -76,21 +76,21 @@ const NavbarSmall = () => {
           <p>Combos</p>
           <div className="dropdown">
             <div className="dropdown-column">
-              <strong>By type</strong>
+              <strong>Cake combo</strong>
               <ul className="dropdown-column-lists">
-                <li>All combo</li>
+                <li>All cake combo</li>
                 <li>Cake & Flower</li>
                 <li>Cake & Gift</li>
-                <li>Gift & Flower</li>
+                <li>Cake & choclate</li>
               </ul>
             </div>
             <div className="dropdown-column">
-              <strong>By Occasion</strong>
+              <strong>Flower combo</strong>
               <ul className="dropdown-column-lists">
-                <li>Birthday</li>
-                <li>Anniversary</li>
-                <li>Housewarming</li>
-                <li>Wedding</li>
+                <li>All flower combo</li>
+                <li>Flower & cake</li>
+                <li>Flower & gift</li>
+                <li>Flower & choclate</li>
               </ul>
             </div>
           </div>

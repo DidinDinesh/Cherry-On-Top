@@ -6,6 +6,7 @@ const cakeCategory = () => {
     <div className="cake-category">
       <div className="cake-category-header">
         <h3>Cakes</h3>
+        <p>Elegance on a plate</p>
       </div>
       <div className="cake-category-wrapper">
         {cake_cat_list.map((item, index) => (
