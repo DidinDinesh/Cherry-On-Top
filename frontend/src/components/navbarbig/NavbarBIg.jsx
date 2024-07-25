@@ -27,14 +27,16 @@ const handleToggleMenu = () => {
             </div>
             <ul className="navbar-menu">
                 <Link to="/">Home</Link>
-                <a href="#explore-menu" >Orders</a>
-                <a href="#footer" >Conatct us</a>
+                <Link to="blog" >Blog</Link>
+                <Link to="Contact" >Conatct us</Link>
             </ul>
           </div>       
           <div className="navbar-right">
             <button>Sign In</button>
             <div className="navbar-cart">
-              <img src={assets.cart_icon} alt="" />
+              <Link to="/cart">
+                <img src={assets.cart_icon} alt="" />
+              </Link>
               <div className="dot"></div>
             </div>
             <div>

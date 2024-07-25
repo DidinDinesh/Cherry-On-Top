@@ -1,10 +1,18 @@
-import logo from './cherry-on-top-high-resolution-logo.png'
-import testLogo from './logo.png'
-import cart_icon from './cart.svg'
-import signin_icon from './SignIn.svg'
-import search_icon from './search.svg'
-import menu_icon from './menu.svg'
-import close_icon from './close.svg'
+import logo from './other/logo.png'
+import cart_icon from './icons/cart.svg'
+import signin_icon from './icons/SignIn.svg'
+import search_icon from './icons/search.svg'
+import menu_icon from './icons/menu.svg'
+import close_icon from './icons/close.svg'
+import play_store from './other/play_store.png'
+import app_store from './other/app_store.png'
+import facebook from './social icons/facebook-circle.svg'
+import whatsapp from './social icons/whatsapp.svg'
+import instagram from './social icons/instagram.svg'
+import twitter from './social icons/x.svg'
+import youtube from './social icons/youtube.svg'
+import linkdin from './social icons/linkedin.svg'
+
 
 import cake from './category/cake.png'
 import flowers from './category/flowers.png'
@@ -45,29 +53,36 @@ import occ_cat_1 from './occasion_category/birthday.png'
 import occ_cat_2 from './occasion_category/anniversary.png'
 import occ_cat_3 from './occasion_category/valentines day.png'
 import occ_cat_4 from './occasion_category/christmas.png'
-import occ_cat_5 from './occasion_category/newyear.png'
+import occ_cat_5 from './occasion_category/new year.png'
 import occ_cat_6 from './occasion_category/onam.png'
 
 
-import cake_1 from './cake_1.png'
-import cake_2 from './cake_2.png'
-import cake_3 from './cake_3.png'
-import cake_4 from './cake_4.png'
-import cake_5 from './cake_5.png'
-import cake_6 from './cake_6.png'
-import cake_7 from './cake_7.png'
-import cake_8 from './cake_8.png'
-import cake_9 from './cake_9.png'
-import cake_10 from './cake_10.png'
+import cake_1 from './cakes/cake_1.png'
+import cake_2 from './cakes/cake_2.png'
+import cake_3 from './cakes/cake_3.png'
+import cake_4 from './cakes/cake_4.png'
+import cake_5 from './cakes/cake_5.png'
+import cake_6 from './cakes/cake_6.png'
+import cake_7 from './cakes/cake_7.png'
+import cake_8 from './cakes/cake_8.png'
+import cake_9 from './cakes/cake_9.png'
+import cake_10 from './cakes/cake_10.png'
 
 export const assets = {
     logo,
-    testLogo,
     cart_icon,
     signin_icon,
     search_icon,
     menu_icon,
     close_icon,
+    play_store,
+    app_store,
+    facebook,
+    whatsapp,
+    instagram,
+    twitter,
+    youtube,
+    linkdin,
     cake,
     flowers,
     gifts,
