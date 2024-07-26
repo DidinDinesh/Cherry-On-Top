@@ -39,6 +39,7 @@
     text-align: center;
     transition: transform 0.3s ease;
     background-color: #fff;
+    cursor: pointer;
 }
 
 .flower-category-card:hover {

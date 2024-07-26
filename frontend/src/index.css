@@ -10,7 +10,8 @@
 
 body {
   padding-top: 18vh;
-  min-height: 100vh;
+  height: 100%;
+  margin: 0;
 }
 
 a {
@@ -19,7 +20,9 @@ a {
 }
 
 .app {
-  margin: auto
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 @media (max-width:900px) {

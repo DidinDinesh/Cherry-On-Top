@@ -1,9 +1,9 @@
 
 .footer {
-    background-color: rgb(232, 222, 28);
-    padding: 20px 10px 10px 10px;
-    border-top: 1px solid #ddd;
-  }
+  background-color: rgb(232, 222, 28);
+  padding: 20px 10px 10px 10px;
+  border-top: 1px solid #ddd;
+}
   
   .footer-content {
     width: 80%;

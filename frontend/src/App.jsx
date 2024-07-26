@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './pages/home/Home'
 import Cart from './pages/cart/Cart'
 import Footer from './components/footer/Footer'
-import MyOrders from './pages/myOrders/MyOrders'
+import Blog from './pages/blog/Blog'
 import ContactUs from './pages/contactUs/ContactUs'
 
 
@@ -13,12 +13,14 @@ const App = () => {
     <>
       <div className="app">
         <Navbar />
-        <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/myOrders" element={<MyOrders/>} />
-            <Route path="/contactUs" element={<ContactUs/>} />
-            <Route path="/cart" element={<Cart/>} />
-        </Routes>
+        <div className="app-content">
+          <Routes>
+              <Route path="/" element={<Home/>} />
+              <Route path="/blog" element={<Blog/>} />
+              <Route path="/contactUs" element={<ContactUs/>} />
+              <Route path="/cart" element={<Cart/>} />
+          </Routes>
+        </div>
       </div>
       <Footer/>
     </>

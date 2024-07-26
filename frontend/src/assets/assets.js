@@ -12,6 +12,9 @@ import instagram from './social icons/instagram.svg'
 import twitter from './social icons/x.svg'
 import youtube from './social icons/youtube.svg'
 import linkdin from './social icons/linkedin.svg'
+import blog_cake from './blog/blog_cake.png'
+import blog_gift from './blog/blog_gift.png'
+import blog_flower from './blog/blog_flower.png'
 
 
 import cake from './category/cake.png'
@@ -117,7 +120,10 @@ export const assets = {
     occ_cat_3,
     occ_cat_4,
     occ_cat_5,
-    occ_cat_6
+    occ_cat_6,
+    blog_cake,
+    blog_gift,
+    blog_flower
 }
 
 export const menu_list = [
