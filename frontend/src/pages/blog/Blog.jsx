@@ -65,6 +65,25 @@ const Blog = () => {
                     <button>Read More</button>
                 </div> 
             </div>
+
+            <div className="blog-2">
+                <div className="blog-image">
+                    <img src={assets.blog_combo} alt="" />
+                </div>
+                <div className="blog-content">
+                    <h3>How to Pair Cakes, Flowers, and More for Unforgettable Moments</h3>
+                    <p>26-july-2024</p>
+                    <hr />
+                    <p>Combining the beauty of flowers with the sweetness
+                        of cakes creates a gift that's truly memorable. 
+                        Whether you're celebrating a birthday, anniversary,
+                        or simply want to brighten someone's day, a well-thought-out
+                        combo can make a significant impact. Learn how to pair 
+                        different types of cakes and flowers for various occasions.
+                    </p>
+                    <button>Read More</button>
+                </div> 
+            </div>
       </div>
     </div>
   )

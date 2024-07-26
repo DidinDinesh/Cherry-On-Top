@@ -15,6 +15,11 @@ import linkdin from './social icons/linkedin.svg'
 import blog_cake from './blog/blog_cake.png'
 import blog_gift from './blog/blog_gift.png'
 import blog_flower from './blog/blog_flower.png'
+import blog_combo from './blog/blog_combo.png'
+import contact_img from './contact/contact.png'
+import call_icon from './contact/call.png'
+import email_icon from './contact/email.png'
+import insta_icon from './contact/insta.png'
 
 
 import cake from './category/cake.png'
@@ -123,7 +128,12 @@ export const assets = {
     occ_cat_6,
     blog_cake,
     blog_gift,
-    blog_flower
+    blog_flower,
+    blog_combo,
+    contact_img,
+    call_icon,
+    email_icon,
+    insta_icon
 }
 
 export const menu_list = [

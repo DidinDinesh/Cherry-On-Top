@@ -4,7 +4,10 @@ import { assets } from '../../assets/assets'
 import { useState } from "react"
 
 const NavbarBIg = () => {
+
   const [ toggle, setToggle ] = useState('');
+
+  const [ menu, setMenu] = useState("home");
 
 const handleToggleMenu = () => {
   setToggle(toggle === '' ? 'show-menu' : '');
@@ -26,9 +29,9 @@ const handleToggleMenu = () => {
               <img src={assets.close_icon} alt="" />
             </div>
             <ul className="navbar-menu">
-                <Link to="/">Home</Link>
-                <Link to="blog" >Blog</Link>
-                <Link to="Contact" >Conatct us</Link>
+                <Link to="/" onClick={() => setMenu("home")} className={menu==="home"?"active" : ""}>Home</Link>
+                <Link to="blog" onClick={() => setMenu("blog")} className={menu==="blog"?"active" : ""}>Blog</Link>
+                <Link to="Contact" onClick={() => setMenu("contact")} className={menu==="contact"?"active" : ""}>Conatct us</Link>
             </ul>
           </div>       
           <div className="navbar-right">
