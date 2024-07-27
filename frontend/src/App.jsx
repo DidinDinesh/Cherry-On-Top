@@ -6,6 +6,9 @@ import Cart from './pages/cart/Cart'
 import Footer from './components/footer/Footer'
 import Blog from './pages/blog/Blog'
 import ContactUs from './pages/contactUs/ContactUs'
+import AllCakes from './pages/cakes/allCakes/AllCakes'
+import AllGifts from './pages/gifts/allGifts/AllGifts'
+import AllFlowers  from './pages/flowers/allFlowers/AllFlowers'
 
 
 const App = () => {
@@ -19,6 +22,9 @@ const App = () => {
               <Route path="/blog" element={<Blog/>} />
               <Route path="/contact" element={<ContactUs/>} />
               <Route path="/cart" element={<Cart/>} />
+              <Route path="/cakes" element={<AllCakes/>} />
+              <Route path="/gifts" element={<AllGifts/>} />
+              <Route path="/flowers" element={<AllFlowers/>} />
           </Routes>
         </div>
       </div>

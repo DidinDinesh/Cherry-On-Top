@@ -15,6 +15,7 @@
 }
 .nav-menu p {
     cursor: pointer;
+    padding: 12px 0;
 }
 
 .nav-menu p::after {
@@ -23,7 +24,7 @@
     height: 2px;
     background: tomato;
     position: absolute;;
-    bottom: -10px;
+    bottom: 0;
     left: 0;
     transition: 0.4s all liner;
 }
@@ -41,7 +42,7 @@
     border-radius: 4px;
     z-index: 1;
     left: -100px;
-    top: 31px;
+    top: 45px;
 }
 
 .nav-menu:hover .dropdown {
@@ -50,12 +51,14 @@
 }
 
 .dropdown-column-lists {
+    display: flex;
+    flex-direction: column;
     margin-top: 5px;
     list-style: none;
     cursor: pointer;
 }
 
-.dropdown-column-lists li {
+.dropdown-column-lists a {
     margin-bottom: 3px;
 }
 
@@ -67,21 +70,17 @@
 
     .nav-menu p {
         font-size: 13px;
+        padding: 6px 0;
     }
-
-    .nav-menu p::after {
-        bottom: -7px;
-    }
-
     .dropdown {
-        top: 23px;
+        top: 29px;
     }
 
     .dropdown strong {
         font-size: 13px;
     }
 
-    .dropdown-column-lists li {
+    .dropdown-column-lists a {
         font-size: 13px;
     }
 }
@@ -104,7 +103,7 @@
         font-size: 10px;
     }
 
-    .dropdown-column-lists li {
+    .dropdown-column-lists a {
         font-size: 10px;
     }
 }
@@ -127,7 +126,7 @@
         font-size: 8px;
     }
 
-    .dropdown-column-lists li{
+    .dropdown-column-lists a {
         font-size: 8px;
     }
 }

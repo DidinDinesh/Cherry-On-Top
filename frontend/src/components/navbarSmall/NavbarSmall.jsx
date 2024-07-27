@@ -1,4 +1,5 @@
 import './NavbarSmall.css'
+import { Link } from 'react-router-dom'
 
 const NavbarSmall = () => {
   return (
@@ -9,19 +10,19 @@ const NavbarSmall = () => {
             <div className="dropdown-column">
               <strong>By type</strong>
               <ul className="dropdown-column-lists">
-                <li>All cakes</li>
-                <li>Best Seller</li>
-                <li>Eggless</li>
-                <li>Photo cake</li>
+                <Link to="/cakes">All cakes</Link>
+                <Link>Best Seller</Link>
+                <Link>Eggless</Link>
+                <Link>Photo cake</Link>
               </ul>
             </div>
             <div className="dropdown-column">
               <strong>By flavour</strong>
               <ul className="dropdown-column-lists">
-                <li>Vanilla</li>
-                <li>Choclate</li>
-                <li>Butterscotch</li>
-                <li>Fruit cake</li>
+                <Link>Vanilla</Link>
+                <Link>Choclate</Link>
+                <Link>Butterscotch</Link>
+                <Link>Fruit cake</Link>
               </ul>
             </div>
           </div>
@@ -32,19 +33,19 @@ const NavbarSmall = () => {
             <div className="dropdown-column">
               <strong>By type</strong>
               <ul className="dropdown-column-lists">
-                <li>All gifts</li>
-                <li>Jewellery</li>
-                <li>Home decor</li>
-                <li>Dining & Serving</li>
+                <Link to="/gifts">All gifts</Link>
+                <Link>Jewellery</Link>
+                <Link>Home decor</Link>
+                <Link>Dining & Serving</Link>
               </ul>
             </div>
             <div className="dropdown-column">
               <strong>To Whoom</strong>
               <ul className="dropdown-column-lists">
-                <li>For her</li>
-                <li>For him</li>
-                <li>For kid</li>
-                <li>For parents</li>
+                <Link>For her</Link>
+                <Link>For him</Link>
+                <Link>For kid</Link>
+                <Link>For parents</Link>
               </ul>
             </div>
           </div>
@@ -55,19 +56,19 @@ const NavbarSmall = () => {
             <div className="dropdown-column">
               <strong>By type</strong>
               <ul className="dropdown-column-lists">
-                <li>All Flowers</li>
-                <li>Roses</li>
-                <li>Lillies</li>
-                <li>Orchids</li>
+                <Link to="/flowers">All Flowers</Link>
+                <Link>Roses</Link>
+                <Link>Lillies</Link>
+                <Link>Orchids</Link>
               </ul>
             </div>
             <div className="dropdown-column">
               <strong>By color</strong>
               <ul className="dropdown-column-lists">
-                <li>Red flower</li>
-                <li>Pink flower</li>
-                <li>White flower</li>
-                <li>Purple flower</li>
+                <Link>Red flower</Link>
+                <Link>Pink flower</Link>
+                <Link>White flower</Link>
+                <Link>Purple flower</Link>
               </ul>
             </div>
           </div>
@@ -78,19 +79,19 @@ const NavbarSmall = () => {
             <div className="dropdown-column">
               <strong>Cake combo</strong>
               <ul className="dropdown-column-lists">
-                <li>All cake combo</li>
-                <li>Cake & Flower</li>
-                <li>Cake & Gift</li>
-                <li>Cake & choclate</li>
+                <Link>All cake combo</Link>
+                <Link>Cake & Flower</Link>
+                <Link>Cake & Gift</Link>
+                <Link>Cake & choclate</Link>
               </ul>
             </div>
             <div className="dropdown-column">
               <strong>Flower combo</strong>
               <ul className="dropdown-column-lists">
-                <li>All flower combo</li>
-                <li>Flower & cake</li>
-                <li>Flower & gift</li>
-                <li>Flower & choclate</li>
+                <Link>All flower combo</Link>
+                <Link>Flower & cake</Link>
+                <Link>Flower & gift</Link>
+                <Link>Flower & choclate</Link>
               </ul>
             </div>
           </div>
@@ -101,19 +102,19 @@ const NavbarSmall = () => {
             <div className="dropdown-column">
               <strong>Personal</strong>
               <ul className="dropdown-column-lists">
-                <li>Birtday</li>
-                <li>Anniversary</li>
-                <li>Valentines day</li>
-                <li>Wedding</li>
+                <Link>Birtday</Link>
+                <Link>Anniversary</Link>
+                <Link>Valentines day</Link>
+                <Link>Wedding</Link>
               </ul>
             </div>
             <div className="dropdown-column">
               <strong>Festivals</strong>
               <ul className="dropdown-column-lists">
-                <li>Christmas</li>
-                <li>New year</li>
-                <li>Onam</li>
-                <li>Vishu</li>
+                <Link>Christmas</Link>
+                <Link>New year</Link>
+                <Link>Onam</Link>
+                <Link>Vishu</Link>
               </ul>
             </div>
           </div>
