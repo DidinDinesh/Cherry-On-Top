@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { assets } from '../../assets/assets'
 import { useState } from "react"
 
-const NavbarBIg = () => {
+const NavbarBIg = ({setShowLogin}) => {
 
   const [ toggle, setToggle ] = useState('');
 
@@ -35,7 +35,7 @@ const handleToggleMenu = () => {
             </ul>
           </div>       
           <div className="navbar-right">
-            <button>Sign In</button>
+            <button onClick={() => setShowLogin(true)}>Sign In</button>
             <div className="navbar-cart">
               <Link to="/cart">
                 <img src={assets.cart_icon} alt="" />

@@ -9,13 +9,19 @@ import ContactUs from './pages/contactUs/ContactUs'
 import AllCakes from './pages/cakes/allCakes/AllCakes'
 import AllGifts from './pages/gifts/allGifts/AllGifts'
 import AllFlowers  from './pages/flowers/allFlowers/AllFlowers'
+import { useState } from "react"
+import LoginPopUp from "./components/loginPopUP/LoginPopUp"
 
 
 const App = () => {
+
+  const [ showLogin, setShowLogin ] = useState(false);
+
   return (
     <>
+      {showLogin ? <LoginPopUp/> : <></>}
       <div className="app">
-        <Navbar />
+        <Navbar setShowLogin ={setShowLogin} showLogin = { showLogin }/>
         <div className="app-content">
           <Routes>
               <Route path="/" element={<Home/>} />
