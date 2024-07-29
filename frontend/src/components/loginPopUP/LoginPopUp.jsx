@@ -1,71 +1,46 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import './LoginPopUp.css'
+import { assets } from "../../assets/assets";
 
-const LoginPopUp = () => {
+const LoginPopUp = ({setShowLogin}) => {
 
-    const [ slideChange, setSlideChange ] = useState('');
+    const [ currentState, setCurrentState ] = useState("Login");
 
-    const handleSlideChange = () => {
-        setSlideChange( slideChange === '' ? 'active' : '');
-      };
+    useEffect(() => {
+        setShowLogin ? document.body.classList.add("no-scroll") 
+        : document.body.classList.remove("no-scroll");
+
+        // Cleanup when the component is unmounted
+        return () => {
+            document.body.classList.remove("no-scroll");
+        };
+    }, [setShowLogin]);
 
   return (
-    <div className="loginpopup">
-        <div className={`container ${slideChange}`}>
-            <div className="form-container sign-up">
-                <form>
-                    <h1>Create Account</h1>
-
-                    <div className="social-icons">
-                        <a href="#" className="icons"><i className='bx bxl-google'></i></a>
-                        <a href="#" className="icons"><i className='bx bxl-facebook-circle' ></i></a>
-                        <a href="#" className="icons"><i className='bx bxl-github' ></i></a>
-                        <a href="#" className="icons"><i className='bx bxl-linkedin' ></i></a>
-                    </div>
-
-                    <span>Register With Email</span>
-                    <input type="text" placeholder="Name"/>
-                    <input type="email" placeholder="Enter Email"/>
-                    <input type="password" placeholder="Enter Password"/>
-                    <button>SIGN UP</button>
-                </form>
+    <div className="login-popup">
+        <form className="login-popup-container" >
+            <div className="login-popup-title">
+                <h2>{currentState}</h2>
+                <img onClick={() => setShowLogin(false)} src={assets.close_icon} alt="" />
             </div>
-
-            <div className="form-container sign-in">
-                <form>
-                    <h1>Sign In</h1>
-
-                    <div className="social-icons">
-                        <a href="#" className="icons"><i className='bx bxl-google'></i></a>
-                        <a href="#" className="icons"><i className='bx bxl-facebook-circle' ></i></a>
-                        <a href="#" className="icons"><i className='bx bxl-github' ></i></a>
-                        <a href="#" className="icons"><i className='bx bxl-linkedin' ></i></a>
-                    </div>
-
-                    <span>Login With Email and Password</span>
-                    <input type="email" placeholder="Enter Email"/>
-                    <input type="password" placeholder="Enter Password"/>
-                    <a href="#">Forgot Password?</a>
-                    <button>SIGN IN</button>
-                </form>
+            <div className="login-popup-inputs">
+                { currentState === "Login"? <></> 
+                : <input name="name" type="text" placeholder="Your name" required /> }
+                <input name="email"  type="text" placeholder="Your Email"  required/>
+                <input name="password" type="password" placeholder="Password" required />
             </div>
-
-            <div className="toggle-container">
-                <div className="toggle">
-                    <div className="toggle-pannel toggle-left">
-                        <h1>Welcome to Cherry on Top</h1>
-                        <p>Sign in with ID and Password</p>
-                        <button onClick={handleSlideChange} className="hidden" id="login">SIGN IN</button>
-                    </div>
-
-                    <div className="toggle-pannel toggle-right">
-                        <h1>New to the Website?</h1>
-                        <p>Join using your Mail ID</p>
-                        <button onClick={handleSlideChange} className="hidden" id="register">SIGN UP</button>
-                    </div>
-                </div>
+            <button type="submit">{currentState === "Sign up"? "Create account" : "Login"}</button>
+            <div className="login-popup-condition">
+                <input type="checkbox" required/>
+                <p>By continuing i agree to the terms of use 
+                & privacy policy
+                </p>
             </div>
-        </div>
+            { currentState === "Login"? 
+            <p>Create a new Accout? <span onClick={() => setCurrentState("Sign up")}>Sign up here</span></p>
+            : <p>Allready have an account?<span onClick={() => setCurrentState("Login")}>Login here</span></p> 
+            }
+      </form>
     </div>
 
   )
