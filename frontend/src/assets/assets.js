@@ -63,9 +63,9 @@ import flower_cat_6 from './flower_category/red_fowers.png'
 import combo_cat_1 from './combo_category/cake & flower.png'
 import combo_cat_2 from './combo_category/cak & gift.png'
 import combo_cat_3 from './combo_category/cake & choclate.png'
-import combo_cat_4 from './combo_category/flower & cake.png'
-import combo_cat_5 from './combo_category/flower & gift.png'
-import combo_cat_6 from './combo_category/flower & choclate.png'
+import combo_cat_4 from './combo_category/flower & gift.png'
+import combo_cat_5 from './combo_category/flower & choclate.png'
+import combo_cat_6 from './combo_category/gift & choclate.png'
 
 import occ_cat_1 from './occasion_category/birthday.png'
 import occ_cat_2 from './occasion_category/anniversary.png'
@@ -227,7 +227,7 @@ export const gift_cat_list = [
         image: gift_cat_5
     },
     {
-        name: "For kid",
+        name: "For kids",
         image: gift_cat_6
     }
 ]
@@ -273,15 +273,15 @@ export const combo_cat_list = [
         image: combo_cat_3
     },
     {
-        name: "Flower & cake",
+        name: "Flower & gift",
         image: combo_cat_4
     },
     {
-        name: "Flower & gift",
+        name: "Flower & choclate",
         image: combo_cat_5
     },
     {
-        name: "Flower & choclate",
+        name: "Gift & choclate",
         image: combo_cat_6
     }
 ]

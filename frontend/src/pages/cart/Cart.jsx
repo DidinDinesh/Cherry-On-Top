@@ -31,7 +31,7 @@ const Cart = () => {
                   <img src={item.image} alt="" />
                   <p>{item.name}</p>
                   <p>&#8377;{item.price}</p>
-                  <p>{cartItems[item.id]}</p>
+                  <button>{cartItems[item.id]}</button>
                   <p>&#8377;{item.price * cartItems[item.id]}</p>
                   <button onClick={() => removeFromCart(item.id)} className="cross">X</button> 
                 </div>

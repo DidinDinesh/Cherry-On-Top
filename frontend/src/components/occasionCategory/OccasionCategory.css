@@ -48,7 +48,7 @@
 
 .occasion-category-image {
     width: auto;
-    height: auto;
+    height: 220px;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -94,6 +94,10 @@
         width: 100%;
     }
 
+    .occasion-category-image {
+    height: 150px;
+    }
+
     .occasion-category-title {
         font-size: 12px;
     }
@@ -111,6 +115,10 @@
 
     .occasion-category-card {
         width: 100%;
+    }
+
+    .occasion-category-image {
+        height: 80px;
     }
 
     .occasion-category-title {

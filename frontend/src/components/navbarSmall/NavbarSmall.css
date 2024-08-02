@@ -15,6 +15,7 @@
 }
 .nav-menu .menu-title {
     cursor: pointer;
+    padding: 12px;
 }
 
 .nav-menu .menu-title::after {
@@ -69,6 +70,7 @@
 
     .nav-menu .menu-title {
         font-size: 13px;
+        padding: 6px;
     }
 
     .nav-menu .menu-title::after {

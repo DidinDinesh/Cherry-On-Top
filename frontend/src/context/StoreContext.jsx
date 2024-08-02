@@ -11,7 +11,10 @@ const StoreContextProvider = (props) => {
         window.scrollTo(0, 0);
     };
 
-    const [ group, setGroup] = useState("All");
+    const [ cakeGroup, setCakeGroup ] = useState("All");
+    const [ giftGroup, setGiftGroup ] = useState("All");
+    const [ flowerGroup, setFlowerGroup ] = useState("All");
+    const [ comboGroup, setComboGroup ] = useState("All");
 
     const cake_list = useMemo(() => product_list.filter(item => item.category === 'cake'), [product_list]);
     const gift_list = useMemo(() => product_list.filter(item => item.category === 'gift'), [product_list]);
@@ -44,8 +47,17 @@ const StoreContextProvider = (props) => {
                 totalAmount += itemInfo.price*cartItems[item];
             }
         }
-
         return totalAmount;
+    }
+
+    const getTotalCartItems = () => {
+        let totalItem = 0;
+        for(const item in cartItems) {
+            if(cartItems[item] > 0) {
+                totalItem += cartItems[item];
+            }
+        }
+        return totalItem;
     }
 
 
@@ -57,13 +69,20 @@ const StoreContextProvider = (props) => {
       gift_list,
       flower_list,
       combo_list,
-      group,
-      setGroup,
       handleScrollToTop,
       cartItems,
       addToCart,
       removeFromCart,
       getTotalCartAmount,   
+      cakeGroup,
+      setCakeGroup,
+      giftGroup,
+      setGiftGroup,
+      flowerGroup,
+      setFlowerGroup,
+      comboGroup,
+      setComboGroup,
+      getTotalCartItems
   }
   
   return (

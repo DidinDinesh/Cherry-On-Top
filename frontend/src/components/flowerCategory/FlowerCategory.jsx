@@ -1,11 +1,21 @@
 import './FlowerCategory.css'
 import { flower_cat_list } from '../../assets/assets'
+import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
 
-const FlowerCategory = () => {
+const FlowerCategory = ({flowerGroup, setFlowerGroup}) => {
 
-  const { setGroup } = useContext(StoreContext);
+  const { handleScrollToTop } = useContext(StoreContext);
+
+
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (category) => {
+    setFlowerGroup(prev => prev === category ? "All" : category);
+    navigate("/flowers");
+    handleScrollToTop();
+  };
 
   return (
     <div className="flower-category">
@@ -15,9 +25,8 @@ const FlowerCategory = () => {
       </div>
       <div className="flower-category-wrapper">
         {flower_cat_list.map((item, index) => (
-          <div onClick={() => setGroup(prev => 
-            prev===item.name? "All" : item.name)} 
-            key={index} className="flower-category-card">
+          <div onClick={() => handleCategoryClick(item.name)} 
+            key={index} className={`flower-category-card ${ flowerGroup.toLowerCase() === item.name.toLocaleLowerCase() ? "active" : ""}`}>
             <div className="flower-category-image">
                 <img src={item.image} />
             </div>

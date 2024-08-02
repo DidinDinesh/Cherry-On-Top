@@ -6,18 +6,20 @@ import { StoreContext } from "../../context/StoreContext";
 
 const AllCombo = () => {
 
-  const { combo_list } = useContext(StoreContext);
+  const { combo_list, comboGroup, setComboGroup, handleScrollToTop } = useContext(StoreContext);
+
+  const filtered_Combo = comboGroup === "All" ? combo_list : combo_list.filter(item => item.type.toLowerCase() === comboGroup.toLowerCase())
   
 
   return (
     <>
-      <ComboCategory />
+      <ComboCategory comboGroup = {comboGroup} setComboGroup = {setComboGroup}/>
       <div className="all-combos">
         <div className="combo-container">
-          {combo_list.map((item, index) => (
+          {filtered_Combo.map((item, index) => (
             <div key={index} className="combo-card">
               <div className="combo-image">
-                <Link to={`/combos/${item.id}`}><img src={item.image} /></Link>
+                <Link to={`/combos/${item.id}`} onClick={handleScrollToTop}><img src={item.image} /></Link>
               </div>
               <p className="combo-name">{item.name}</p>
               <p className="combo-price">&#8377; {item.price}</p>

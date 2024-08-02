@@ -153,6 +153,8 @@ let product_list = [
         price: 595,
         description: "Transform your look with our enchanting Oxidised Jhumkas, a celebration of intricate beauty and traditional craftsmanship. These captivating earrings have impeccable detailing that tells a story of artistry. Adorned with a radiant centre stone, they exude elegance and charm.",
         category: "gift",
+        type: "Jewellery",
+        toWho: ["for her"]
     },
     {
         id: "12",
@@ -160,7 +162,9 @@ let product_list = [
         image: gift_2,
         price: 1300,
         description: "Capture your cherished memories with our Personalized Photo Glow Lamp, elegantly designed in the shape of a heart. This unique lamp showcases a crystal-clear acrylic panel that's skillfully engraved with your chosen photo, creating a captivating 3D effect. The real wood base adds a touch of natural beauty to your customized keepsake. Whether it's a romantic gesture or a heartfelt gift, this lamp beautifully encapsulates your special moments. ",
-        category: "gift"
+        category: "gift",
+        type: "Home decor",
+        toWho: ["for her","for him"]
     }, 
     {
         id: "13",
@@ -168,7 +172,9 @@ let product_list = [
         image: gift_3,
         price: 375,
         description: "This elegant photo frame boasts a timeless wooden aesthetic, perfectly blending rich grains and organic charm. Its meticulous craftsmanship is evident in the subtle details and smooth finish, making it a cherished possession for any home. Ideal as an anniversary gift, this frame encapsulates memories, reminding couples of their journey together. Gift it to your partner to forever immortalize those cherished moments, and watch as it not only holds a photo but also the essence of love and enduring commitment",
-        category: "gift"
+        category: "gift",
+        type: "Home decor",
+        toWho: ["for her","for him"]
     }, 
     {
         id: "14",
@@ -176,7 +182,9 @@ let product_list = [
         image: gift_4,
         price: 1590,
         description: "Is your valentine a 90's kid? Revive your sweetheart's interests by getting them this exclusive customised 90's themed box that consists of all the popular and nostalgia infused moments. The perfect gift for any 90 born, this assorted box contains the many flavours and strains of childhood.",
-        category: "gift"
+        category: "gift",
+        type: "other",
+        toWho: ["for kids"]
     }, 
     {
         id: "15",
@@ -184,7 +192,9 @@ let product_list = [
         image: gift_5,
         price: 375,
         description: "A little temple, a big symbol of devotion. This Ram Mandir miniature is a splendid wooden replica that brings a piece of sacred serenity right into your home. Carved with care, the intricate details on the temple are a testament to skilled craftsmanship. It stands as a small but powerful reminder of faith, tradition, and the spiritual sanctity of the Ram Mandir. ",
-        category: "gift"
+        category: "gift",
+        type: "Home decor",
+        toWho: ["for her", "for him", "for parents"]
     }, 
     {
         id: "16",
@@ -192,7 +202,9 @@ let product_list = [
         image: gift_6,
         price: 599,
         description: "We worship Lord Ganesha on Diwali to get blessed with wealth, knowledge, happiness and good health. This time as you look for a gift, consider this auspicious marble Ganpati murti for your near and dear ones. Gifting Ganesha is an old practice of gifting good fortune and prosperity to our loved ones. So, order today and gift this beautiful Murti, this festival.",
-        category: "gift"
+        category: "gift",
+        type: "Home decor",
+        toWho: ["for her", "for him", "for parents"]
     }, 
     {
         id: "17",
@@ -200,7 +212,9 @@ let product_list = [
         image: gift_7,
         price: 1205,
         description: "Now bake your favorite cake, bread or pasta in this royal white ceramic bake bowl. Decorated with a golden borderline and a small golden handle can enhance the look of your dining table. It is microwave safe and durable. Wait no more, order for yourself or as a gift for your loved ones.",
-        category: "gift"
+        category: "gift",
+        type: "Dining & Serving",
+        toWho: ["for her", "for parents"]
     }, 
     {
         id: "18",
@@ -208,7 +222,9 @@ let product_list = [
         image: gift_8,
         price: 525,
         description: "Made of non-reactive and completely safe to use material, this multi purpose blue Ceramic bowl is an eye-catching addition to any home, making it the perfect choice for decor upgrade, kitchen purposes and gift giving. Select this stunning round bowl for an array of purposes and make your loved ones very happy!",
-        category: "gift"
+        category: "gift",
+        type: "Dining & Serving",
+        toWho: ["for her", "for parents"]
     }, 
     {
         id: "19",
@@ -216,7 +232,9 @@ let product_list = [
         image: gift_9,
         price: 1300,
         description: "What should i gift my man? If you have such a question in mind then this combo of classic pure leather wallet is a perfect fit. Paired with a brass metal antique sand timer keychain, Don’t miss any chance to surprise the special man in your life. Gift now!",
-        category: "gift"
+        category: "gift",
+        type: "other",
+        toWho: ["for men"]
     }, 
     {
         id: "20",
@@ -224,7 +242,9 @@ let product_list = [
         image: gift_10,
         price: 1000,
         description: "Confess to your partner that you are in love with the smile, laugh, eyes, soul, and all of him or her over this handcrafted explosion box of love. Beautifully curated with lovely pictures and moments, gift this on Anniversary to your beloved one to pop a bubble of love and romance.",
-        category: "gift"
+        category: "gift",
+        type: "home decor",
+        toWho: ["for her", "for him"]
     },
     {
         id: "21",
@@ -332,7 +352,8 @@ let product_list = [
         image: combo_1,
         price: 1145,
         description: "Just like your love for your dear ones can never fade, so will not the aura of this fresh bouquet of 10 mixed roses. To add to the charm of the hamper, coming along with it is a 1/2 kg Chocolate Cake to make the experience delightful and more love-filled. Perfect for occasions such as Birthday, Anniversaries, Mother's Day and more to spread happiness.",
-        category : "combo"
+        category : "combo",
+        type: "Cake & Flower"
     },
     {
         id: "32",
@@ -340,7 +361,8 @@ let product_list = [
         image: combo_2,
         price: 895,
         description: "Loves is red. True that! Red roses represent deep and true love. The fragrance of this beautiful bunch of 10 Red Roses, will for sure fill heart of your loved one with love. On top of it, nothing better than the 2 all-time favorites Temptaions. Send this delightful combo to your special ones.",
-        category : "combo"
+        category : "combo",
+        type: "Flower & choclate"
     }, 
     {
         id: "33",
@@ -348,7 +370,8 @@ let product_list = [
         image: combo_3,
         price: 1199,
         description: "The best way to send birthday wishes is with the delightful sweetness of chocolates and a thoughtful gift. This duo of ferrero rocher birthday chocolates along with a Golden mug that can be personalized with the recipient's name or name initial on it. Gift now!",
-        category : "combo"
+        category : "combo",
+        type: "gift & choclate"
     }, 
     {
         id: "34",
@@ -356,7 +379,8 @@ let product_list = [
         image: combo_4,
         price: 1045,
         description: "Celebrate your love with a charming Valentine's Day gift that speaks volumes. You'll find a bouquet of two delicate daisies in a vibrant red square box, symbolising love's simplicity and purity. Surrounding them are ten delightful KitKat chocolates, each one representing a sweet moment shared between you and your beloved. This gift captures the essence of love, combining the joy of indulgence with the beauty of nature. It's a heartfelt gesture that conveys your affection simply yet meaningfully, making your Valentine's Day even more special and memorable.",
-        category : "combo"
+        category : "combo",
+        type: "Flower & choclate"
     }, 
     {
         id: "35",
@@ -364,7 +388,8 @@ let product_list = [
         image: combo_5,
         price: 1795,
         description: "Wrapped in the warmth of affection, a charming small basket filled with love's delightful gifts. It holds a dozen rich red roses, full of beauty and joy, alongside two stems of cheerful green button daisies, adding a sprinkle of playful charm. A cute white teddy bear that brings a fluffy bundle of cuteness, symbolizing the tenderness and comfort of love. Tucked within are four Ferrero Rocher chocolates, each a golden treat of creamy, crunchy sweetness. This basket is a treasure trove of love, perfect for celebrating the special moments of Valentine's Day.",
-        category : "combo"
+        category : "combo",
+        type: "Flower & gift"
     }, 
     {
         id: "36",
@@ -372,7 +397,8 @@ let product_list = [
         image: combo_6,
         price: 1295,
         description: "Amidst the symphony of flavors and the lushness of nature, behold the enchanting fusion of the rasmalai cake and the money plant. Like a melody that delights the senses, the rasmalai cake is crowned with a generous spread of pistachios and the ethereal essence of rasmalai. Paired with the money plant, an emblem of prosperity and abundance, this combo harmoniously intertwines the indulgence of taste with the vitality of greenery. ",
-        category : "combo"
+        category : "combo",
+        type: "Cake & gift"
     }, 
     {
         id: "37",
@@ -380,7 +406,8 @@ let product_list = [
         image: combo_7,
         price: 845,
         description: "Gift this enticingly sweet combo to celebrate the symphony of flavors and joy. The classic black forest cake is a masterpiece with its luscious chocolate ganache, velvety frosting, and delightful cherry accents. Adorned with chocolate bark, it's a sight to behold and a delight to savor. And as a perfect accompaniment, the Cadbury Celebrations box adds a touch of sweetness to every moment shared. Let this exquisite combination of flavors and love deepen the bonds you cherish. ",
-        category : "combo"
+        category : "combo",
+        type: "Cake & choclate"
     }, 
     {
         id: "38",
@@ -388,7 +415,8 @@ let product_list = [
         image: combo_8,
         price: 1245,
         description: "Experience pure bliss with a delightful combo, which is a perfect blend of flavors and cuddles. Indulge in the heavenly richness of this eggless choco vanilla cake, where half is adorned with velvety choco ganache while the other half boasts an abstract art design. The cake's crown is adorned with delectable chocolate pieces meticulously crafted into a captivating floral arrangement. Accompanying this scrumptious treat is a plush teddy bear, ready to embrace and shower affection. ",
-        category : "combo"
+        category : "combo",
+        type: "Cake & gift"
     }, 
     {
         id: "39",
@@ -396,7 +424,8 @@ let product_list = [
         image: combo_9,
         price: 1245,
         description: "Discover the perfect pairing of flavor and serenity with our Red Velvet Cake and Three-Layer Lucky Bamboo Plant Combo. This delightful package features a Red Velvet Cake topped with creamy chocolate dollops and red velvet crumbs, accompanied by a three-layer Lucky Bamboo Plant. Enjoy the cake's rich and velvety taste, while the bamboo plant adds a touch of green tranquility to your surroundings. Whether it's for a special occasion or to bring joy to someone's day, this combo is a delightful treat for the senses",
-        category : "combo"
+        category : "combo",
+        type: "Cake & gift"
     }, 
     {
         id: "40",
@@ -404,7 +433,8 @@ let product_list = [
         image: combo_10,
         price: 3145,
         description: "Cherish the festivities of the season of merriment by surprising your special person with this gorgeous assorted hamper. It consists of a gorgeous rose bouquet, two Temptation chocolate bars, a pack of Ferrero Rochers assorted in a beautiful wooden basket.",
-        category : "combo"
+        category : "combo",
+        type: "flower & choclate"
     }
 ]    
 

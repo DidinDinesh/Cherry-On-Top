@@ -5,20 +5,24 @@ import { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
 
 
-const AllGIfts = (props) => {
+const AllGIfts = () => {
 
-  const { gift_list } = useContext(StoreContext);
+  const { gift_list, giftGroup, setGiftGroup, handleScrollToTop } = useContext(StoreContext);
+  
+
+  const filtered_Gifts = giftGroup === "All" ? gift_list : gift_list.filter(item =>
+    item.toWho.map(type => type.toLowerCase()).includes(giftGroup.toLowerCase()) || item.type.toLowerCase() === giftGroup.toLowerCase())
   
 
   return (
     <>
-    <GiftCategory />
+    <GiftCategory giftGroup = {giftGroup} setGiftGroup = {setGiftGroup}/>
       <div className="all-gifts">
         <div className="gift-container">
-          {gift_list.map((item, index) => (
+          {filtered_Gifts.map((item, index) => (
             <div key={index} className="gift-card">
               <div className="gift-image">
-                <Link to={`/gifts/${item.id}`}><img src={item.image} /></Link>
+                <Link to={`/gifts/${item.id}`} onClick={handleScrollToTop}><img src={item.image} /></Link>
               </div>
               <p className="gift-name">{item.name}</p>
               <p className="gift-price">&#8377; {item.price}</p>

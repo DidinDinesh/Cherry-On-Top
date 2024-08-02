@@ -43,19 +43,24 @@
     cursor: pointer;
 }
 
+.cake-category-card.active {
+    background-color: #3eb6f3;
+}
+
 .cake-category-card:hover {
     transform: translateY(-5px);
 }
 
 .cake-category-image {
-    width: 100%;
+    width: auto;
+    height: 220px;
     border-radius: 10px;
     overflow: hidden;
 }
 
 .cake-category-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -94,6 +99,10 @@
         width: 100%;
     }
 
+    .cake-category-image {
+        height: 150px;
+    }
+
     .cake-category-title {
         font-size: 12px;
     }
@@ -111,6 +120,10 @@
 
     .cake-category-card {
         width: 100%;
+    }
+
+    .cake-category-image {
+        height: 80px;
     }
 
     .cake-category-title {

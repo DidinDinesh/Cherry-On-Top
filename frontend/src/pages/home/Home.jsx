@@ -6,20 +6,22 @@ import FlowerCategory from "../../components/flowerCategory/FlowerCategory"
 import GiftCategory from "../../components/gifrCategory/GiftCategory"
 import ComboCategory from "../../components/comboCategory/ComboCategory"
 import OccasionCategory from "../../components/occasionCategory/OccasionCategory"
-import { useState } from "react"
+import {  useContext } from "react"
+import { StoreContext } from "../../context/StoreContext"
 
 
 const Home = () => {
-  
+
+  const { cakeGroup, setCakeGroup, giftGroup, setGiftGroup, flowerGroup, setFlowerGroup, comboGroup, setComboGroup } = useContext(StoreContext); 
 
   return (
     <div className="home">
       <Header />
       <Category />
-      <CakeCategory  />
-      <GiftCategory />
-      <FlowerCategory />
-      <ComboCategory />
+      <CakeCategory cakeGroup={cakeGroup} setCakeGroup={setCakeGroup} />
+      <GiftCategory giftGroup={giftGroup} setGiftGroup={setGiftGroup}/>
+      <FlowerCategory flowerGroup={flowerGroup} setFlowerGroup={setFlowerGroup} />
+      <ComboCategory comboGroup={cakeGroup} setComboGroup={setComboGroup}/>
       <OccasionCategory />
     </div>
   )

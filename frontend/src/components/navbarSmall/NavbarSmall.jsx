@@ -1,97 +1,101 @@
+import { useContext } from "react";
 import './NavbarSmall.css'
 import { Link } from 'react-router-dom'
+import { StoreContext } from "../../context/StoreContext";
 
 const NavbarSmall = () => {
+
+  const { setCakeGroup, setGiftGroup, setFlowerGroup, setComboGroup } = useContext(StoreContext);
+
   return (
       <div className="navbar-small">
         <div className="nav-menu">
-        <Link className="menu-title" to="/cakes">Cakes</Link>
+        <Link className="menu-title" to="/cakes" onClick={() => setCakeGroup("All")}>Cakes</Link>
           <div className="dropdown">
             <div className="dropdown-column">
               <strong>By type</strong>
               <ul className="dropdown-column-lists">
-                <Link to="/cakes">All cakes</Link>
-                <Link>Best Seller</Link>
-                <Link>Eggless</Link>
-                <Link>Photo cake</Link>
+                <Link to="/cakes" onClick={() => setCakeGroup("All")}>All cakes</Link>
+                <Link to="/cakes" onClick={() => setCakeGroup("bestseller")}>Best Seller</Link>
+                <Link to="/cakes" onClick={() => setCakeGroup("eggless")}>Eggless</Link>
+                <Link to="/cakes" onClick={() => setCakeGroup("photo cake")}>Photo cake</Link>
               </ul>
             </div>
             <div className="dropdown-column">
               <strong>By flavour</strong>
               <ul className="dropdown-column-lists">
-                <Link>Vanilla</Link>
-                <Link>Choclate</Link>
-                <Link>Butterscotch</Link>
-                <Link>Fruit cake</Link>
+                <Link to="/cakes" onClick={() => setCakeGroup("vanilla")}>Vanilla</Link>
+                <Link to="/cakes" onClick={() => setCakeGroup("choclate")}>Choclate</Link>
+                <Link to="/cakes" onClick={() => setCakeGroup("butterscotch")}>Butterscotch</Link>
+                <Link to="/cakes" onClick={() => setCakeGroup("fruit")}>Fruit cake</Link>
               </ul>
             </div>
           </div>
         </div>
         <div className="nav-menu">
-          <Link className="menu-title" to="/gifts">Gifts</Link>
+          <Link className="menu-title" to="/gifts" onClick={() => setGiftGroup("All")}>Gifts</Link>
           <div className="dropdown">
             <div className="dropdown-column">
               <strong>By type</strong>
               <ul className="dropdown-column-lists">
-                <Link to="/gifts">All gifts</Link>
-                <Link>Jewellery</Link>
-                <Link>Home decor</Link>
-                <Link>Dining & Serving</Link>
+                <Link to="/gifts" onClick={() => setGiftGroup("All")}>All gifts</Link>
+                <Link to="/gifts" onClick={() => setGiftGroup("jewellery")}>Jewellery</Link>
+                <Link to="/gifts" onClick={() => setGiftGroup("home decor")}>Home decor</Link>
+                <Link to="/gifts" onClick={() => setGiftGroup("dining & serving")}>Dining & Serving</Link>
               </ul>
             </div>
             <div className="dropdown-column">
               <strong>To Whoom</strong>
               <ul className="dropdown-column-lists">
-                <Link>For her</Link>
-                <Link>For him</Link>
-                <Link>For kid</Link>
-                <Link>For parents</Link>
+                <Link to="/gifts" onClick={() => setGiftGroup("for her")}>For her</Link>
+                <Link to="/gifts" onClick={() => setGiftGroup("for him")}>For him</Link>
+                <Link to="/gifts" onClick={() => setGiftGroup("for kid")}>For kid</Link>
+                <Link to="/gifts" onClick={() => setGiftGroup("for parents")}>For parents</Link>
               </ul>
             </div>
           </div>
         </div>
         <div className="nav-menu">
-          <Link className="menu-title" to="/flowers">Flowers</Link>
+          <Link className="menu-title" to="/flowers" onClick={() => setFlowerGroup("All")}>Flowers</Link>
           <div className="dropdown">
             <div className="dropdown-column">
               <strong>By type</strong>
               <ul className="dropdown-column-lists">
-                <Link to="/flowers">All Flowers</Link>
-                <Link>Roses</Link>
-                <Link>Lillies</Link>
-                <Link>Orchids</Link>
+                <Link to="/flowers" onClick={() => setFlowerGroup("All")}>All Flowers</Link>
+                <Link to="/flowers" onClick={() => setFlowerGroup("rose")}>Roses</Link>
+                <Link to="/flowers" onClick={() => setFlowerGroup("lily")}>Lillies</Link>
+                <Link to="/flowers" onClick={() => setFlowerGroup("orchid")}>Orchids</Link>
               </ul>
             </div>
             <div className="dropdown-column">
               <strong>By color</strong>
               <ul className="dropdown-column-lists">
-                <Link>Red flower</Link>
-                <Link>Pink flower</Link>
-                <Link>White flower</Link>
-                <Link>Purple flower</Link>
+                <Link to="/flowers" onClick={() => setFlowerGroup("red flower")}>Red flower</Link>
+                <Link to="/flowers" onClick={() => setFlowerGroup("blue flower")}>blue flower</Link>
+                <Link to="/flowers" onClick={() => setFlowerGroup("white flower")}>White flower</Link>
+                <Link to="/flowers" onClick={() => setFlowerGroup("purple flower")}>Purple flower</Link>
               </ul>
             </div>
           </div>
         </div>
         <div className="nav-menu">
-        <Link className="menu-title" to="/combos">Combos</Link>
+        <Link className="menu-title" to="/combos" onClick={() => setComboGroup("All")}>Combos</Link>
           <div className="dropdown">
             <div className="dropdown-column">
               <strong>Cake combo</strong>
               <ul className="dropdown-column-lists">
-                <Link>All cake combo</Link>
-                <Link>Cake & Flower</Link>
-                <Link>Cake & Gift</Link>
-                <Link>Cake & choclate</Link>
+                <Link to="/combos" onClick={() => setComboGroup("All")}>All combo</Link>
+                <Link to="/combos" onClick={() => setComboGroup("cake & flower")}>Cake & Flower</Link>
+                <Link to="/combos" onClick={() => setComboGroup("cake & gift")}>Cake & Gift</Link>
+                <Link to="/combos" onClick={() => setComboGroup("cake & choclate")}>Cake & choclate</Link>
               </ul>
             </div>
             <div className="dropdown-column">
-              <strong>Flower combo</strong>
+              <strong>Other Combos</strong>
               <ul className="dropdown-column-lists">
-                <Link>All flower combo</Link>
-                <Link>Flower & cake</Link>
-                <Link>Flower & gift</Link>
-                <Link>Flower & choclate</Link>
+                <Link to="/combos" onClick={() => setComboGroup("flower & gift")}>Flower & gift</Link>
+                <Link to="/combos" onClick={() => setComboGroup("flower & choclate")}>Flower & choclate</Link>
+                <Link to="/combos" onClick={() => setComboGroup("gift & choclate")}>Gift & choclate</Link>
               </ul>
             </div>
           </div>

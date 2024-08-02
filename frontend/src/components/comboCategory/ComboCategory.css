@@ -44,6 +44,10 @@
     transform: scale(1.1);
 }
 
+.combo-category-card img.active {
+    border: 10px solid rgb(232, 69, 218);
+}
+
 .combo-category-title {
     font-size: 16px;
     font-weight: 600;

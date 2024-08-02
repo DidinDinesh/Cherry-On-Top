@@ -15,7 +15,7 @@ const NavbarBIg = ({setShowLogin}) => {
   setToggle(toggle === '' ? 'show-menu' : '');
   };
 
-  const { getTotalCartAmount } = useContext(StoreContext);
+  const { getTotalCartAmount, getTotalCartItems } = useContext(StoreContext);
 
 
   return (
@@ -45,7 +45,7 @@ const NavbarBIg = ({setShowLogin}) => {
               <Link to="/cart">
                 <img src={assets.cart_icon} alt="" />
               </Link>
-              <div className= {getTotalCartAmount() === 0 ? "" : "dot"}></div>
+              <div className= "navbar-cart-count">{getTotalCartItems()}</div>
             </div>
             <div>
               <img onClick={handleToggleMenu} className="toggle-icon" src={assets.menu_icon} alt="" />

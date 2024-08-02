@@ -33,6 +33,7 @@
     cursor: pointer;
 }
 
+
 .gift-category-card img {
     width: 200px;
     height: 240px;
@@ -46,6 +47,9 @@
     transform: scale(1.1);
 }
 
+.gift-category-card img.active {
+    border: 10px solid rgb(232, 69, 218);
+}
 
 .gift-category-title {
     font-size: 16px;
