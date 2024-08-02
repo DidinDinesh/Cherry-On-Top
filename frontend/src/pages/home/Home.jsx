@@ -6,17 +6,20 @@ import FlowerCategory from "../../components/flowerCategory/FlowerCategory"
 import GiftCategory from "../../components/gifrCategory/GiftCategory"
 import ComboCategory from "../../components/comboCategory/ComboCategory"
 import OccasionCategory from "../../components/occasionCategory/OccasionCategory"
+import { useState } from "react"
 
 
 const Home = () => {
+  
+
   return (
     <div className="home">
       <Header />
       <Category />
-      <CakeCategory />
+      <CakeCategory  />
       <GiftCategory />
       <FlowerCategory />
-      <ComboCategory/>
+      <ComboCategory />
       <OccasionCategory />
     </div>
   )

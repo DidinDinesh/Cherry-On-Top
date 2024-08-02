@@ -1,0 +1,137 @@
+
+.aboutus {
+    width: 80%;
+    margin: auto;
+}
+
+.aboutus-logo {
+    margin: 30px 0 30px 0;
+    text-align: center;
+}
+
+.aboutus-logo img {
+    width: 200px;
+}
+
+.aboutus-desc h2 {
+    color: #3d3d3d;
+    margin-bottom: 10px;
+}
+
+.aboutus-desc-welcome {
+    margin-bottom: 20px;
+}
+
+.aboutus-desc-story {
+    margin-bottom: 20px;
+}
+
+.aboutus-values h2 {
+    text-align: center;
+    margin: 40px 0 40px 0;
+    color: #3d3d3d;
+}
+
+.aboutus-values-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.aboutus-value {
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutus-value img {
+    margin: auto;
+    width: 100px;
+}
+
+.aboutus-value b {
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+.aboutus-value p {
+    font-size: 12px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+.aboutus-cultures h2 {
+    text-align: center;
+    margin: 40px 0 40px 0;
+    color: #3d3d3d;
+}
+
+.aboutus-cultures-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+
+.aboutus-culture {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.aboutus-culture img {
+    margin: auto;
+    width: 100px;
+}
+
+.aboutus-culture b {
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+.aboutus-culture p {
+    font-size: 12px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+.aboutus-social h2 {
+    margin-bottom: 10px;
+}
+
+.aboutus-social-apps {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    margin: 30px 0 30px 0;
+}
+
+.aboutus-social-apps img {
+    width: 70px;
+    cursor: pointer;
+}
+
+.aboutus-social-apps img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width:700px) {
+    .aboutus-social-apps img {
+        width: 40px;
+    }
+}
+
+@media (max-width:450px) {
+    .aboutus-values-container {
+        grid-template-columns: 1fr;
+    }
+
+    .aboutus-cultures-container {
+        grid-template-columns: 1fr;
+    }
+
+    .aboutus-social-apps img {
+        width: 30px;
+    }
+}

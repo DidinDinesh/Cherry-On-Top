@@ -1,0 +1,126 @@
+
+.flowerproductdisplay {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.flowerproductdisplay-left {
+    display: flex;
+    gap: 17px;
+}
+
+.flowerproductdisplay-img-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.flowerproductdisplay-img-list img {
+    height: 110px;
+    width: 110px;
+}
+
+.flowerproductdisplay-main-img {
+    width: 488px;
+    height: 488px;
+}
+
+.flowerproductdisplay-right {
+    margin: 0 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flowerproductdisplay-right h1 {
+    color: #3d3d3d;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.flowerproductdisplay-right-price {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 20px 0;
+    color: tomato;
+}
+
+.flowerproductdisplay-right-desc {
+    text-align: justify;
+}
+
+.flowerproductdisplay-right button {
+    padding: 15px 30px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #ff4141;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.flowerproductdisplay-right button:hover {
+    color: white;
+    background-color: #f80303;
+}
+
+@media (max-width:1200px) {
+    .flowerproductdisplay {
+        flex-direction: column;
+    }
+
+    .flowerproductdisplay-right {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width:750px) {
+    .flowerproductdisplay-left {
+        flex-direction: column-reverse;
+    }
+
+    .flowerproductdisplay-img-list {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .flowerproductdisplay-img-list img {
+        width: 100px;
+    }
+
+    .flowerproductdisplay-main-img {
+        width: 448px;
+        height: 448px;
+    }
+
+    .flowerproductdisplay-right h1 {
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    .flowerproductdisplay-right button {
+        padding: 10px 10px;
+        width: 150px;
+    }
+}
+
+@media (max-width:530px) {
+    .flowerproductdisplay-img-list {
+        gap: 10px;
+    }
+
+    .flowerproductdisplay-img-list img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .flowerproductdisplay-main-img {
+        width: 350px;
+        height: 350px;
+    }
+}

@@ -1,0 +1,171 @@
+
+.cakeproductdisplay {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.cakeproductdisplay-left {
+    display: flex;
+    gap: 17px;
+}
+
+.cakeproductdisplay-img-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cakeproductdisplay-img-list img {
+    height: 110px;
+    width: 110px;
+}
+
+.cakeproductdisplay-main-img {
+    width: 488px;
+    height: 488px;
+}
+
+.cakeproductdisplay-right {
+    margin: 0 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cakeproductdisplay-right h1 {
+    color: #3d3d3d;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.cakeproductdisplay-right-price {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 20px 0;
+    color: tomato;
+}
+
+.cakeproductdisplay-right-desc {
+    text-align: justify;
+}
+
+.cakeproductdisplay-right-weight h1 {
+    margin-top: 30px;
+    color: #656565;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cakeproductdisplay-right-weights {
+    display: flex;
+    margin: 20px 0px;
+    gap: 20px;
+}
+
+.cakeproductdisplay-right-weights div {
+    padding: 8px 24px;
+    background-color: #fbfbfb;
+    border: 1px solid tomato;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.cakeproductdisplay-right button {
+    padding: 15px 30px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #ff4141;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.cakeproductdisplay-right button:hover {
+    color: white;
+    background-color: #f80303;
+}
+
+.cakeproductdisplay-right-flavour {
+    margin-top: 10px;
+}
+
+.cakeproductdisplay-right-flavour span {
+    font-weight: 600;
+}
+
+@media (max-width:1200px) {
+    .cakeproductdisplay {
+        flex-direction: column;
+    }
+
+    .cakeproductdisplay-right {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width:750px) {
+    .cakeproductdisplay-left {
+        flex-direction: column-reverse;
+    }
+
+    .cakeproductdisplay-img-list {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .cakeproductdisplay-img-list img {
+        width: 100px;
+    }
+
+    .cakeproductdisplay-main-img {
+        width: 448px;
+        height: 448px;
+    }
+
+    .cakeproductdisplay-right h1 {
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    .cakeproductdisplay-right-weight h1 {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .cakeproductdisplay-right-weights {
+        gap: 10px;
+    }
+
+    .cakeproductdisplay-right-weights div {
+        padding: 5px 10px;
+    }
+
+    .cakeproductdisplay-right button {
+        padding: 10px 10px;
+        width: 150px;
+    }
+
+}
+
+@media (max-width:530px) {
+
+    .cakeproductdisplay-img-list {
+        gap: 10px;
+    }
+
+    .cakeproductdisplay-img-list img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cakeproductdisplay-main-img {
+        width: 350px;
+        height: 350px;
+    }
+
+
+}

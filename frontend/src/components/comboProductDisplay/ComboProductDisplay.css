@@ -1,0 +1,126 @@
+
+.comboproductdisplay {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.comboproductdisplay-left {
+    display: flex;
+    gap: 17px;
+}
+
+.comboproductdisplay-img-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.comboproductdisplay-img-list img {
+    height: 110px;
+    width: 110px;
+}
+
+.comboproductdisplay-main-img {
+    width: 488px;
+    height: 488px;
+}
+
+.comboproductdisplay-right {
+    margin: 0 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comboproductdisplay-right h1 {
+    color: #3d3d3d;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.comboproductdisplay-right-price {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 20px 0;
+    color: tomato;
+}
+
+.comboproductdisplay-right-desc {
+    text-align: justify;
+}
+
+.comboproductdisplay-right button {
+    padding: 15px 30px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #ff4141;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.comboproductdisplay-right button:hover {
+    color: white;
+    background-color: #f80303;
+}
+
+@media (max-width: 1200px) {
+    .comboproductdisplay {
+        flex-direction: column;
+    }
+
+    .comboproductdisplay-right {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 750px) {
+    .comboproductdisplay-left {
+        flex-direction: column-reverse;
+    }
+
+    .comboproductdisplay-img-list {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .comboproductdisplay-img-list img {
+        width: 100px;
+    }
+
+    .comboproductdisplay-main-img {
+        width: 448px;
+        height: 448px;
+    }
+
+    .comboproductdisplay-right h1 {
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    .comboproductdisplay-right button {
+        padding: 10px 10px;
+        width: 150px;
+    }
+}
+
+@media (max-width: 530px) {
+    .comboproductdisplay-img-list {
+        gap: 10px;
+    }
+
+    .comboproductdisplay-img-list img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .comboproductdisplay-main-img {
+        width: 350px;
+        height: 350px;
+    }
+}

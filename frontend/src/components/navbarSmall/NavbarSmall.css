@@ -13,23 +13,22 @@
 .nav-menu {
     position: relative;
 }
-.nav-menu p {
+.nav-menu .menu-title {
     cursor: pointer;
-    padding: 12px 0;
 }
 
-.nav-menu p::after {
+.nav-menu .menu-title::after {
     content: '';
     width: 0;
     height: 2px;
     background: tomato;
     position: absolute;;
-    bottom: 0;
+    bottom: -12px;
     left: 0;
     transition: 0.4s all liner;
 }
 
-.nav-menu:hover p::after {
+.nav-menu:hover a::after {
     width: 100%;
 }
 
@@ -42,7 +41,7 @@
     border-radius: 4px;
     z-index: 1;
     left: -100px;
-    top: 45px;
+    top: 33px;
 }
 
 .nav-menu:hover .dropdown {
@@ -68,12 +67,16 @@
         height: 4vh;
     }
 
-    .nav-menu p {
+    .nav-menu .menu-title {
         font-size: 13px;
-        padding: 6px 0;
     }
+
+    .nav-menu .menu-title::after {
+        bottom: -5px;
+    }
+
     .dropdown {
-        top: 29px;
+        top: 25px;
     }
 
     .dropdown strong {
@@ -90,7 +93,7 @@
         width: 60%;
     }
 
-    .nav-menu p {
+    .nav-menu .menu-title {
         font-size: 13px;
     }
 
@@ -109,12 +112,8 @@
 }
 
 @media (max-width:400px) {
-    .nav-menu p {
+    .nav-menu .menu-title {
         font-size: 10px;
-    }
-
-    .nav-menu p::after {
-        bottom: -8px;
     }
 
     .dropdown {

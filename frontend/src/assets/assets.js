@@ -20,13 +20,23 @@ import contact_img from './contact/contact.png'
 import call_icon from './contact/call.png'
 import email_icon from './contact/email.png'
 import insta_icon from './contact/insta.png'
+import arrow_right from './icons/arrow-right.svg'
+import quality_img from './aboutus/icons8-quality-100.png'
+import trust_img from './aboutus/icons8-trust-100.png'
+import happy_img from './aboutus/icons8-happy-100.png'
+import creativity_img from './aboutus/icons8-creativity-100.png'
+import passion_img from './aboutus/icons8-passion-99.png'
+import teamwork_img from './aboutus/icons8-teamwork-100.png'
+import integrity_img from './aboutus/icons8-integrity-100.png'
+import sustainability_img from './aboutus/icons8-sustainability-100.png'
+import dedication_img from './aboutus/icons8-thinking-100.png'
+
 
 
 import cake from './category/cake.png'
 import flowers from './category/flowers.png'
 import gifts from './category/gifts.png'
 import combo from './category/combo.png'
-import occassion from './category/occasion.png'
 
 import cake_cat_1 from './cake_category/regular.png'
 import cake_cat_2 from './cake_category/photocake.png'
@@ -95,7 +105,6 @@ export const assets = {
     flowers,
     gifts,
     combo,
-    occassion,
     cake_cat_1,
     cake_cat_2,
     cake_cat_3,
@@ -133,35 +142,45 @@ export const assets = {
     contact_img,
     call_icon,
     email_icon,
-    insta_icon
+    insta_icon,
+    arrow_right,
+    quality_img,
+    trust_img,
+    happy_img,
+    creativity_img,
+    passion_img,
+    teamwork_img,
+    integrity_img,
+    sustainability_img,
+    dedication_img
 }
 
 export const menu_list = [
     {
-        name: "Cake",
-        image: cake
+        name: "Cakes",
+        image: cake,
+        path: "/cakes"
     },
     {
         name: "Gifts",
-        image: gifts
+        image: gifts,
+        path: "/gifts"
     },
     {
         name: "Flowers",
-        image: flowers
+        image: flowers,
+        path: "/flowers"
     },
     {
-        name: "Combo",
-        image: combo
-    },
-    {
-        name: "Occasion",
-        image: occassion
+        name: "Combos",
+        image: combo,
+        path: "/combos"
     }
 ]
 
 export const cake_cat_list = [
     {
-        name: "Regular",
+        name: "Bestseller",
         image: cake_cat_1
     },
     {
@@ -215,27 +234,27 @@ export const gift_cat_list = [
 
 export const flower_cat_list = [
     {
-        name: "Roses",
+        name: "Rose",
         image: flower_cat_1
     },
     {
-        name: "Lillies",
+        name: "Lily",
         image: flower_cat_2
     },
     {
-        name: "Orchids",
+        name: "Orchid",
         image: flower_cat_3
     },
     {
-        name: "White flowers",
+        name: "White flower",
         image: flower_cat_4
     },
     {
-        name: "Purple flowers",
+        name: "Purple flower",
         image: flower_cat_5
     },
     {
-        name: "Red flowers",
+        name: "Red flower",
         image: flower_cat_6
     }
 ]

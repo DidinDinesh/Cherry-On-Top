@@ -5,7 +5,7 @@ const NavbarSmall = () => {
   return (
       <div className="navbar-small">
         <div className="nav-menu">
-          <p>Cakes</p>
+        <Link className="menu-title" to="/cakes">Cakes</Link>
           <div className="dropdown">
             <div className="dropdown-column">
               <strong>By type</strong>
@@ -28,7 +28,7 @@ const NavbarSmall = () => {
           </div>
         </div>
         <div className="nav-menu">
-          <p>Gifts</p>
+          <Link className="menu-title" to="/gifts">Gifts</Link>
           <div className="dropdown">
             <div className="dropdown-column">
               <strong>By type</strong>
@@ -51,7 +51,7 @@ const NavbarSmall = () => {
           </div>
         </div>
         <div className="nav-menu">
-          <p>Flowers</p>
+          <Link className="menu-title" to="/flowers">Flowers</Link>
           <div className="dropdown">
             <div className="dropdown-column">
               <strong>By type</strong>
@@ -74,7 +74,7 @@ const NavbarSmall = () => {
           </div>
         </div>
         <div className="nav-menu">
-          <p>Combos</p>
+        <Link className="menu-title" to="/combos">Combos</Link>
           <div className="dropdown">
             <div className="dropdown-column">
               <strong>Cake combo</strong>
@@ -97,27 +97,6 @@ const NavbarSmall = () => {
           </div>
         </div>
         <div className="nav-menu">
-          <p>Occasions</p>
-          <div className="dropdown">
-            <div className="dropdown-column">
-              <strong>Personal</strong>
-              <ul className="dropdown-column-lists">
-                <Link>Birtday</Link>
-                <Link>Anniversary</Link>
-                <Link>Valentines day</Link>
-                <Link>Wedding</Link>
-              </ul>
-            </div>
-            <div className="dropdown-column">
-              <strong>Festivals</strong>
-              <ul className="dropdown-column-lists">
-                <Link>Christmas</Link>
-                <Link>New year</Link>
-                <Link>Onam</Link>
-                <Link>Vishu</Link>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
   )

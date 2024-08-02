@@ -1,32 +1,35 @@
 import './Footer.css'
 import { assets  } from '../../assets/assets'
 import { Link } from 'react-router-dom'
+import { useContext } from "react"
+import { StoreContext } from "../../context/StoreContext"
 
 const Footer = () => {
+
+  const { handleScrollToTop } = useContext(StoreContext);
+
   return (
     <div className="footer">
       <div className="footer-content">
         <div className="footer-content-left">
           <img src={assets.logo} alt="" />
-          <p>The term dummy tag can have different 
-              eanings depending on the context. 
-              Here are two possibilities related to 
-              web development
+          <p>At Cherry on Top, every cake tells a story of joy, 
+            crafted with love and the finest ingredients. 
+            Let us sweeten your celebrations, one slice at a time.
           </p>
         </div>
         <div className="footer-content-center">
           <ul>
-            <Link to="/" >Home</Link>
-            <Link to="blog">Blog</Link>
-            <Link to="contact">Contact us</Link>
-            <Link>About</Link>
+            <Link to="/" onClick={handleScrollToTop}>Home</Link>
+            <Link to="/blog" onClick={handleScrollToTop}>Blog</Link>
+            <Link to="/contact" onClick={handleScrollToTop}>Contact us</Link>
+            <Link to="/about" onClick={handleScrollToTop}>About us</Link>
             </ul>
           <ul>
-            <Link>Cakes</Link>
-            <Link>Gifts</Link>
-            <Link>Flowers</Link>
-            <Link>Combo</Link>
-            <Link>Occasion</Link>
+            <Link to="/cakes" onClick={handleScrollToTop}>Cakes</Link>
+            <Link to="/gifts" onClick={handleScrollToTop}>Gifts</Link>
+            <Link to="/flowers" onClick={handleScrollToTop}>Flowers</Link>
+            <Link to="/combos" onClick={handleScrollToTop}>Combos</Link>
           </ul>
         </div>
         <div className="footer-content-right">

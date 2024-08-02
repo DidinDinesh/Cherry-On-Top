@@ -1,0 +1,130 @@
+
+.giftproductdisplay {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.giftproductdisplay-left {
+    display: flex;
+    gap: 17px;
+}
+
+.giftproductdisplay-img-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.giftproductdisplay-img-list img {
+    height: 110px;
+    width: 110px;
+}
+
+.giftproductdisplay-main-img {
+    width: 488px;
+    height: 488px;
+}
+
+.giftproductdisplay-right {
+    margin: 0 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.giftproductdisplay-right h1 {
+    color: #3d3d3d;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.giftproductdisplay-right-price {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 20px 0;
+    color: tomato;
+}
+
+.giftproductdisplay-right-desc {
+    text-align: justify;
+}
+
+
+.giftproductdisplay-right button {
+    padding: 15px 30px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #ff4141;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.giftproductdisplay-right button:hover {
+    color: white;
+    background-color: #f80303;
+}
+
+
+@media (max-width:1200px) {
+    .giftproductdisplay {
+        flex-direction: column;
+    }
+
+    .giftproductdisplay-right {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width:750px) {
+    .giftproductdisplay-left {
+        flex-direction: column-reverse;
+    }
+
+    .giftproductdisplay-img-list {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .giftproductdisplay-img-list img {
+        width: 100px;
+    }
+
+    .giftproductdisplay-main-img {
+        width: 448px;
+        height: 448px;
+    }
+
+    .giftproductdisplay-right h1 {
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    .giftproductdisplay-right button {
+        padding: 10px 10px;
+        width: 150px;
+    }
+
+}
+
+@media (max-width:530px) {
+
+    .giftproductdisplay-img-list {
+        gap: 10px;
+    }
+
+    .giftproductdisplay-img-list img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .giftproductdisplay-main-img {
+        width: 350px;
+        height: 350px;
+    }
+}

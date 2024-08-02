@@ -1,7 +1,9 @@
 import './NavbarBig.css'
 import { Link } from 'react-router-dom'
 import { assets } from '../../assets/assets'
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { StoreContext } from "../../context/StoreContext"
+
 
 const NavbarBIg = ({setShowLogin}) => {
 
@@ -9,9 +11,12 @@ const NavbarBIg = ({setShowLogin}) => {
 
   const [ menu, setMenu] = useState("home");
 
-const handleToggleMenu = () => {
+  const handleToggleMenu = () => {
   setToggle(toggle === '' ? 'show-menu' : '');
-};
+  };
+
+  const { getTotalCartAmount } = useContext(StoreContext);
+
 
   return (
         <div className="navbar-big">
@@ -40,7 +45,7 @@ const handleToggleMenu = () => {
               <Link to="/cart">
                 <img src={assets.cart_icon} alt="" />
               </Link>
-              <div className="dot"></div>
+              <div className= {getTotalCartAmount() === 0 ? "" : "dot"}></div>
             </div>
             <div>
               <img onClick={handleToggleMenu} className="toggle-icon" src={assets.menu_icon} alt="" />
