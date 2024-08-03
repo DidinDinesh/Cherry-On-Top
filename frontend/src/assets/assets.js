@@ -184,7 +184,7 @@ export const cake_cat_list = [
         image: cake_cat_1
     },
     {
-        name: "Photo cake",
+        name: "Photo Cake",
         image: cake_cat_2
     },
     {
@@ -211,7 +211,7 @@ export const gift_cat_list = [
         image: gift_cat_1
     },
     {
-        name: "Home decor",
+        name: "Home Decor",
         image: gift_cat_2
     },
     {
@@ -219,15 +219,15 @@ export const gift_cat_list = [
         image: gift_cat_3
     },
     {
-        name: "For her",
+        name: "For Her",
         image: gift_cat_4
     },
     {
-        name: "For him",
+        name: "For Him",
         image: gift_cat_5
     },
     {
-        name: "For kids",
+        name: "For Kids",
         image: gift_cat_6
     }
 ]
@@ -246,15 +246,15 @@ export const flower_cat_list = [
         image: flower_cat_3
     },
     {
-        name: "White flower",
+        name: "White Flower",
         image: flower_cat_4
     },
     {
-        name: "Purple flower",
+        name: "Purple Flower",
         image: flower_cat_5
     },
     {
-        name: "Red flower",
+        name: "Red Flower",
         image: flower_cat_6
     }
 ]
@@ -269,19 +269,19 @@ export const combo_cat_list = [
         image: combo_cat_2
     },
     {
-        name: "Cake & choclate",
+        name: "Cake & Choclate",
         image: combo_cat_3
     },
     {
-        name: "Flower & gift",
+        name: "Flower & Gift",
         image: combo_cat_4
     },
     {
-        name: "Flower & choclate",
+        name: "Flower & Choclate",
         image: combo_cat_5
     },
     {
-        name: "Gift & choclate",
+        name: "Gift & Choclate",
         image: combo_cat_6
     }
 ]
@@ -296,7 +296,7 @@ export const occasion_cat_list = [
         image: occ_cat_2
     },
     {
-        name: "Valentines day",
+        name: "Valentines Day",
         image: occ_cat_3
     },
     {
@@ -304,7 +304,7 @@ export const occasion_cat_list = [
         image: occ_cat_4
     },
     {
-        name: "New year",
+        name: "New Year",
         image: occ_cat_5
     },
     {
@@ -368,7 +368,7 @@ export const cake_list = [
         image: cake_7,
         price: 1650,
         description: "Add some sweetness to your celebration by getting your hands on this delightful cake, and treat your taste buds with every bite. This round dripping cake is decorated with mini hearts, which makes it a perfect choice for the special Day. The cake flavour is optional, so you can get it customised as per your choice. Order this delicious fresh cake online from FlowerAura.",
-        flavour: "Rolls"
+        flavour: "Strawberry"
     }, 
     {
         _id: "8",

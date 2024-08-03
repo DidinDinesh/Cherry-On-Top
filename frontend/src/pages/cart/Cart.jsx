@@ -5,15 +5,25 @@ import { useNavigate } from "react-router-dom"
 
 const Cart = () => {
 
-  const {cartItems, product_list, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
+  const {cartItems, product_list, removeFromCart, updateCartItem, getTotalCartAmount } = useContext(StoreContext);
+  
   const navigate = useNavigate();
 
-  console.log("cartItems:", cartItems);
+  const handleInputChange = (event, id) => {
+    const value = parseInt(event.target.value);
+    updateCartItem(id, value);
+  };
+
+  const handleKeyDown = (event) => {
+    if ( event.key === "Backspace" || event.key === "Delete") {
+      event.preventDefault();
+    }
+  };
 
   return (
     <div className="cart">
       <div className="cart-items">
-        <div className="cart-items-title">
+        <div className="cart-items-title cart-items-header" >
           <p>Items</p>
           <p>Title</p>
           <p>Price</p>
@@ -24,14 +34,14 @@ const Cart = () => {
         <br />
         <hr />
         {product_list.map((item,index) => {
-          if ((cartItems[item.id] ?? 0) > 0) {
+          if (cartItems[item.id] > 0) {
             return (
               <div key={item.id}>
                 <div className="cart-items-title cart-items-item">
                   <img src={item.image} alt="" />
                   <p>{item.name}</p>
-                  <p>&#8377;{item.price}</p>
-                  <button>{cartItems[item.id]}</button>
+                  <p>&#8377;{item.price}</p>             
+                  <input onChange={(e) => handleInputChange(e,item.id)} onKeyDown={handleKeyDown} type="number" className="counter" value={cartItems[item.id]} />
                   <p>&#8377;{item.price * cartItems[item.id]}</p>
                   <button onClick={() => removeFromCart(item.id)} className="cross">X</button> 
                 </div>

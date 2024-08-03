@@ -34,9 +34,18 @@ const StoreContextProvider = (props) => {
         }
     }
 
-    const removeFromCart =  (Id) => {
+    const updateCartItem = (Id, value) => {
+        if (value > 0) {
+            setCartItems((prev) => ({ ...prev, [Id]: value }))
+        } else {
+            const { [Id]: _, ...rest } = cartItems;
+            setCartItems(rest);
+        }
+    }
 
-        setCartItems((prev) => ({...prev, [Id]: prev[Id] - 1}))
+    const removeFromCart =  (Id) => {
+        const { [Id]: _, ...rest } = cartItems;
+        setCartItems(rest);
     }
 
     const getTotalCartAmount = () => {
@@ -61,8 +70,6 @@ const StoreContextProvider = (props) => {
     }
 
 
-
-
   const contextValue= {
       product_list,
       cake_list,
@@ -73,6 +80,7 @@ const StoreContextProvider = (props) => {
       cartItems,
       addToCart,
       removeFromCart,
+      updateCartItem,
       getTotalCartAmount,   
       cakeGroup,
       setCakeGroup,

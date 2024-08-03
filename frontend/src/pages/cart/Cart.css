@@ -26,6 +26,12 @@
     margin-right: auto;
 }
 
+.cart-items-item .counter {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+}
+
 .cart hr {
     height: 1px;
     background-color: #e2e2e2;
@@ -112,4 +118,26 @@
     .cart-promocode {
         justify-content: start;
     }
+}
+
+@media (max-width:600px) {
+
+    .cart-items-header {
+        display: none;
+    }
+
+    .cart-items-item {
+        grid-template-columns: 0.5fr 3fr 0.5fr;
+        gap: 2px;
+        text-align: left;
+    }
+
+    .cart-items-item .counter {
+        width: 80%;
+    }
+
+    .cart-items-item button {
+        margin-left: 0;
+    }
+    
 }

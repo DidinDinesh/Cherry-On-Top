@@ -1,21 +1,37 @@
 import './CakeCategory.css'
 import { cake_cat_list } from '../../assets/assets'
-import { useNavigate } from "react-router-dom"
-import { useContext } from "react";
+import { useNavigate, useLocation } from "react-router-dom"
+import { useContext, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
 
 const cakeCategory = ({cakeGroup, setCakeGroup}) => {
 
   const { handleScrollToTop } = useContext(StoreContext);
 
+
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleCategoryClick = (category) => {
-    setCakeGroup(prev => prev === category ? "All" : category);
-    navigate("/cakes");
-    handleScrollToTop();
-  };
+      if (category !== cakeGroup) {
+        setCakeGroup(category);
+        navigate(`/cakes/category/${category}`);
+        handleScrollToTop();
+      }
+  }
 
+  useEffect(() => {
+    const pathParts = location.pathname.split('/');
+    const category = pathParts[pathParts.length - 1];
+    if (location.pathname === '/cakes') {
+      setCakeGroup('All');
+    } else {
+      setCakeGroup(decodeURIComponent(category));
+    }
+  }, [location.pathname, setCakeGroup]);
+
+
+  
   return (
     <div className="cake-category">
       <div className="cake-category-header">
@@ -25,7 +41,8 @@ const cakeCategory = ({cakeGroup, setCakeGroup}) => {
       <div className="cake-category-wrapper">
         {cake_cat_list.map((item, index) => (
           <div onClick={() => handleCategoryClick(item.name)} 
-            key={index} className={`cake-category-card ${ cakeGroup.toLowerCase() === item.name.toLowerCase() ? "active" : ""}`}>
+            key={index} className={`cake-category-card ${ decodeURIComponent(location.pathname) === `/cakes/category/${cakeGroup}` && 
+            cakeGroup.toLowerCase() === item.name.toLowerCase() ? "active" : ""}`}>
             <div className="cake-category-image">
                 <img src={item.image} />
             </div>

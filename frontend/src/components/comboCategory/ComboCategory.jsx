@@ -1,7 +1,7 @@
 import './ComboCategory.css'
 import { combo_cat_list } from '../../assets/assets'
-import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useContext, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
 
 const ComboCategory = ({comboGroup, setComboGroup}) => {
@@ -9,12 +9,25 @@ const ComboCategory = ({comboGroup, setComboGroup}) => {
   const { handleScrollToTop } = useContext(StoreContext);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleCategoryClick = (category) => {
-    setComboGroup(prev => prev === category ? "All" : category);
-    navigate("/combos");
-    handleScrollToTop();
+    if (category !== comboGroup) {
+      setComboGroup(category);
+      navigate(`/combos/category/${encodeURIComponent(category)}`);
+      handleScrollToTop();
+    }
   };
+
+  useEffect(() => {
+    const pathParts = location.pathname.split('/');
+    const category = pathParts[pathParts.length - 1];
+    if (location.pathname === '/combos') {
+      setComboGroup('All');
+    } else {
+      setComboGroup(decodeURIComponent(category));
+    }
+  }, [location.pathname, setComboGroup]);
 
   return (
     <div className="combo-category">
@@ -26,7 +39,8 @@ const ComboCategory = ({comboGroup, setComboGroup}) => {
         {combo_cat_list.map((item, index) => (
           <div onClick={() => handleCategoryClick(item.name)} 
             key={index} className="combo-category-card">
-            <img className= {comboGroup.toLowerCase() === item.name.toLowerCase() ? "active" : ""} src={item.image} />
+            <img className= {decodeURIComponent(location.pathname) === `/combos/category/${comboGroup}` && 
+            comboGroup.toLowerCase() === item.name.toLowerCase() ? "active" : ""} src={item.image} />
             <p className="combo-category-title">{item.name}</p>
           </div>
         ))}

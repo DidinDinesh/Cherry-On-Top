@@ -10,16 +10,12 @@ const AllGIfts = () => {
   const { gift_list, giftGroup, setGiftGroup, handleScrollToTop } = useContext(StoreContext);
   
 
-  const filtered_Gifts = giftGroup === "All" ? gift_list : gift_list.filter(item =>
-    item.toWho.map(type => type.toLowerCase()).includes(giftGroup.toLowerCase()) || item.type.toLowerCase() === giftGroup.toLowerCase())
-  
-
   return (
     <>
     <GiftCategory giftGroup = {giftGroup} setGiftGroup = {setGiftGroup}/>
       <div className="all-gifts">
         <div className="gift-container">
-          {filtered_Gifts.map((item, index) => (
+          {gift_list.map((item, index) => (
             <div key={index} className="gift-card">
               <div className="gift-image">
                 <Link to={`/gifts/${item.id}`} onClick={handleScrollToTop}><img src={item.image} /></Link>

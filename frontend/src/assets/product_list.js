@@ -72,7 +72,7 @@ let product_list = [
         image: cake_3,
         price: 849,
         description: "This vibrant and fresh fruit cake is a delightful symphony of flavours and colours, perfect for celebration. Its light, airy sponge is frosted with a delicate pink and white cream that's both visually appealing and delicious. The top of the cake is generously adorned with an array of fresh fruits, including kiwi, cherries, dragon fruit, and oranges, creating a luscious mosaic that is as tasty as it is attractive. This cake is not only a feast for the eyes but also offers a refreshing taste with each bite, making it an ideal choice for those who prefer a less sweet, fruit-forward dessert.",
-        flavour: "Fruit",
+        flavour: "Fruit cake",
         category: "cake",
         type: ["Bestseller"]
     }, 
@@ -112,7 +112,7 @@ let product_list = [
         image: cake_7,
         price: 1650,
         description: "Add some sweetness to your celebration by getting your hands on this delightful cake, and treat your taste buds with every bite. This round dripping cake is decorated with mini hearts, which makes it a perfect choice for the special Day. The cake flavour is optional, so you can get it customised as per your choice. Order this delicious fresh cake online from FlowerAura.",
-        flavour: "Rolls",
+        flavour: "strawberry",
         category: "cake",
         type: ["Bestseller"]
     }, 
@@ -154,7 +154,7 @@ let product_list = [
         description: "Transform your look with our enchanting Oxidised Jhumkas, a celebration of intricate beauty and traditional craftsmanship. These captivating earrings have impeccable detailing that tells a story of artistry. Adorned with a radiant centre stone, they exude elegance and charm.",
         category: "gift",
         type: "Jewellery",
-        toWho: ["for her"]
+        toWho: ["For Her"]
     },
     {
         id: "12",
@@ -163,8 +163,8 @@ let product_list = [
         price: 1300,
         description: "Capture your cherished memories with our Personalized Photo Glow Lamp, elegantly designed in the shape of a heart. This unique lamp showcases a crystal-clear acrylic panel that's skillfully engraved with your chosen photo, creating a captivating 3D effect. The real wood base adds a touch of natural beauty to your customized keepsake. Whether it's a romantic gesture or a heartfelt gift, this lamp beautifully encapsulates your special moments. ",
         category: "gift",
-        type: "Home decor",
-        toWho: ["for her","for him"]
+        type: "Home Decor",
+        toWho: ["For Her","for Him"]
     }, 
     {
         id: "13",
@@ -173,8 +173,8 @@ let product_list = [
         price: 375,
         description: "This elegant photo frame boasts a timeless wooden aesthetic, perfectly blending rich grains and organic charm. Its meticulous craftsmanship is evident in the subtle details and smooth finish, making it a cherished possession for any home. Ideal as an anniversary gift, this frame encapsulates memories, reminding couples of their journey together. Gift it to your partner to forever immortalize those cherished moments, and watch as it not only holds a photo but also the essence of love and enduring commitment",
         category: "gift",
-        type: "Home decor",
-        toWho: ["for her","for him"]
+        type: "Home Decor",
+        toWho: ["For Her","For Him"]
     }, 
     {
         id: "14",
@@ -184,7 +184,7 @@ let product_list = [
         description: "Is your valentine a 90's kid? Revive your sweetheart's interests by getting them this exclusive customised 90's themed box that consists of all the popular and nostalgia infused moments. The perfect gift for any 90 born, this assorted box contains the many flavours and strains of childhood.",
         category: "gift",
         type: "other",
-        toWho: ["for kids"]
+        toWho: ["For Kids"]
     }, 
     {
         id: "15",
@@ -193,8 +193,8 @@ let product_list = [
         price: 375,
         description: "A little temple, a big symbol of devotion. This Ram Mandir miniature is a splendid wooden replica that brings a piece of sacred serenity right into your home. Carved with care, the intricate details on the temple are a testament to skilled craftsmanship. It stands as a small but powerful reminder of faith, tradition, and the spiritual sanctity of the Ram Mandir. ",
         category: "gift",
-        type: "Home decor",
-        toWho: ["for her", "for him", "for parents"]
+        type: "Home Decor",
+        toWho: ["For Her", "For Him", "For Parents"]
     }, 
     {
         id: "16",
@@ -203,8 +203,8 @@ let product_list = [
         price: 599,
         description: "We worship Lord Ganesha on Diwali to get blessed with wealth, knowledge, happiness and good health. This time as you look for a gift, consider this auspicious marble Ganpati murti for your near and dear ones. Gifting Ganesha is an old practice of gifting good fortune and prosperity to our loved ones. So, order today and gift this beautiful Murti, this festival.",
         category: "gift",
-        type: "Home decor",
-        toWho: ["for her", "for him", "for parents"]
+        type: "Home Decor",
+        toWho: ["For h=Her", "For Him", "For Parents"]
     }, 
     {
         id: "17",
@@ -214,7 +214,7 @@ let product_list = [
         description: "Now bake your favorite cake, bread or pasta in this royal white ceramic bake bowl. Decorated with a golden borderline and a small golden handle can enhance the look of your dining table. It is microwave safe and durable. Wait no more, order for yourself or as a gift for your loved ones.",
         category: "gift",
         type: "Dining & Serving",
-        toWho: ["for her", "for parents"]
+        toWho: ["For Her", "For Parents"]
     }, 
     {
         id: "18",
@@ -224,7 +224,7 @@ let product_list = [
         description: "Made of non-reactive and completely safe to use material, this multi purpose blue Ceramic bowl is an eye-catching addition to any home, making it the perfect choice for decor upgrade, kitchen purposes and gift giving. Select this stunning round bowl for an array of purposes and make your loved ones very happy!",
         category: "gift",
         type: "Dining & Serving",
-        toWho: ["for her", "for parents"]
+        toWho: ["For Her", "For Parents"]
     }, 
     {
         id: "19",
@@ -233,8 +233,8 @@ let product_list = [
         price: 1300,
         description: "What should i gift my man? If you have such a question in mind then this combo of classic pure leather wallet is a perfect fit. Paired with a brass metal antique sand timer keychain, Don’t miss any chance to surprise the special man in your life. Gift now!",
         category: "gift",
-        type: "other",
-        toWho: ["for men"]
+        type: "Other",
+        toWho: ["For Men"]
     }, 
     {
         id: "20",
@@ -243,8 +243,8 @@ let product_list = [
         price: 1000,
         description: "Confess to your partner that you are in love with the smile, laugh, eyes, soul, and all of him or her over this handcrafted explosion box of love. Beautifully curated with lovely pictures and moments, gift this on Anniversary to your beloved one to pop a bubble of love and romance.",
         category: "gift",
-        type: "home decor",
-        toWho: ["for her", "for him"]
+        type: "Home Decor",
+        toWho: ["For Her", "For Him"]
     },
     {
         id: "21",
@@ -253,8 +253,8 @@ let product_list = [
         price: 645,
         description: "When a bunch of 10 ravishing Red Roses come together in such beautiful wrapping, it defines prettiness! And as Red Roses in million little ways reveal the deepest secrets, this bouquet is sure to reveal yours. Perfect for occasions such as Date Night, Birthday, Valentine's, Anniversaries, Mother's Day and more to spread love.",
         category: "flower",
-        type: "rose",
-        color: "red flower"
+        type: "Rose",
+        color: "Red Flower"
     },
     {
         id: "22",
@@ -263,8 +263,8 @@ let product_list = [
         price: 745,
         description: "Among all the pretty little things in the world, this exquisite bouquet of orchids is surely one! Representing tenderness, this bunch of orchids are perfect for appreciating people for their good deeds and can be gifted across various special days. So, without thinking even twice, go ahead and gift it asap!",
         category: "flower",
-        type: "orchid",
-        color: "purple flower"
+        type: "Orchid",
+        color: "Purple Flower"
     }, 
     {
         id: "23",
@@ -273,8 +273,8 @@ let product_list = [
         price: 1145,
         description: "Orchids represents love; luxury; beauty and strength. These beautiful blooms is known to be one of the most desirable flowers as gift. If any special occasion of a loved one is around; order this beautful potted orchids fish bowl and make them feel loved and special.",
         category: "flower",
-        type: "orchid",
-        color: "blue flower"
+        type: "Orchid",
+        color: "Blue Flower"
     }, 
     {
         id: "24",
@@ -283,8 +283,8 @@ let product_list = [
         price: 645,
         description: "This bouquet clipping 10 mixed roses together is a perfect representation of your love and care. Be it Birthday, Anniversaries, Mother's Day or any other occasion, express your bountiful wishes with this scintillating and love-filled bunch.",
         category: "flower",
-        type: "rose",
-        color: "mixed flower"
+        type: "Rose",
+        color: "Mixed Flower"
     }, 
     {
         id: "25",

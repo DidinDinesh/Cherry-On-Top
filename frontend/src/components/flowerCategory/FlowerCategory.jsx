@@ -1,21 +1,33 @@
 import './FlowerCategory.css'
 import { flower_cat_list } from '../../assets/assets'
-import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useContext, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
 
 const FlowerCategory = ({flowerGroup, setFlowerGroup}) => {
 
   const { handleScrollToTop } = useContext(StoreContext);
 
-
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleCategoryClick = (category) => {
-    setFlowerGroup(prev => prev === category ? "All" : category);
-    navigate("/flowers");
-    handleScrollToTop();
+    if (category !== flowerGroup) {
+      setFlowerGroup(category);
+      navigate(`/flowers/category/${encodeURIComponent(category)}`);
+      handleScrollToTop();
+    }
   };
+
+  useEffect(() => {
+    const pathParts = location.pathname.split('/');
+    const category = pathParts[pathParts.length - 1];
+    if (location.pathname === '/flowers') {
+      setFlowerGroup('All');
+    } else {
+      setFlowerGroup(decodeURIComponent(category));
+    }
+  }, [location.pathname, setFlowerGroup]);
 
   return (
     <div className="flower-category">
@@ -26,7 +38,8 @@ const FlowerCategory = ({flowerGroup, setFlowerGroup}) => {
       <div className="flower-category-wrapper">
         {flower_cat_list.map((item, index) => (
           <div onClick={() => handleCategoryClick(item.name)} 
-            key={index} className={`flower-category-card ${ flowerGroup.toLowerCase() === item.name.toLocaleLowerCase() ? "active" : ""}`}>
+            key={index} className={`flower-category-card ${ decodeURIComponent(location.pathname) === `/flowers/category/${flowerGroup}` && 
+            flowerGroup.toLowerCase() === item.name.toLocaleLowerCase() ? "active" : ""}`}>
             <div className="flower-category-image">
                 <img src={item.image} />
             </div>
