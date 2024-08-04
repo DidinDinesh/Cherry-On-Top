@@ -1,8 +1,8 @@
 import './AllFlowers.css'
 import { Link } from "react-router-dom"
-import FlowerCategory from '../../components/flowerCategory/FlowerCategory'
+import FlowerCategory from '../../../components/flowerCategory/FlowerCategory'
 import { useContext } from "react";
-import { StoreContext } from "../../context/StoreContext";
+import { StoreContext } from "../../../context/StoreContext";
 
 const AllFlowers = () => {
 

@@ -1,9 +1,9 @@
 import './cakeProduct.css'
 import { useContext } from "react"
-import { StoreContext } from "../../context/StoreContext"
+import { StoreContext } from "../../../context/StoreContext"
 import { useParams } from "react-router-dom";
-import Breadcrum from "../../components/breadcrums/Breadcrum";
-import CakeProductDisplay from "../../components/cakeProductDisplay/CakeProductDisplay";
+import Breadcrum from "../../../components/breadcrums/Breadcrum";
+import CakeProductDisplay from "../../../components/cakeProductDisplay/CakeProductDisplay";
 
 
 const Product = () => {

@@ -1,8 +1,8 @@
 import './AllCakes.css'
 import { Link } from "react-router-dom"
-import CakeCategory from '../../components/cakeCategory/CakeCategory'
+import CakeCategory from '../../../components/cakeCategory/CakeCategory'
 import { useContext } from "react"
-import { StoreContext } from "../../context/StoreContext"
+import { StoreContext } from "../../../context/StoreContext"
 
 const AllCakes = () => {
 

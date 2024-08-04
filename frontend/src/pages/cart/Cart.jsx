@@ -11,11 +11,18 @@ const Cart = () => {
 
   const handleInputChange = (event, id) => {
     const value = parseInt(event.target.value);
+    if (value > 0) {
     updateCartItem(id, value);
+    }
+    else {
+      event.target.value = cartItems[id];
+    }
   };
 
   const handleKeyDown = (event) => {
-    if ( event.key === "Backspace" || event.key === "Delete") {
+    const invalidKeys = ["-", ".", "e"];
+
+    if (invalidKeys.includes(event.key))  {
       event.preventDefault();
     }
   };
@@ -70,7 +77,7 @@ const Cart = () => {
               <b>&#8377;{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 50}</b>
             </div>
           </div>
-          <button onClick={() => navigate("/placeOrder")}>PROCEED TO CHECKOUT</button>
+          <button onClick={() => navigate("/placeorder")}>PROCEED TO CHECKOUT</button>
         </div>
         <div className="cart-promocode">
           <div>

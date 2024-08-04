@@ -1,8 +1,8 @@
 import'./ComboCategoryPage.css'
 import { Link, useLocation } from "react-router-dom"
-import ComboCategory from '../../components/comboCategory/ComboCategory'
+import ComboCategory from '../../../components/comboCategory/ComboCategory'
 import { useContext, useEffect } from "react";
-import { StoreContext } from "../../context/StoreContext";
+import { StoreContext } from "../../../context/StoreContext";
 
 const ComboCategoryPage = () => {
 

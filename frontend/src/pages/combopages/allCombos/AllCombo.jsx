@@ -1,8 +1,8 @@
 import './AllCombo.css'
 import { Link } from "react-router-dom"
-import ComboCategory from '../../components/comboCategory/ComboCategory'
+import ComboCategory from '../../../components/comboCategory/ComboCategory'
 import { useContext } from "react";
-import { StoreContext } from "../../context/StoreContext";
+import { StoreContext } from "../../../context/StoreContext";
 
 const AllCombo = () => {
 

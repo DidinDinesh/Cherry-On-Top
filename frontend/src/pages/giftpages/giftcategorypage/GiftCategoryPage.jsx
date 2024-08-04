@@ -1,8 +1,8 @@
 import "./GiftCategoryPage.css"
 import { Link, useLocation } from "react-router-dom"
-import GiftCategory from '../../components/gifrCategory/GiftCategory'
+import GiftCategory from '../../../components/gifrCategory/GiftCategory'
 import { useContext, useEffect } from "react"
-import { StoreContext } from "../../context/StoreContext"
+import { StoreContext } from "../../../context/StoreContext"
 
 
 const GiftCategoryPage = () => {

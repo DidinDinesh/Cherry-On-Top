@@ -1,8 +1,8 @@
 import './CakeCategoryPage.css'
 import { Link, useLocation } from "react-router-dom"
-import CakeCategory from '../../components/cakeCategory/CakeCategory'
+import CakeCategory from '../../../components/cakeCategory/CakeCategory'
 import { useContext, useEffect } from "react"
-import { StoreContext } from "../../context/StoreContext"
+import { StoreContext } from "../../../context/StoreContext"
 
 const CakeCategoryPage = () => {
 

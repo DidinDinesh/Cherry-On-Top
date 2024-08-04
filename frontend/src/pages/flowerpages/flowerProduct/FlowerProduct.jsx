@@ -1,9 +1,9 @@
 import './FlowerProduct.css'
 import { useContext } from "react"
-import { StoreContext } from "../../context/StoreContext"
+import { StoreContext } from "../../../context/StoreContext"
 import { useParams } from "react-router-dom";
-import Breadcrum from "../../components/breadcrums/Breadcrum";
-import FlowerProductDisplay from "../../components/flowerProductDisplay/FlowerProductDisplay";
+import Breadcrum from "../../../components/breadcrums/Breadcrum";
+import FlowerProductDisplay from "../../../components/flowerProductDisplay/FlowerProductDisplay";
 
 function FlowerProduct() {
 

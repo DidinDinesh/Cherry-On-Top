@@ -1,8 +1,8 @@
 import './AllGifts.css'
 import { Link } from "react-router-dom"
-import GiftCategory from '../../components/gifrCategory/GiftCategory'
+import GiftCategory from '../../../components/gifrCategory/GiftCategory'
 import { useContext } from "react";
-import { StoreContext } from "../../context/StoreContext";
+import { StoreContext } from "../../../context/StoreContext";
 
 
 const AllGIfts = () => {

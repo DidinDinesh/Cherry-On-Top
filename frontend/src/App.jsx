@@ -1,26 +1,27 @@
 
-import Navbar from './components/navbar/Navbar'
+import { useState } from "react"
 import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/navbar/Navbar'
 import Home from './pages/home/Home'
 import Footer from './components/footer/Footer'
 import Blog from './pages/blog/Blog'
 import ContactUs from './pages/contactUs/ContactUs'
 import AboutUs from './pages/aboutUs/AboutUs'
-import Cart from './pages/cart/Cart'
-import AllCakes from './pages/allCakes/AllCakes'
-import AllGifts from './pages/allgifts/AllGIfts'
-import AllFlowers  from './pages/allFlowers/AllFlowers'
-import AllCombo  from './pages/allCombos/AllCombo'
-import CakeCategoryPage from './pages/cakecategorypage/CakeCategoryPage'
-import GiftCategoryPage from './pages/giftcategorypage/GiftCategoryPage'
-import FlowerCategoryPage from './pages/flowercategorypage/FlowerCategoryPage'
-import ComboCategoryPage from './pages/combocategorypage/ComboCategoryPage'
-import { useState } from "react"
+import AllCakes from './pages/cakepages/allCakes/AllCakes'
+import AllGifts from './pages/giftpages/allgifts/AllGIfts'
+import AllFlowers  from './pages/flowerpages/allFlowers/AllFlowers'
+import AllCombo  from './pages/combopages/allCombos/AllCombo'
+import CakeCategoryPage from './pages/cakepages/cakecategorypage/CakeCategoryPage'
+import GiftCategoryPage from './pages/giftpages/giftcategorypage/GiftCategoryPage'
+import FlowerCategoryPage from './pages/flowerpages/flowercategorypage/FlowerCategoryPage'
+import ComboCategoryPage from './pages/combopages/combocategorypage/ComboCategoryPage'
+import CakeProduct from './pages/cakepages/cakeProduct/cakeProduct'
+import GiftProduct from "./pages/giftpages/giftProduct/GiftProduct"
+import FlowerProduct from "./pages/flowerpages/flowerProduct/FlowerProduct"
+import ComboProduct from "./pages/combopages/comboProduct/ComboProduct"
 import LoginPopUp from "./components/loginPopUP/LoginPopUp"
-import CakeProduct from './pages/cakeProduct/cakeProduct'
-import GiftProduct from "./pages/giftProduct/GiftProduct"
-import FlowerProduct from "./pages/flowerProduct/FlowerProduct"
-import ComboProduct from "./pages/comboProduct/ComboProduct"
+import Cart from './pages/cart/Cart'
+import PlaceOrder from "./pages/placeorder/PlaceOrder"
 
 
 const App = () => {
@@ -39,7 +40,6 @@ const App = () => {
               <Route path="/blog" element={<Blog/>} />
               <Route path="/contact" element={<ContactUs/>} />
               <Route path="/about" element={<AboutUs/>} />
-              <Route path="/cart" element={<Cart/>} />
               <Route path="/cakes" element={<AllCakes/>} />
               <Route path="/cakes/category/:categoryName" element={<CakeCategoryPage/>} />
               <Route path="/cakes/:productId" element={<CakeProduct/>} />
@@ -52,6 +52,8 @@ const App = () => {
               <Route path="/combos" element={<AllCombo/>} />
               <Route path="/combos/category/:categoryName" element={<ComboCategoryPage/>} />
               <Route path="/combos/:productId" element={<ComboProduct/>} />
+              <Route path="/cart" element={<Cart/>} />
+              <Route path="/placeorder" element={<PlaceOrder/>} />
           </Routes>
         </div>
       </div>
