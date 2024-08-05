@@ -164,7 +164,7 @@ let product_list = [
         description: "Capture your cherished memories with our Personalized Photo Glow Lamp, elegantly designed in the shape of a heart. This unique lamp showcases a crystal-clear acrylic panel that's skillfully engraved with your chosen photo, creating a captivating 3D effect. The real wood base adds a touch of natural beauty to your customized keepsake. Whether it's a romantic gesture or a heartfelt gift, this lamp beautifully encapsulates your special moments. ",
         category: "gift",
         type: "Home Decor",
-        toWho: ["For Her","for Him"]
+        toWho: ["For Her","For Him"]
     }, 
     {
         id: "13",
@@ -294,7 +294,7 @@ let product_list = [
         description: "Yellow gerberas are a beautiful token of friendship and care, so pass it on to your friend or family (who seems no less than a friend to you) across various life milestones of his/her life. his bouquet is a perfect gift to convey your love and feelings for the person. It will surely brighten up the day of the recipient with its bright hue and evoking appeal.",
         category: "flower",
         type: "sunflower",
-        color: "yellow flower"
+        color: "Yellow flower"
     }, 
     {
         id: "26",
@@ -304,7 +304,7 @@ let product_list = [
         description: "Cherish your special relations on special occasions as you choose to opt for this scintillating jute bouquet full of blue orchids. These exotic blooms are sure to be delivered at your as well as your dear one's doorstep garden fresh and is sure to symbolize love, luxury, beauty and strength.",
         category: "flower",
         type: "orchid",
-        color: "blue flower"
+        color: "Blue flower"
     }, 
     {
         id: "27",
@@ -314,7 +314,7 @@ let product_list = [
         description: "Introducing our gorgeous floral arrangement, a perfect blend of elegance and charm. This captivating arrangement features 8 pristine white roses, symbolising purity and love, paired with 8 delicate white carnations that exude admiration and grace. Complementing these are 3 stems of enchanting white daisies, adding a touch of innocence and joy. The flower box is artistically enhanced with black painted fern leaves, creating a striking contrast and sophisticated look. All these beautiful elements are thoughtfully arranged in a chic striped box and adorned with white paper, making it an ideal gift for any special occasion.",
         category: "flower",
         type: "rose",
-        color: "white flower"
+        color: "White flower"
     }, 
     {
         id: "28",
@@ -324,7 +324,7 @@ let product_list = [
         description: "This exquisite arrangement features twelve passionate red roses elegantly displayed within a captivating blue-coloured box. Red roses, the timeless symbol of deep affection, are carefully selected for their rich hue and velvety petals. Adding an extra sentiment layer is the 'I love you' pop-up card accompanying the bouquet. This card is more than just words; it's a heartfelt declaration of love, making this ensemble an ideal gift to express profound emotions on any occasion. The combination of red roses and the affectionate card creates a truly memorable and touching gesture that speaks volumes of love and devotion.",
         category: "flower",
         type: "rose",
-        color: "red flower"
+        color: "Red flower"
     }, 
     {
         id: "29",
@@ -334,7 +334,7 @@ let product_list = [
         description: "This bunch consists of 12 White roses. This divine beauty is a symbol of purity of heart. This is an ideal way to project. White roses are the flower of light, they are also called the bride's flowers in some traditions.",
         category: "flower",
         type: "rose",
-        color: "white flower"
+        color: "White flower"
     }, 
     {
         id: "30",
@@ -344,7 +344,7 @@ let product_list = [
         description: "Unveil the splendor of simplicity with this Lilly bouquet. This sophisticated arrangement features four stunning pink lilies. Wrapped in premium white paper with bold black accents, the bouquet exudes contemporary elegance, tied together with a delicate pink ribbon for a touch of grace. Ideal for any occasion that calls for a statement of pure beauty, these lilies are a breathtaking gesture that conveys your exquisite taste and heartfelt sentiments.",
         category: "flower",
         type: "lily",
-        color: "purple flower"
+        color: "Purple flower"
     },
     {
         id: "31",
@@ -371,7 +371,7 @@ let product_list = [
         price: 1199,
         description: "The best way to send birthday wishes is with the delightful sweetness of chocolates and a thoughtful gift. This duo of ferrero rocher birthday chocolates along with a Golden mug that can be personalized with the recipient's name or name initial on it. Gift now!",
         category : "combo",
-        type: "gift & choclate"
+        type: "Gift & Choclate"
     }, 
     {
         id: "34",
