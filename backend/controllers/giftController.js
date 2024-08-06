@@ -6,19 +6,22 @@ import fs from 'fs';
 
 const addGift = async (req, res) => {
 
-    let image_filename = `${req.file.filename}`
-
-    const gift = new giftModel({
-        name: req.body.name,
-        description: req.body.description,
-        price: req.body.price,
-        category: req.body.category,
-        type: req.body.type,
-        towho: req.body.towho,
-        image: image_filename
-    })
-
     try {
+        if (!req.file) {
+            return res.json({ success: false, message: "Image is required" });
+        }
+    
+        let image_filename = `${req.file.filename}`
+    
+        const gift = new giftModel({
+            name: req.body.name,
+            description: req.body.description,
+            price: req.body.price,
+            category: req.body.category,
+            type: req.body.type,
+            towho: req.body.towho,
+            image: image_filename
+        })
         await gift.save()
         res.json({success:true, message:"Gift Added"})
     } catch (error) {

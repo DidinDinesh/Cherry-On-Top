@@ -5,21 +5,25 @@ import fs from 'fs';
 
 const addCake = async (req,res) => {
 
-    let image_filename = `${req.file.filename}`
-
-    const cake = new cakeModel({
-        name: req.body.name,
-        description: req.body.description,
-        price: req.body.price,
-        category: req.body.category,
-        flavour: req.body.flavour,
-        type: req.body.type,
-        image: image_filename
-    })
-
     try {
-        await cake.save()
-        res.json({success:true, message:"Cake Added"})
+        if (!req.file) {
+            return res.json({ success: false, message: "Image is required" });
+        }
+      
+        let image_filename = `${req.file.filename}`;
+      
+        const cake = new cakeModel({
+            name: req.body.name,
+            description: req.body.description,
+            price: req.body.price,
+            category: req.body.category,
+            flavour: req.body.flavour,
+            type: req.body.type,
+            image: image_filename
+        });
+      
+        await cake.save();
+        res.json({ success: true, message: "Cake Added" });
     } catch (error) {
         console.log(error);
         res.json({success:false, message:"Error"})

@@ -6,21 +6,26 @@ import fs from 'fs';
 
 const addCombo = async (req, res) => {
 
-    let image_filename = `${req.file.filename}`
-
-    const combo = new comboModel({
-        name: req.body.name,
-        description: req.body.description,
-        price: req.body.price,
-        category: req.body.category,
-        type: req.body.type,
-        image: image_filename
-    })
-
     try {
+
+        if (!req.file) {
+            return res.json({ success: false, message: "Image is required" });
+        }
+
+        let image_filename = `${req.file.filename}`
+
+        const combo = new comboModel({
+            name: req.body.name,
+            description: req.body.description,
+            price: req.body.price,
+            category: req.body.category,
+            type: req.body.type,
+            image: image_filename
+        })
+
         await combo.save()
         res.json({success:true, message:"Combo Added"})
-    } catch (error) {
+    }  catch (error) {
         console.log(error);
         res.json({success:false, message:"Error"})
     }

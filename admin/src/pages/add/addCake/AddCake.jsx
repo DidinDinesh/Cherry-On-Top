@@ -31,6 +31,7 @@ const AddCake = ({url}) => {
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
+
     const formData = new FormData();
     formData.append("name", data.name)
     formData.append("description", data.description)
@@ -112,7 +113,7 @@ const AddCake = ({url}) => {
 
         <div className="add-price flex-col">
             <p>Product price</p>
-            <input onChange={onChangeHandler} value={data.price} type="Number" name="price" placeholder="$20" />
+            <input onChange={onChangeHandler} value={data.price} type="Number" name="price" placeholder="&#8377;20" required/>
         </div>
 
         <button type="submit" className="add-btn">ADD</button>

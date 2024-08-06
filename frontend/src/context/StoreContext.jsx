@@ -1,4 +1,4 @@
-import { createContext, useMemo, useState } from 'react';
+import { createContext, useEffect, useMemo, useState } from 'react';
 import product_list from '../assets/product_list'
 
 
@@ -10,6 +10,16 @@ const StoreContextProvider = (props) => {
     const handleScrollToTop = () => {
         window.scrollTo(0, 0);
     };
+
+    const url = "http://localhost:4000"
+    
+    const [token,setToken] = useState("");
+
+    useEffect(() => {
+        if (localStorage.getItem("token")) {
+            setToken(localStorage.getItem("token"));
+        }
+    },[])
 
     const [ cakeGroup, setCakeGroup ] = useState("All");
     const [ giftGroup, setGiftGroup ] = useState("All");
@@ -71,6 +81,9 @@ const StoreContextProvider = (props) => {
 
 
   const contextValue= {
+      url,
+      token,
+      setToken,
       product_list,
       cake_list,
       gift_list,

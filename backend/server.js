@@ -5,6 +5,8 @@ import cakeRouter from "./routes/cakeRoute.js"
 import giftRouter from "./routes/giftRoute.js"
 import flowerRouter from "./routes/flowerRoute.js"
 import comboRouter from "./routes/comboRoute.js"
+import userRouter from "./routes/userRoute.js"
+import 'dotenv/config'
 
 
 // app config
@@ -27,6 +29,7 @@ app.use("/api/cakes", cakeRouter)
 app.use("/api/gifts", giftRouter)
 app.use("/api/flowers", flowerRouter)
 app.use("/api/combos", comboRouter)
+app.use("/api/user", userRouter)
 
 app.use("/images", express.static("uploads"))
 

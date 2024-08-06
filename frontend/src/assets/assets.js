@@ -30,6 +30,9 @@ import teamwork_img from './aboutus/icons8-teamwork-100.png'
 import integrity_img from './aboutus/icons8-integrity-100.png'
 import sustainability_img from './aboutus/icons8-sustainability-100.png'
 import dedication_img from './aboutus/icons8-thinking-100.png'
+import user_icon from './icons/icons8-user-32.png'
+import order_icon from './icons/icons8-shopping-bag-32.png'
+import logout_icon from './icons/icons8-logout-32.png'
 
 
 
@@ -152,7 +155,10 @@ export const assets = {
     teamwork_img,
     integrity_img,
     sustainability_img,
-    dedication_img
+    dedication_img,
+    user_icon,
+    order_icon,
+    logout_icon
 }
 
 export const menu_list = [
