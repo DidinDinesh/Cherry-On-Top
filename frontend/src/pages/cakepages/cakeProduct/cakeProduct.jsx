@@ -1,4 +1,5 @@
-import './cakeProduct.css'
+
+import './CakeProduct.css'
 import { useContext } from "react"
 import { StoreContext } from "../../../context/StoreContext"
 import { useParams } from "react-router-dom";
@@ -6,19 +7,23 @@ import Breadcrum from "../../../components/breadcrums/Breadcrum";
 import CakeProductDisplay from "../../../components/cakeProductDisplay/CakeProductDisplay";
 
 
-const Product = () => {
+const CakeProduct = () => {
 
-    const { cake_list } = useContext(StoreContext);
+    const { cake_list, loading } = useContext(StoreContext);
     const { productId } = useParams();
+
+    if (loading) {
+      return <p>Loading...</p>; 
+   }
   
-    const product = cake_list.find ((e) => e.id === productId) 
+    const product = cake_list.find ((e) => e._id === productId) 
 
   return (
     <div>
       <Breadcrum product = { product }/>
-      <CakeProductDisplay product = {product} />
+      <CakeProductDisplay product = { product } />
     </div>
   )
 }
 
-export default Product
+export default CakeProduct

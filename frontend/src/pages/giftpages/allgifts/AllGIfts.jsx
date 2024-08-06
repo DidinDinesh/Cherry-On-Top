@@ -7,9 +7,12 @@ import { StoreContext } from "../../../context/StoreContext";
 
 const AllGIfts = () => {
 
-  const { gift_list, giftGroup, setGiftGroup, handleScrollToTop } = useContext(StoreContext);
-  
+  const { gift_list, giftGroup, setGiftGroup, handleScrollToTop, url, loading } = useContext(StoreContext);
 
+  if (loading) {
+    return <p>Loading...</p>; 
+  }
+  
   return (
     <>
     <GiftCategory giftGroup = {giftGroup} setGiftGroup = {setGiftGroup}/>
@@ -18,7 +21,7 @@ const AllGIfts = () => {
           {gift_list.map((item, index) => (
             <div key={index} className="gift-card">
               <div className="gift-image">
-                <Link to={`/gifts/${item.id}`} onClick={handleScrollToTop}><img src={item.image} /></Link>
+                <Link to={`/gifts/${item._id}`} onClick={handleScrollToTop}><img src={url + "/images/" + item.image} /></Link>
               </div>
               <p className="gift-name">{item.name}</p>
               <p className="gift-price">&#8377; {item.price}</p>

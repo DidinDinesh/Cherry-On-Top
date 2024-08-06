@@ -4,19 +4,23 @@ import { StoreContext } from "../../context/StoreContext";
 
 const GiftProductDisplay = ({product}) => {
     
-    const { addToCart } = useContext(StoreContext);
+    const { addToCart, url, loading } = useContext(StoreContext);
+
+    if (loading) {
+        return <p>Loading...</p>; 
+      }
 
   return (
         <div className="giftproductdisplay">
             <div className="giftproductdisplay-left">
                 <div className="giftproductdisplay-img-list">
-                    <img src={product.image} alt="" />
-                    <img src={product.image} alt="" />
-                    <img src={product.image} alt="" />
-                    <img src={product.image} alt="" />
+                    <img src={url + "/images/" + product.image} alt="" />
+                    <img src={url + "/images/" + product.image} alt="" />
+                    <img src={url + "/images/" + product.image} alt="" />
+                    <img src={url + "/images/" + product.image} alt="" />
                 </div>
                 <div className="giftproductdisplay-img">
-                    <img className="giftproductdisplay-main-img" src={product.image} alt="" />
+                    <img className="giftproductdisplay-main-img" src={url + "/images/" + product.image} alt="" />
                 </div>
             </div>
             <div className="giftproductdisplay-right">
@@ -25,7 +29,7 @@ const GiftProductDisplay = ({product}) => {
                 <div className="giftproductdisplay-right-desc">
                     {product.description}
                 </div>
-                <button onClick={() => addToCart(product.id)}>ADD TO CART</button>
+                <button onClick={() => addToCart(product._id)}>ADD TO CART</button>
             </div>
         </div>
     )

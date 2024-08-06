@@ -6,7 +6,7 @@ import { StoreContext } from "../../../context/StoreContext";
 
 const ComboCategoryPage = () => {
 
-  const { combo_list, comboGroup, setComboGroup, handleScrollToTop } = useContext(StoreContext);
+  const { combo_list, comboGroup, setComboGroup, handleScrollToTop, url } = useContext(StoreContext);
 
   const filtered_Combo = comboGroup === "All" ? combo_list : combo_list.filter(item => item.type.toLowerCase() === comboGroup.toLowerCase())
 
@@ -26,7 +26,7 @@ useEffect(() => {
           {filtered_Combo.map((item, index) => (
             <div key={index} className="combo-card">
               <div className="combo-image">
-                <Link to={`/combos/${item.id}`} onClick={handleScrollToTop}><img src={item.image} /></Link>
+                <Link to={`/combos/${item._id}`} onClick={handleScrollToTop}><img src={url + "/images/" + item.image} /></Link>
               </div>
               <p className="combo-name">{item.name}</p>
               <p className="combo-price">&#8377; {item.price}</p>

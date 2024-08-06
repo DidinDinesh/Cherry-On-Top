@@ -1,9 +1,7 @@
 import './Breadcrum.css'
 import { assets }  from "../../assets/assets";
 
-const Breadcrum = (props) => {
-
-    const { product } = props;
+const Breadcrum = ({product}) => { 
 
   return (
     <div className="breadcrum">

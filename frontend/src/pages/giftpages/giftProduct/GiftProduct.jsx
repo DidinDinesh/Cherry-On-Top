@@ -7,10 +7,14 @@ import GiftProductDisplay from "../../../components/giftProductDisplay/GiftProdu
 
 const GiftProduct = () => {
 
-    const { gift_list } = useContext(StoreContext);
+    const { gift_list, loading } = useContext(StoreContext);
     const { productId } = useParams();
   
-    const product = gift_list.find ((e) => e.id === productId) 
+    const product = gift_list.find ((e) => e._id === productId) 
+
+    if (loading) {
+      return <p>Loading...</p>; 
+    }
 
   return (
     <div>

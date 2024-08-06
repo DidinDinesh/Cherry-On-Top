@@ -4,19 +4,23 @@ import { StoreContext } from "../../context/StoreContext";
 
 const CakeProductDisplay = ({product}) => {
 
-  const { addToCart } = useContext(StoreContext);
+  const { addToCart, url, loading } = useContext(StoreContext);
+
+  if (loading) {
+    return <p>Loading...</p>; 
+  }
 
   return (
     <div className="cakeproductdisplay">
       <div className="cakeproductdisplay-left">
         <div className="cakeproductdisplay-img-list">
-            <img src={product.image} alt="" />
-            <img src={product.image} alt="" />
-            <img src={product.image} alt="" />
-            <img src={product.image} alt="" />
+            <img src={url+"/images/"+product.image} alt="" />
+            <img src={url+"/images/"+product.image} alt="" />
+            <img src={url+"/images/"+product.image} alt="" />
+            <img src={url+"/images/"+product.image} alt="" />
         </div>
         <div className="cakeproductdisplay-img">
-            <img className="cakeproductdisplay-main-img" src={product.image} alt="" />
+            <img className="cakeproductdisplay-main-img" src={url+"/images/"+product.image} alt="" />
         </div>
       </div>
       <div className="cakeproductdisplay-right">
@@ -35,7 +39,7 @@ const CakeProductDisplay = ({product}) => {
             <div>3kg</div>
           </div>
         </div>
-        <button onClick={() => addToCart(product.id)}>ADD TO CART</button>
+        <button onClick={() => addToCart(product._id)}>ADD TO CART</button>
         <p className="cakeproductdisplay-right-flavour"><span>Flavour: {product.flavour}</span></p>
       </div>
     </div>

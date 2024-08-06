@@ -6,7 +6,9 @@ import { StoreContext } from "../../../context/StoreContext"
 
 const CakeCategoryPage = () => {
 
-const { cake_list, cakeGroup, setCakeGroup, handleScrollToTop } = useContext(StoreContext); 
+const { cake_list, cakeGroup, setCakeGroup, handleScrollToTop, url, loading } = useContext(StoreContext); 
+
+
 
 const filtered_Cakes = cake_list.filter(item =>
   item.type.map(type => type.toLowerCase()).includes(cakeGroup.toLowerCase()) || item.flavour.toLowerCase() === cakeGroup.toLowerCase())
@@ -27,7 +29,7 @@ useEffect(() => {
           {filtered_Cakes.map((item, index) => (
             <div key={index} className="cake-card">
               <div className="cake-image">
-                <Link to={`/cakes/${item.id}`} onClick={handleScrollToTop}><img src={item.image} /></Link>
+                <Link to={`/cakes/${item._id}`} onClick={handleScrollToTop}><img src={url+"/images/"+item.image} /></Link>
               </div>
               <p className="cake-name">{item.name}</p>
               <p className="cake-price">&#8377; {item.price}</p>

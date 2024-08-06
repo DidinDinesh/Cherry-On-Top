@@ -204,7 +204,7 @@ let product_list = [
         description: "We worship Lord Ganesha on Diwali to get blessed with wealth, knowledge, happiness and good health. This time as you look for a gift, consider this auspicious marble Ganpati murti for your near and dear ones. Gifting Ganesha is an old practice of gifting good fortune and prosperity to our loved ones. So, order today and gift this beautiful Murti, this festival.",
         category: "gift",
         type: "Home Decor",
-        toWho: ["For h=Her", "For Him", "For Parents"]
+        toWho: ["For Her", "For Him", "For Parents"]
     }, 
     {
         id: "17",
@@ -234,7 +234,7 @@ let product_list = [
         description: "What should i gift my man? If you have such a question in mind then this combo of classic pure leather wallet is a perfect fit. Paired with a brass metal antique sand timer keychain, Don’t miss any chance to surprise the special man in your life. Gift now!",
         category: "gift",
         type: "Other",
-        toWho: ["For Men"]
+        toWho: ["For Him"]
     }, 
     {
         id: "20",

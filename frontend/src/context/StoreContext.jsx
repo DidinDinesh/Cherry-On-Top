@@ -1,5 +1,6 @@
 import { createContext, useEffect, useMemo, useState } from 'react';
 import product_list from '../assets/product_list'
+import axios from 'axios'
 
 
 export const StoreContext = createContext(null);
@@ -15,21 +16,17 @@ const StoreContextProvider = (props) => {
     
     const [token,setToken] = useState("");
 
-    useEffect(() => {
-        if (localStorage.getItem("token")) {
-            setToken(localStorage.getItem("token"));
-        }
-    },[])
-
     const [ cakeGroup, setCakeGroup ] = useState("All");
     const [ giftGroup, setGiftGroup ] = useState("All");
     const [ flowerGroup, setFlowerGroup ] = useState("All");
     const [ comboGroup, setComboGroup ] = useState("All");
 
-    const cake_list = useMemo(() => product_list.filter(item => item.category === 'cake'), [product_list]);
-    const gift_list = useMemo(() => product_list.filter(item => item.category === 'gift'), [product_list]);
-    const flower_list = useMemo(() => product_list.filter(item => item.category === 'flower'), [product_list]);
-    const combo_list = useMemo(() => product_list.filter(item => item.category === 'combo'), [product_list]);
+    const [cake_list, setCake_list ] = useState([]);
+    const [gift_list, setGift_list ] = useState([]);
+    const [flower_list, setFlower_list ] = useState([]);
+    const [combo_list, setCombo_list ] = useState([]);
+
+    const [loading, setLoading] = useState(true);
 
 
     const [ cartItems, setCartItems ] = useState({});
@@ -79,6 +76,58 @@ const StoreContextProvider = (props) => {
         return totalItem;
     }
 
+    const fetchCakeList = async () => {
+        setLoading(true);
+        const response = await axios.get(url+"/api/cakes/list")
+        setCake_list(response.data.data)
+        setLoading(false);
+    }
+    const fetchGiftrList = async () => {
+        setLoading(true);
+        const response = await axios.get(url+"/api/gifts/list")
+        setGift_list(response.data.data)
+        setLoading(false);
+    }
+
+    const fetchFlowerList = async () => {
+        setLoading(true);
+        const response = await axios.get(url+"/api/flowers/list")
+        setFlower_list(response.data.data)
+        setLoading(false);
+    }
+
+    const fetchComboList = async () => {
+        setLoading(true);
+        const response = await axios.get(url+"/api/combos/list")
+        setCombo_list(response.data.data)
+        setLoading(false);
+    }
+
+
+    useEffect(() => {
+        async function loadCakeData() {
+            await fetchCakeList();
+        }
+        async function loadGiftData() {
+            await fetchGiftrList();
+        }
+        async function loadFlowerData() {
+            await fetchFlowerList();
+        }
+        async function loadComboData() {
+            await fetchComboList();
+        }
+
+        if (localStorage.getItem("token")) {
+            setToken(localStorage.getItem("token"));
+        }
+
+        loadCakeData();
+        loadGiftData();
+        loadFlowerData();
+        loadComboData();
+    },[])
+
 
   const contextValue= {
       url,
@@ -103,7 +152,8 @@ const StoreContextProvider = (props) => {
       setFlowerGroup,
       comboGroup,
       setComboGroup,
-      getTotalCartItems
+      getTotalCartItems,
+      loading
   }
   
   return (

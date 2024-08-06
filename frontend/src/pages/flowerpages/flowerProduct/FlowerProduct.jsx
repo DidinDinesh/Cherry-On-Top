@@ -7,10 +7,14 @@ import FlowerProductDisplay from "../../../components/flowerProductDisplay/Flowe
 
 function FlowerProduct() {
 
-    const { flower_list } = useContext(StoreContext);
+    const { flower_list, loading } = useContext(StoreContext);
     const { productId } = useParams();
   
-    const product = flower_list.find ((e) => e.id === productId) 
+    const product = flower_list.find ((e) => e._id === productId) 
+
+    if (loading) {
+        return <p>Loading...</p>; 
+     }
 
     return (
         <div>

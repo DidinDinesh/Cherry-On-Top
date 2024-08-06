@@ -15,7 +15,7 @@ import CakeCategoryPage from './pages/cakepages/cakecategorypage/CakeCategoryPag
 import GiftCategoryPage from './pages/giftpages/giftcategorypage/GiftCategoryPage'
 import FlowerCategoryPage from './pages/flowerpages/flowercategorypage/FlowerCategoryPage'
 import ComboCategoryPage from './pages/combopages/combocategorypage/ComboCategoryPage'
-import CakeProduct from './pages/cakepages/cakeProduct/cakeProduct'
+import CakeProduct from './pages/cakepages/cakeProduct/CakeProduct'
 import GiftProduct from "./pages/giftpages/giftProduct/GiftProduct"
 import FlowerProduct from "./pages/flowerpages/flowerProduct/FlowerProduct"
 import ComboProduct from "./pages/combopages/comboProduct/ComboProduct"

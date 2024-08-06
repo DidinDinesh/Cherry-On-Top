@@ -6,8 +6,11 @@ import { StoreContext } from "../../../context/StoreContext";
 
 const AllFlowers = () => {
 
-  const { flower_list, flowerGroup, setFlowerGroup, handleScrollToTop } = useContext(StoreContext);
+  const { flower_list, flowerGroup, setFlowerGroup, handleScrollToTop, url, loading } = useContext(StoreContext);
   
+  if (loading) {
+    return <p>Loading...</p>; 
+  }
 
   return (
     <>
@@ -17,7 +20,7 @@ const AllFlowers = () => {
           {flower_list.map((item, index) => (
             <div key={index} className="flower-card">
               <div className="flower-image">
-                <Link to={`/flowers/${item.id}`} onClick={handleScrollToTop}><img src={item.image} /></Link>
+                <Link to={`/flowers/${item._id}`} onClick={handleScrollToTop}><img src={url+ "/images/" + item.image} /></Link>
               </div>
               <p className="flower-name">{item.name}</p>
               <p className="flower-price">&#8377; {item.price}</p>

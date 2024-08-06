@@ -4,19 +4,23 @@ import { StoreContext } from "../../context/StoreContext";
 
 const FlowerProductDisplay = ({product}) => {
 
-    const { addToCart } = useContext(StoreContext);
+    const { addToCart, url, loading } = useContext(StoreContext);
+
+    if (loading) {
+        return <p>Loading...</p>; 
+     }
     
   return (
     <div className="flowerproductdisplay">
         <div className="flowerproductdisplay-left">
             <div className="flowerproductdisplay-img-list">
-                <img src={product.image} alt="" />
-                <img src={product.image} alt="" />
-                <img src={product.image} alt="" />
-                <img src={product.image} alt="" />
+                <img src={url +"/images/" + product.image} alt="" />
+                <img src={url +"/images/" + product.image} alt="" />
+                <img src={url +"/images/" + product.image} alt="" />
+                <img src={url +"/images/" + product.image} alt="" />
             </div>
             <div className="flowerproductdisplay-img">
-                <img className="flowerproductdisplay-main-img" src={product.image} alt="" />
+                <img className="flowerproductdisplay-main-img" src={url +"/images/" + product.image} alt="" />
             </div>
         </div>
         <div className="flowerproductdisplay-right">
@@ -25,7 +29,7 @@ const FlowerProductDisplay = ({product}) => {
             <div className="flowerproductdisplay-right-desc">
                 {product.description}
             </div>
-            <button onClick={() => addToCart(product.id)}>ADD TO CART</button>
+            <button onClick={() => addToCart(product._id)}>ADD TO CART</button>
         </div>
     </div>
   )
