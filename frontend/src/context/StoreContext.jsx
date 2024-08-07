@@ -1,5 +1,4 @@
-import { createContext, useEffect, useMemo, useState } from 'react';
-import product_list from '../assets/product_list'
+import { createContext, useEffect, useState } from 'react';
 import axios from 'axios'
 
 
@@ -28,38 +27,49 @@ const StoreContextProvider = (props) => {
 
     const [loading, setLoading] = useState(true);
 
-
     const [ cartItems, setCartItems ] = useState({});
 
-    const addToCart =  (Id) => {
+    const addToCart = async (itemId) => {
 
-        if(!cartItems[Id]) {
-            setCartItems((prev) => ({...prev, [Id] : 1}))
+        if(!cartItems[itemId]) {
+            setCartItems((prev) => ({...prev, [itemId] : 1}))
         }
         else {
-            setCartItems((prev) => ({...prev, [Id]: prev[Id] + 1}))
+            setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1}))
+        }
+
+        if(token) {
+            await axios.post(url + "/api/cart/add", {itemId}, {headers:{token}})
         }
     }
 
-    const updateCartItem = (Id, value) => {
+    const updateCartItem = async (itemId, value) => {
         if (value > 0) {
-            setCartItems((prev) => ({ ...prev, [Id]: value }))
+            setCartItems((prev) => ({ ...prev, [itemId]: value }))
         } else {
-            const { [Id]: _, ...rest } = cartItems;
+            const { [itemId]: _, ...rest } = cartItems;
             setCartItems(rest);
         }
+
+        if (token) {
+            await axios.post(url + "/api/cart/update", { itemId, value}, {headers:{token}});
+        }
     }
 
-    const removeFromCart =  (Id) => {
-        const { [Id]: _, ...rest } = cartItems;
+    const removeFromCart = async (itemId) => {
+        const { [itemId]: _, ...rest } = cartItems;
         setCartItems(rest);
+
+        if (token) {
+            await axios.post(url + "/api/cart/remove", {itemId}, {headers:{token}});
+        }
     }
 
     const getTotalCartAmount = () => {
         let totalAmount = 0;
         for(const item in cartItems) {
             if (cartItems[item] > 0) {
-                const itemInfo = product_list.find((product) => product.id === item);
+                const itemInfo = Total_Product_List.find((product) => product._id === item);
                 totalAmount += itemInfo.price*cartItems[item];
             }
         }
@@ -103,37 +113,37 @@ const StoreContextProvider = (props) => {
         setLoading(false);
     }
 
+    const fetchCartData = async (token) => {
+        const response = await axios.post(url+"/api/cart/get", {}, {headers:{token}})
+        setCartItems(response.data.cartData);
+    }
+
 
     useEffect(() => {
-        async function loadCakeData() {
+        async function loadData() {
             await fetchCakeList();
-        }
-        async function loadGiftData() {
+  
             await fetchGiftrList();
-        }
-        async function loadFlowerData() {
+      
             await fetchFlowerList();
-        }
-        async function loadComboData() {
+      
             await fetchComboList();
-        }
-
+        
         if (localStorage.getItem("token")) {
             setToken(localStorage.getItem("token"));
+            await fetchCartData(localStorage.getItem("token"));
         }
-
-        loadCakeData();
-        loadGiftData();
-        loadFlowerData();
-        loadComboData();
+    }
+        loadData();
     },[])
+
+    const Total_Product_List = [...cake_list, ...gift_list, ...flower_list, ...combo_list];
 
 
   const contextValue= {
       url,
       token,
       setToken,
-      product_list,
       cake_list,
       gift_list,
       flower_list,
@@ -153,7 +163,8 @@ const StoreContextProvider = (props) => {
       comboGroup,
       setComboGroup,
       getTotalCartItems,
-      loading
+      loading,
+      Total_Product_List
   }
   
   return (

@@ -22,6 +22,7 @@ import ComboProduct from "./pages/combopages/comboProduct/ComboProduct"
 import LoginPopUp from "./components/loginPopUP/LoginPopUp"
 import Cart from './pages/cart/Cart'
 import PlaceOrder from "./pages/placeorder/PlaceOrder"
+import Verify from "./pages/verify/Verify"
 
 
 const App = () => {
@@ -54,6 +55,7 @@ const App = () => {
               <Route path="/combos/:productId" element={<ComboProduct/>} />
               <Route path="/cart" element={<Cart/>} />
               <Route path="/placeorder" element={<PlaceOrder/>} />
+              <Route path="/verify" element={<Verify/>} />
           </Routes>
         </div>
       </div>
