@@ -12,6 +12,7 @@ import ListFlowers from './pages/list/listFlowers/ListFlowers'
 import ListCombos from './pages/list/listCombos/ListCombos'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Orders from "./pages/orders/Orders"
 
 
 
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/listgifts" element={<ListGifts url={url}/>} />
         <Route path="/listflowers" element={<ListFlowers url={url}/>} />
         <Route path="/listcombos" element={<ListCombos url={url}/>} />
+        <Route path="/order" element={<Orders url={url}/>} />
       </Routes>
       </div>
     </div>

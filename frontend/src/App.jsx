@@ -23,6 +23,7 @@ import LoginPopUp from "./components/loginPopUP/LoginPopUp"
 import Cart from './pages/cart/Cart'
 import PlaceOrder from "./pages/placeorder/PlaceOrder"
 import Verify from "./pages/verify/Verify"
+import MyOrders from "./pages/myOrders/MyOrders"
 
 
 const App = () => {
@@ -56,6 +57,7 @@ const App = () => {
               <Route path="/cart" element={<Cart/>} />
               <Route path="/placeorder" element={<PlaceOrder/>} />
               <Route path="/verify" element={<Verify/>} />
+              <Route path="/myorders" element={<MyOrders/>} />
           </Routes>
         </div>
       </div>

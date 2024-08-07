@@ -33,6 +33,7 @@ import dedication_img from './aboutus/icons8-thinking-100.png'
 import user_icon from './icons/icons8-user-32.png'
 import order_icon from './icons/icons8-shopping-bag-32.png'
 import logout_icon from './icons/icons8-logout-32.png'
+import parcel_icon from './icons/icons8-parcel-96.png'
 
 
 
@@ -158,7 +159,8 @@ export const assets = {
     dedication_img,
     user_icon,
     order_icon,
-    logout_icon
+    logout_icon,
+    parcel_icon
 }
 
 export const menu_list = [
