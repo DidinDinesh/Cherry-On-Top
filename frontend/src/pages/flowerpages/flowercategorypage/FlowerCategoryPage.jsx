@@ -6,18 +6,26 @@ import { StoreContext } from "../../../context/StoreContext";
 
 const FlowerCategoryPage = () => {
 
-  const { flower_list, flowerGroup, setFlowerGroup, handleScrollToTop, url } = useContext(StoreContext);
+  const { flower_list, flowerGroup, setFlowerGroup, handleScrollToTop, url, loading } = useContext(StoreContext);
 
   const filtered_Flowers = flowerGroup === "All" ? flower_list : flower_list.filter(item =>
     item.type.toLowerCase() === flowerGroup.toLowerCase() || item.color.toLowerCase() === flowerGroup.toLowerCase())
 
-    const location = useLocation();
+  const location = useLocation();
 
-useEffect(() => {
-  const pathParts = location.pathname.split('/');
-  const category = pathParts[pathParts.length - 1];
-  setFlowerGroup(decodeURIComponent(category));
-  }, [location.pathname, setFlowerGroup]);
+  useEffect(() => {
+    const pathParts = location.pathname.split('/');
+    const category = pathParts[pathParts.length - 1];
+    setFlowerGroup(decodeURIComponent(category));
+    }, [location.pathname, setFlowerGroup]);
+  
+  if (loading) {
+    return (
+      <div className="loading">
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div>

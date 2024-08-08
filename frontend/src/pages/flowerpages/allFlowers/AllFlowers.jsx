@@ -9,7 +9,11 @@ const AllFlowers = () => {
   const { flower_list, flowerGroup, setFlowerGroup, handleScrollToTop, url, loading } = useContext(StoreContext);
   
   if (loading) {
-    return <p>Loading...</p>; 
+    return (
+      <div className="loading">
+        <p>Loading...</p>
+      </div>
+    );
   }
 
   return (

@@ -7,18 +7,26 @@ import { StoreContext } from "../../../context/StoreContext"
 
 const GiftCategoryPage = () => {
 
-  const { gift_list, giftGroup, setGiftGroup, handleScrollToTop, url } = useContext(StoreContext);
+  const { gift_list, giftGroup, setGiftGroup, handleScrollToTop, url, loading } = useContext(StoreContext);
 
   const filtered_Gifts = giftGroup === "All" ? gift_list : gift_list.filter(item =>
     item.towho.map(type => type.toLowerCase()).includes(giftGroup.toLowerCase()) || item.type.toLowerCase() === giftGroup.toLowerCase())
 
-    const location = useLocation();
+  const location = useLocation();
 
-    useEffect(() => {
-      const pathParts = location.pathname.split('/');
-      const category = pathParts[pathParts.length - 1];
-      setGiftGroup(decodeURIComponent(category));
-      }, [location.pathname, setGiftGroup]);
+  useEffect(() => {
+    const pathParts = location.pathname.split('/');
+    const category = pathParts[pathParts.length - 1];
+    setGiftGroup(decodeURIComponent(category));
+    }, [location.pathname, setGiftGroup]);
+    
+  if (loading) {
+    return (
+      <div className="loading">
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div>

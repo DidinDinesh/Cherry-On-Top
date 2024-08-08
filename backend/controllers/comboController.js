@@ -34,6 +34,7 @@ const addCombo = async (req, res) => {
 // all combo list
 
 const listCombo = async (req, res) => {
+
     try {
         const combos = await comboModel.find({});
         res.json({success:true, data:combos})
@@ -46,6 +47,7 @@ const listCombo = async (req, res) => {
 // remove combo item
 
 const removeCombo = async (req, res) => {
+    
     try {
         const combo = await comboModel.findById(req.body.id);
         fs.unlink(`uploads/${combo.image}`, () => {})

@@ -83,6 +83,7 @@ const verifyOrder = async (req, res) => {
 //user orders for frontend 
 
 const userOrders = async (req, res) => {
+    
     try {
         const orders = await orderModel.find({userId:req.body.userId});
         res.json({success:true, data:orders});
@@ -95,6 +96,7 @@ const userOrders = async (req, res) => {
 // listing orders fro admin
 
 const listAllOrders = async (req, res ) => {
+
     try {
         const orders = await orderModel.find({});
         res.json({success:true, data:orders})
@@ -107,6 +109,7 @@ const listAllOrders = async (req, res ) => {
 //api for updating order status 
 
 const updateOrderStatus = async (req, res) => {
+
     try {
         await orderModel.findByIdAndUpdate(req.body.orderId, {status:req.body.status});
         res.json({success:true, message:"Status Updated"});

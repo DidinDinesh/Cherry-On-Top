@@ -4,6 +4,10 @@ import signin_icon from './icons/SignIn.svg'
 import search_icon from './icons/search.svg'
 import menu_icon from './icons/menu.svg'
 import close_icon from './icons/close.svg'
+import banne_cake from './banner/banner_cake.jpg'
+import banner_gift from './banner/banner_gift.jpg'
+import banner_flower from './banner/banner_flower.jpg'
+import banner_cake_flower from './banner/banner_cake&flower.jpg'
 import play_store from './other/play_store.png'
 import app_store from './other/app_store.png'
 import facebook from './social icons/facebook-circle.svg'
@@ -34,6 +38,7 @@ import user_icon from './icons/icons8-user-32.png'
 import order_icon from './icons/icons8-shopping-bag-32.png'
 import logout_icon from './icons/icons8-logout-32.png'
 import parcel_icon from './icons/icons8-parcel-96.png'
+
 
 
 
@@ -97,6 +102,10 @@ export const assets = {
     search_icon,
     menu_icon,
     close_icon,
+    banne_cake,
+    banner_gift,
+    banner_flower,
+    banner_cake_flower,
     play_store,
     app_store,
     facebook,
@@ -162,6 +171,29 @@ export const assets = {
     logout_icon,
     parcel_icon
 }
+
+export const banners = [
+    { 
+        id: 1, 
+        image: banne_cake, 
+        text: "Sweeten your moments with our cakes" 
+    },
+    { 
+        id: 2, 
+        image: banner_gift, 
+        text: "Gifts that speak from the heart" 
+    },
+    { 
+        id: 3, 
+        image: banner_flower, 
+        text: "Say it with flowers, say it with love" 
+    },
+    { 
+        id: 4, 
+        image: banner_cake_flower, 
+        text: "Delightful combos to make your celebrations special" 
+    },
+  ];
 
 export const menu_list = [
     {

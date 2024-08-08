@@ -9,7 +9,11 @@ const AllCombo = () => {
   const { combo_list, comboGroup, setComboGroup, handleScrollToTop, url, loading } = useContext(StoreContext);
 
   if (loading) {
-    return <p>Loading...</p>; 
+    return (
+      <div className="loading">
+        <p>Loading...</p>
+      </div>
+    );
   }
 
   return (

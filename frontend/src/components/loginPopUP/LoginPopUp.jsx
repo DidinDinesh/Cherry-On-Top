@@ -4,11 +4,12 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 import axios from 'axios'
 
-const LoginPopUp = ({setShowLogin}) => {
+const LoginPopUp = ({setShowLogin, showLogin}) => {
 
     const {url, setToken} = useContext(StoreContext);
 
     const [ currentState, setCurrentState ] = useState("Login");
+
     const [data, setData ] = useState({
         name:"",
         email:"",
@@ -22,19 +23,22 @@ const LoginPopUp = ({setShowLogin}) => {
     }
 
     useEffect(() => {
-        setShowLogin ? document.body.classList.add("no-scroll") 
+        showLogin ? document.body.classList.add("no-scroll") 
         : document.body.classList.remove("no-scroll");
 
         // Cleanup when the component is unmounted
+
         return () => {
             document.body.classList.remove("no-scroll");
         };
-    }, [setShowLogin]);
+    }, [showLogin]);
 
 
     const onLogin = async (event) => {
+        
         event.preventDefault()
         let newUrl = url;
+
         if(currentState === 'Login') {
             newUrl += "/api/user/login"
         }

@@ -33,6 +33,7 @@ const addCake = async (req,res) => {
 // all cake list
 
 const listCake = async (req,res) => {
+
     try {
         const cakes = await cakeModel.find({});
         res.json({success:true, data:cakes})
@@ -45,6 +46,7 @@ const listCake = async (req,res) => {
 // remove cake item
 
 const removeCake = async (req,res) => {
+    
     try {
         const cake = await cakeModel.findById(req.body.id);
         fs.unlink(`uploads/${cake.image}`, () => {})

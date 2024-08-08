@@ -13,8 +13,12 @@ function FlowerProduct() {
     const product = flower_list.find ((e) => e._id === productId) 
 
     if (loading) {
-        return <p>Loading...</p>; 
-     }
+        return (
+        <div className="loading">
+            <p>Loading...</p>
+        </div>
+        );
+    }
 
     return (
         <div>

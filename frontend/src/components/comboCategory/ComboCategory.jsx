@@ -4,9 +4,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
 
-const ComboCategory = ({comboGroup, setComboGroup}) => {
+const ComboCategory = () => {
 
-  const { handleScrollToTop } = useContext(StoreContext);
+  const { handleScrollToTop, comboGroup, setComboGroup } = useContext(StoreContext);
 
   const navigate = useNavigate();
   const location = useLocation();

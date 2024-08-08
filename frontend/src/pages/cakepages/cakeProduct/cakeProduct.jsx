@@ -9,14 +9,18 @@ import CakeProductDisplay from "../../../components/cakeProductDisplay/CakeProdu
 
 const CakeProduct = () => {
 
-    const { cake_list, loading } = useContext(StoreContext);
-    const { productId } = useParams();
+  const { cake_list, loading } = useContext(StoreContext);
+  const { productId } = useParams();
 
-    if (loading) {
-      return <p>Loading...</p>; 
-   }
-  
-    const product = cake_list.find ((e) => e._id === productId) 
+  if (loading) {
+    return (
+      <div className="loading">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
+  const product = cake_list.find ((e) => e._id === productId) 
 
   return (
     <div>

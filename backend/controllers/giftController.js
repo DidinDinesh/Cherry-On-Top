@@ -33,6 +33,7 @@ const addGift = async (req, res) => {
 // all gift list
 
 const listGift = async (req, res) => {
+
     try {
         const gifts = await giftModel.find({});
         res.json({success:true, data:gifts})
@@ -45,6 +46,7 @@ const listGift = async (req, res) => {
 // remove gift item
 
 const removeGift = async (req, res) => {
+    
     try {
         const gift = await giftModel.findById(req.body.id);
         fs.unlink(`uploads/${gift.image}`, () => {})

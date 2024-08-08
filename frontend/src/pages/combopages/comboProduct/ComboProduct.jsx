@@ -9,13 +9,17 @@ import ComboProductDisplay from "../../../components/comboProductDisplay/ComboPr
 const ComboProduct = () => {
 
   const { combo_list, loading } = useContext(StoreContext);
-    const { productId } = useParams();
+  const { productId } = useParams();
   
-    const product = combo_list.find ((e) => e._id === productId) 
+  const product = combo_list.find ((e) => e._id === productId) 
 
-    if (loading) {
-      return <p>Loading...</p>; 
-    }
+  if (loading) {
+    return (
+      <div className="loading">
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div>

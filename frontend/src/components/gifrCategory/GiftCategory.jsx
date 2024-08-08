@@ -4,9 +4,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
 
-const GiftCategory = ({giftGroup, setGiftGroup}) => {
+const GiftCategory = () => {
 
-  const { handleScrollToTop } = useContext(StoreContext);
+  const { handleScrollToTop, giftGroup, setGiftGroup } = useContext(StoreContext);
 
   const navigate = useNavigate();
   const location = useLocation();

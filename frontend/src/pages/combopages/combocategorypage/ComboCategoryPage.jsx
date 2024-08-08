@@ -6,17 +6,25 @@ import { StoreContext } from "../../../context/StoreContext";
 
 const ComboCategoryPage = () => {
 
-  const { combo_list, comboGroup, setComboGroup, handleScrollToTop, url } = useContext(StoreContext);
+  const { combo_list, comboGroup, setComboGroup, handleScrollToTop, url, loading } = useContext(StoreContext);
 
   const filtered_Combo = comboGroup === "All" ? combo_list : combo_list.filter(item => item.type.toLowerCase() === comboGroup.toLowerCase())
 
   const location = useLocation();
 
-useEffect(() => {
-  const pathParts = location.pathname.split('/');
-  const category = pathParts[pathParts.length - 1];
-  setComboGroup(decodeURIComponent(category));
-  }, [location.pathname, setComboGroup]);
+  useEffect(() => {
+    const pathParts = location.pathname.split('/');
+    const category = pathParts[pathParts.length - 1];
+    setComboGroup(decodeURIComponent(category));
+    }, [location.pathname, setComboGroup]);
+
+  if (loading) {
+    return (
+      <div className="loading">
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div>

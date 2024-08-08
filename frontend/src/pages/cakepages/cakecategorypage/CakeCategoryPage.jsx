@@ -6,20 +6,27 @@ import { StoreContext } from "../../../context/StoreContext"
 
 const CakeCategoryPage = () => {
 
-const { cake_list, cakeGroup, setCakeGroup, handleScrollToTop, url, loading } = useContext(StoreContext); 
+  const { cake_list, cakeGroup, setCakeGroup, handleScrollToTop, url, loading } = useContext(StoreContext); 
 
+  
+  const filtered_Cakes = cake_list.filter(item =>
+    item.type.map(type => type.toLowerCase()).includes(cakeGroup.toLowerCase()) || item.flavour.toLowerCase() === cakeGroup.toLowerCase())
 
+  const location = useLocation();
 
-const filtered_Cakes = cake_list.filter(item =>
-  item.type.map(type => type.toLowerCase()).includes(cakeGroup.toLowerCase()) || item.flavour.toLowerCase() === cakeGroup.toLowerCase())
+  useEffect(() => {
+    const pathParts = location.pathname.split('/');
+    const category = pathParts[pathParts.length - 1];
+    setCakeGroup(decodeURIComponent(category));
+    }, [location.pathname, setCakeGroup]);
 
-const location = useLocation();
-
-useEffect(() => {
-  const pathParts = location.pathname.split('/');
-  const category = pathParts[pathParts.length - 1];
-  setCakeGroup(decodeURIComponent(category));
-  }, [location.pathname, setCakeGroup]);
+    if (loading) {
+      return (
+        <div className="loading">
+          <p>Loading...</p>
+        </div>
+      );
+    }
 
   return (
     <div>

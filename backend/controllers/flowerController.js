@@ -34,6 +34,7 @@ const addFlower = async (req, res) => {
 // all flower list
 
 const listFlower = async (req, res) => {
+
     try {
         const flowers = await flowerModel.find({});
         res.json({success:true, data:flowers})
@@ -46,6 +47,7 @@ const listFlower = async (req, res) => {
 // remove flower item
 
 const removeFlower = async (req, res) => {
+    
     try {
         const flower = await flowerModel.findById(req.body.id);
         fs.unlink(`uploads/${flower.image}`, () => {})

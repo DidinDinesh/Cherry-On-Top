@@ -4,9 +4,9 @@ import { useNavigate, useLocation } from "react-router-dom"
 import { useContext, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
 
-const cakeCategory = ({cakeGroup, setCakeGroup}) => {
+const CakeCategory = () => {
 
-  const { handleScrollToTop } = useContext(StoreContext);
+  const { handleScrollToTop, cakeGroup, setCakeGroup } = useContext(StoreContext);
 
 
   const navigate = useNavigate();
@@ -54,4 +54,4 @@ const cakeCategory = ({cakeGroup, setCakeGroup}) => {
   )
 }
 
-export default cakeCategory
+export default CakeCategory

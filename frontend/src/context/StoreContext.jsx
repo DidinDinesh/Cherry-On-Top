@@ -4,26 +4,25 @@ import axios from 'axios'
 
 export const StoreContext = createContext(null);
 
-
 const StoreContextProvider = (props) => {
+
+    const url = "http://localhost:4000"
 
     const handleScrollToTop = () => {
         window.scrollTo(0, 0);
     };
-
-    const url = "http://localhost:4000"
     
     const [token,setToken] = useState("");
-
-    const [ cakeGroup, setCakeGroup ] = useState("All");
-    const [ giftGroup, setGiftGroup ] = useState("All");
-    const [ flowerGroup, setFlowerGroup ] = useState("All");
-    const [ comboGroup, setComboGroup ] = useState("All");
 
     const [cake_list, setCake_list ] = useState([]);
     const [gift_list, setGift_list ] = useState([]);
     const [flower_list, setFlower_list ] = useState([]);
     const [combo_list, setCombo_list ] = useState([]);
+
+    const [ cakeGroup, setCakeGroup ] = useState("All");
+    const [ giftGroup, setGiftGroup ] = useState("All");
+    const [ flowerGroup, setFlowerGroup ] = useState("All");
+    const [ comboGroup, setComboGroup ] = useState("All");
 
     const [loading, setLoading] = useState(true);
 
@@ -141,30 +140,30 @@ const StoreContextProvider = (props) => {
 
 
   const contextValue= {
-      url,
-      token,
-      setToken,
-      cake_list,
-      gift_list,
-      flower_list,
-      combo_list,
-      handleScrollToTop,
-      cartItems,
-      addToCart,
-      removeFromCart,
-      updateCartItem,
-      getTotalCartAmount,   
-      cakeGroup,
-      setCakeGroup,
-      giftGroup,
-      setGiftGroup,
-      flowerGroup,
-      setFlowerGroup,
-      comboGroup,
-      setComboGroup,
-      getTotalCartItems,
-      loading,
-      Total_Product_List
+    url,
+    handleScrollToTop,
+    token,
+    setToken,
+    cake_list,
+    gift_list,
+    flower_list,
+    combo_list,
+    cakeGroup,
+    setCakeGroup,
+    giftGroup,
+    setGiftGroup,
+    flowerGroup,
+    setFlowerGroup,
+    comboGroup,
+    setComboGroup,
+    cartItems,
+    addToCart,
+    removeFromCart,
+    updateCartItem,
+    getTotalCartAmount,   
+    getTotalCartItems,
+    loading,
+    Total_Product_List
   }
   
   return (

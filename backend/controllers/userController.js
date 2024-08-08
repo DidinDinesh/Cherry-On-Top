@@ -11,6 +11,7 @@ const createToken = (id) => {
 // login user
 
 const loginUser = async (req, res) => {
+
     const { email, password } = req.body;
     try {
         // checking email allready registered
@@ -39,6 +40,7 @@ const loginUser = async (req, res) => {
 // register user
 
 const registerUser = async (req, res) => {
+    
     const { name, password, email} = req.body;
     try {
 
