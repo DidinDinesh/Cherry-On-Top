@@ -1,7 +1,7 @@
 import './GiftCategory.css'
 import { gift_cat_list } from '../../assets/assets'
 import { useNavigate, useLocation } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
 
 const GiftCategory = () => {
@@ -18,16 +18,6 @@ const GiftCategory = () => {
       handleScrollToTop();
     }
   };
-
-  useEffect(() => {
-    const pathParts = location.pathname.split('/');
-    const category = pathParts[pathParts.length - 1];
-    if (location.pathname === '/gifts') {
-      setGiftGroup('All');
-    } else {
-      setGiftGroup(decodeURIComponent(category));
-    }
-  }, [location.pathname, setGiftGroup]);
 
   return (
     <div className="gift-category">

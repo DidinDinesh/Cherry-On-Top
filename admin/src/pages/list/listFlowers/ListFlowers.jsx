@@ -2,6 +2,7 @@ import './ListFlowers.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { toast } from "react-toastify"
+import { Link } from 'react-router-dom'
 
 const ListFlowers = ({url}) => {
 
@@ -51,7 +52,10 @@ const ListFlowers = ({url}) => {
               <p>{item.name}</p>
               <p>{item.type}</p>
               <p>&#8377; {item.price}</p>
-              <p onClick={() => removeFlower(item._id)} className="cursor">X</p>
+              <div className="actions">
+                <Link to={`/editflower/${item._id}`} className="cursor list-edit-btn">Edit</Link>
+                <p onClick={() => removeFlower(item._id)} className="cursor">X</p>
+              </div>
             </div>
           )
         })}

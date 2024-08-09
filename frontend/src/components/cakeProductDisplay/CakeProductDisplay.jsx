@@ -33,10 +33,6 @@ const CakeProductDisplay = ({product}) => {
           <h1>Weight</h1>
           <div className="cakeproductdisplay-right-weights">
             <div>0.5kg</div>
-            <div>1kg</div>
-            <div>1.5kg</div>
-            <div>2kg</div>
-            <div>3kg</div>
           </div>
         </div>
         <button onClick={() => addToCart(product._id)}>ADD TO CART</button>

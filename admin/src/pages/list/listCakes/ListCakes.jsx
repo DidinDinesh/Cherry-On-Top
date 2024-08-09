@@ -2,6 +2,7 @@ import './ListCakes.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { toast } from "react-toastify"
+import { Link } from 'react-router-dom'
 
 const ListCakes = ({url}) => {
 
@@ -50,7 +51,10 @@ const ListCakes = ({url}) => {
               <p>{item.name}</p>
               <p>{item.flavour}</p>
               <p>&#8377; {item.price}</p>
-              <p onClick={() => removeCake(item._id)} className="cursor">X</p>
+              <div className="actions">
+                <Link to={`/editcake/${item._id}`} className="cursor list-edit-btn">Edit</Link>
+                <p onClick={() => removeCake(item._id)} className="cursor">X</p>
+              </div>
             </div>
           )
         })}

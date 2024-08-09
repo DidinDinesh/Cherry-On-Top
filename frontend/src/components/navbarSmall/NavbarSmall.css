@@ -66,7 +66,7 @@
     color: tomato;
 }
 
-@media (max-width:900px) {
+@media (max-width:985px) {
 
     .navbar-small {
         height: 4vh;
@@ -94,9 +94,9 @@
     }
 }
 
-@media (max-width:600px) {
+@media (max-width:705px) {
     .navbar-small {
-        width: 60%;
+        width: 70%;
     }
 
     .nav-menu .menu-title {
@@ -117,7 +117,7 @@
     }
 }
 
-@media (max-width:400px) {
+@media (max-width:475px) {
     .nav-menu .menu-title {
         font-size: 10px;
     }

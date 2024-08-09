@@ -19,6 +19,7 @@ const addCake = async (req,res) => {
             category: req.body.category,
             flavour: req.body.flavour,
             type: req.body.type,
+            occasion : req.body.occasion,
             image: image_filename
         });
       
@@ -58,4 +59,30 @@ const removeCake = async (req,res) => {
     }
 }
 
-export { addCake, listCake,removeCake }
+//api for updating cake price and types 
+
+const updateCake = async (req, res) => {
+    try {
+        if ( req.body.type.length === 0) {
+            return res.status(400).json({ success: false, message: "Type array cannot be empty" });
+        }
+
+        if (req.body.price <= 0) {
+            return res.status(400).json({ success: false, message: "Price must be greater than zero" });
+        }
+
+        // Update the cake
+        
+        await cakeModel.findByIdAndUpdate(req.body.itemId, {
+            type: req.body.type,
+            price: req.body.price
+        });
+
+        res.json({ success: true, message: "Item updated" });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" });
+    }
+};
+
+export { addCake, listCake,removeCake,updateCake }

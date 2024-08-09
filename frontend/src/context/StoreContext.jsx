@@ -23,6 +23,7 @@ const StoreContextProvider = (props) => {
     const [ giftGroup, setGiftGroup ] = useState("All");
     const [ flowerGroup, setFlowerGroup ] = useState("All");
     const [ comboGroup, setComboGroup ] = useState("All");
+    const [ occasionGroup, setOccasionGroup ] = useState("All");
 
     const [loading, setLoading] = useState(true);
 
@@ -156,6 +157,8 @@ const StoreContextProvider = (props) => {
     setFlowerGroup,
     comboGroup,
     setComboGroup,
+    occasionGroup,
+    setOccasionGroup,
     cartItems,
     addToCart,
     removeFromCart,

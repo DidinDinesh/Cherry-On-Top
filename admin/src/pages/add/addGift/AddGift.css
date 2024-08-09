@@ -31,14 +31,17 @@
     padding: 10px;
 }
 
-.add-category {
-    display: flex;
-    width: 38%;
+.add-type{
+    width: 150px;
+    margin-bottom: 30px;
 }
 
-.add-type {
-    width: 90%;
-    flex-direction: column;
+.add-towho {
+    margin-bottom: 30px;
+}
+
+.add-occasion {
+    margin-bottom: 30px;
 }
 
 
@@ -54,16 +57,4 @@
     background-color: black;
     color: white;
     cursor: pointer;
-}
-
-@media(max-width:700px) {
-    .add-category {
-        width: 60%;
-    }
-}
-
-@media(max-width:500px) {
-    .add-category {
-        width: 85%;
-    }
 }

@@ -7,7 +7,8 @@ const giftSchema = new mongoose.Schema({
     image : {type:String, required:true},
     category : {type:String, required:true},
     type : {type:String, required:true},
-    towho : {type:Array, required:true}
+    towho : {type:Array, required:true},
+    occasion : {type:Array, required:true}
 })
 
 const giftModel = mongoose.models.gift || mongoose.model("gift", giftSchema)

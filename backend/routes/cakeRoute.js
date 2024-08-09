@@ -1,5 +1,5 @@
 import express from 'express'
-import { addCake, listCake, removeCake } from "../controllers/cakeController.js"
+import { addCake, listCake, removeCake, updateCake } from "../controllers/cakeController.js"
 import multer from "multer"
 
 const cakeRouter = express.Router();
@@ -18,6 +18,7 @@ const upload = multer({storage:storage})
 cakeRouter.post("/add", upload.single("image"), addCake)
 cakeRouter.get("/list",listCake)
 cakeRouter.post("/remove",removeCake)
+cakeRouter.post("/edit", updateCake)
 
 
 

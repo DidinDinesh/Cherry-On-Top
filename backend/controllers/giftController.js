@@ -20,6 +20,7 @@ const addGift = async (req, res) => {
             category: req.body.category,
             type: req.body.type,
             towho: req.body.towho,
+            occasion : req.body.occasion,
             image: image_filename
         })
         await gift.save()
@@ -58,4 +59,22 @@ const removeGift = async (req, res) => {
     }
 }
 
-export { addGift, listGift, removeGift }
+//api for updating gift price
+
+const updateGift = async (req, res) => {
+    try {
+        if (req.body.price <= 0) {
+            return res.status(400).json({ success: false, message: "Price must be greater than zero" });
+        }
+
+        // Update the gift
+        
+        await giftModel.findByIdAndUpdate(req.body.itemId, {price: req.body.price});
+        res.json({ success: true, message: "Item updated" });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" });
+    }
+};
+
+export { addGift, listGift, removeGift, updateGift }

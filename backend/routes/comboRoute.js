@@ -1,5 +1,5 @@
 import express from 'express'
-import { addCombo, listCombo, removeCombo } from "../controllers/comboController.js"
+import { addCombo, listCombo, removeCombo, updateCombo } from "../controllers/comboController.js"
 import multer from "multer"
 
 const comboRouter = express.Router();
@@ -18,5 +18,6 @@ const upload = multer({storage:storage})
 comboRouter.post("/add", upload.single("image"), addCombo)
 comboRouter.get("/list", listCombo)
 comboRouter.post("/remove", removeCombo)
+comboRouter.post("/edit", updateCombo)
 
 export default comboRouter;

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 
 const Cart = () => {
 
-  const {cartItems, removeFromCart, updateCartItem, getTotalCartAmount, Total_Product_List, url } = useContext(StoreContext);
+  const {cartItems, removeFromCart, updateCartItem, getTotalCartAmount, Total_Product_List, url, token } = useContext(StoreContext);
 
   const navigate = useNavigate();
 
@@ -24,6 +24,16 @@ const Cart = () => {
 
     if (invalidKeys.includes(event.key))  {
       event.preventDefault();
+    }
+  };
+
+  const handleProceedToCheckout = () => {
+    if (!token) {
+      alert("Please sign in to proceed to checkout."); 
+    } else if (getTotalCartAmount() === 0) {
+      alert("Your cart is empty. Please add items to your cart before proceeding."); 
+    } else {
+      navigate("/placeorder");
     }
   };
 
@@ -77,7 +87,7 @@ const Cart = () => {
               <b>&#8377;{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 50}</b>
             </div>
           </div>
-          <button onClick={() => navigate("/placeorder")}>PROCEED TO CHECKOUT</button>
+          <button onClick={handleProceedToCheckout}>PROCEED TO CHECKOUT</button>
         </div>
         <div className="cart-promocode">
           <div>

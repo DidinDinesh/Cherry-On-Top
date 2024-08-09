@@ -9,13 +9,13 @@ const NavbarBIg = ({setShowLogin}) => {
 
   const [ toggle, setToggle ] = useState('');
 
-  
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleToggleMenu = () => {
   setToggle(toggle === '' ? 'show-menu' : '');
   };
 
-  const { getTotalCartAmount, getTotalCartItems, token, setToken } = useContext(StoreContext);
+  const { getTotalCartItems, token, setToken, handleScrollToTop } = useContext(StoreContext);
 
   const navigate = useNavigate();
 
@@ -25,17 +25,23 @@ const NavbarBIg = ({setShowLogin}) => {
     navigate("/");
   }
 
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?query=${searchQuery}`); 
+    }
+  };
 
   return (
       <div className="navbar-big">
         <Link to="/"><img src={assets.logo} alt="" className="logo" /></Link>
         <div className="navbar-left">
-          <div className="navbar-search">
-            <input type="text" placeholder='Search a product'/>
-            <button className="search-btn">
+          <form onSubmit={handleSearchSubmit} className="navbar-search">
+            <input onChange={(event) => setSearchQuery(event.target.value)} value={searchQuery} type="text" placeholder='Search a product'/>
+            <button onClick={handleScrollToTop} type="sumbit" className="search-btn">
               <img src={assets.search_icon} alt="search"/>
           </button>
-          </div>
+          </form>
         </div>
         <div className={`navbar-middle ${toggle}`}>
           <div className="navbar-close" onClick={handleToggleMenu}>

@@ -33,6 +33,11 @@
 
 .add-type {
     width: 150px;
+    margin-bottom: 30px;
+}
+
+.add-occasion {
+    margin-bottom: 30px;
 }
 
 .add-price input {

@@ -32,8 +32,17 @@
     margin-right: auto;
 }
 
-.cursor {
-    cursor: pointer;
+.actions {
+    display: flex;
+    justify-content: space-around;
+}
+  
+.list-edit-btn {
+color: blue;
+}
+  
+.list-edit-btn:hover {
+color: darkblue;
 }
 
 @media (max-width:600px) {

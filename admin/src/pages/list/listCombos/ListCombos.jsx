@@ -2,6 +2,7 @@ import './ListCombos.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { toast } from "react-toastify"
+import { Link } from 'react-router-dom'
 
 
 const ListCombos = ({url}) => {
@@ -51,7 +52,10 @@ const ListCombos = ({url}) => {
               <p>{item.name}</p>
               <p>{item.type}</p>
               <p>&#8377; {item.price}</p>
-              <p onClick={() => removeCombo(item._id)} className="cursor">X</p>
+              <div className="actions">
+                <Link to={`/editcombo/${item._id}`} className="cursor list-edit-btn">Edit</Link>
+                <p onClick={() => removeCombo(item._id)} className="cursor">X</p>
+              </div>
             </div>
           )
         })}

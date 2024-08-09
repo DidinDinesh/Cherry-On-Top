@@ -7,7 +7,8 @@ const flowerSchema = new mongoose.Schema({
     image : {type:String, required:true},
     category : {type:String, required:true},
     type : {type:String, required:true},
-    color : {type:String, required:true}
+    color : {type:String, required:true},
+    occasion : {type:Array, required:true}
 })
 
 const flowerModel = mongoose.models.flower || mongoose.model("flower", flowerSchema)

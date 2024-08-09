@@ -1,6 +1,6 @@
 
 import express from 'express'
-import { addGift, listGift, removeGift } from "../controllers/giftController.js"
+import { addGift, listGift, removeGift, updateGift } from "../controllers/giftController.js"
 import multer from "multer"
 
 const giftRouter = express.Router();
@@ -19,5 +19,6 @@ const upload = multer({storage:storage})
 giftRouter.post("/add", upload.single("image"), addGift)
 giftRouter.get("/list", listGift)
 giftRouter.post("/remove", removeGift)
+giftRouter.post("/edit", updateGift)
 
 export default giftRouter;

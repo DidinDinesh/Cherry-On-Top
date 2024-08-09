@@ -1,0 +1,44 @@
+
+.editcake {
+    width: 50%;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.edit-type {
+    margin-bottom: 20px;
+}
+
+.edit-price {
+    margin-bottom: 20px;
+}
+
+.edit-price input {
+    width: 100px;
+    padding: 10px;
+}
+
+.edit-type p,
+.edit-price p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.edit-type label,
+.edit-price input {
+    margin-bottom: 10px;
+}
+
+.edit-btn {
+    padding: 10px 20px;
+    background-color: #50b367;
+    color: white;
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #2aad46;
+}

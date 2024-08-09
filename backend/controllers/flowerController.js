@@ -21,6 +21,7 @@ const addFlower = async (req, res) => {
             category: req.body.category,
             type: req.body.type,
             color: req.body.color,
+            occasion : req.body.occasion,
             image: image_filename
         })
         await flower.save()
@@ -59,4 +60,22 @@ const removeFlower = async (req, res) => {
     }
 }
 
-export { addFlower, listFlower, removeFlower }
+//api for updating flower price
+
+const updateFlower = async (req, res) => {
+    try {
+        if (req.body.price <= 0) {
+            return res.status(400).json({ success: false, message: "Price must be greater than zero" });
+        }
+
+        // Update the flower
+        
+        await flowerModel.findByIdAndUpdate(req.body.itemId, {price: req.body.price});
+        res.json({ success: true, message: "Item updated" });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" });
+    }
+};
+
+export { addFlower, listFlower, removeFlower, updateFlower }

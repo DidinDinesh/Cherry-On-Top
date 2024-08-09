@@ -84,12 +84,12 @@ const AboutUs = () => {
             Share your Cherry on Top moments with us using #CherryOnTopCelebrations.</p>
         </div>
         <div className="aboutus-social-apps">
-            <img src={assets.facebook} alt="" />
-            <img src={assets.whatsapp} alt="" />
-            <img src={assets.instagram} alt="" />
-            <img src={assets.twitter} alt="" />
-            <img src={assets.youtube} alt="" />
-            <img src={assets.linkdin} alt="" />
+            <img onClick={() => window.location.href = "https://www.facebook.com/didin.dineshan/"} src={assets.facebook} alt="" />
+            <img onClick={() => window.open("https://wa.me/918156890206?text=Hello! I’m interested in placing an order and would like some assistance. Could you please provide me with information on your available options, pricing, and delivery details? Thank you!")} src={assets.whatsapp} alt="" />
+            <img onClick={() => window.location.href = "https://www.instagram.com/cherryontop_homecakes/"} src={assets.instagram} alt="" />
+            <img onClick={() => window.location.href = "https://x.com/didindinesh5"} src={assets.twitter} alt="" />
+            <img onClick={() => window.location.href = "https://www.youtube.com/@didindinesh5870"} src={assets.youtube} alt="" />
+            <img onClick={() => window.location.href = "https://www.linkedin.com/in/didin-a-619714152/"} src={assets.linkdin} alt="" />
         </div>
       </div>
     </div>

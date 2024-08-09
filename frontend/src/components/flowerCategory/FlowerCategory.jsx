@@ -1,7 +1,7 @@
 import './FlowerCategory.css'
 import { flower_cat_list } from '../../assets/assets'
 import { useNavigate, useLocation } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
 
 const FlowerCategory = () => {
@@ -18,16 +18,6 @@ const FlowerCategory = () => {
       handleScrollToTop();
     }
   };
-
-  useEffect(() => {
-    const pathParts = location.pathname.split('/');
-    const category = pathParts[pathParts.length - 1];
-    if (location.pathname === '/flowers') {
-      setFlowerGroup('All');
-    } else {
-      setFlowerGroup(decodeURIComponent(category));
-    }
-  }, [location.pathname, setFlowerGroup]);
 
   return (
     <div className="flower-category">

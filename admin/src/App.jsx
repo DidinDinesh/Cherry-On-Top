@@ -13,12 +13,17 @@ import ListCombos from './pages/list/listCombos/ListCombos'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Orders from "./pages/orders/Orders"
+import EditCake from "./pages/edit/editcake/EditCake"
+import EditGift from "./pages/edit/editgift/EditGift"
+import EditFlower from "./pages/edit/editflower/EditFlower"
+import EditCombo from "./pages/edit/editcombo/EditCombo"
 
 
 
 const App = () => {
 
   const url = "http://localhost:4000";
+
 
   return (
     <div>
@@ -37,6 +42,10 @@ const App = () => {
         <Route path="/listflowers" element={<ListFlowers url={url}/>} />
         <Route path="/listcombos" element={<ListCombos url={url}/>} />
         <Route path="/order" element={<Orders url={url}/>} />
+        <Route path="/editcake/:itemId" element={<EditCake url={url} />} />
+        <Route path="/editgift/:itemId" element={<EditGift url={url} />} />
+        <Route path="/editflower/:itemId" element={<EditFlower url={url} />} />
+        <Route path="/editcombo/:itemId" element={<EditCombo url={url} />} />
       </Routes>
       </div>
     </div>

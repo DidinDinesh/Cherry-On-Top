@@ -20,6 +20,7 @@ const addCombo = async (req, res) => {
             price: req.body.price,
             category: req.body.category,
             type: req.body.type,
+            occasion : req.body.occasion,
             image: image_filename
         })
 
@@ -59,4 +60,22 @@ const removeCombo = async (req, res) => {
     }
 }
 
-export { addCombo, listCombo, removeCombo }
+//api for updating combo price
+
+const updateCombo = async (req, res) => {
+    try {
+        if (req.body.price <= 0) {
+            return res.status(400).json({ success: false, message: "Price must be greater than zero" });
+        }
+
+        // Update the combo
+        
+        await comboModel.findByIdAndUpdate(req.body.itemId, {price: req.body.price});
+        res.json({ success: true, message: "Item updated" });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" });
+    }
+};
+
+export { addCombo, listCombo, removeCombo, updateCombo }

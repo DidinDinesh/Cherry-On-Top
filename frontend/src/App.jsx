@@ -23,6 +23,8 @@ import Cart from './pages/cart/Cart'
 import PlaceOrder from "./pages/placeorder/PlaceOrder"
 import Verify from "./pages/verify/Verify"
 import MyOrders from "./pages/myOrders/MyOrders"
+import SearchResults from "./pages/searchresults/SearchResults"
+import Occasion from "./pages/occasion/Occasion"
 
 
 const App = () => {
@@ -52,10 +54,12 @@ const App = () => {
               <Route path="/combos" element={<AllCombo/>} />
               <Route path="/combos/category/:categoryName" element={<ComboCategoryPage/>} />
               <Route path="/combos/:productId" element={<ComboProduct/>} />
+              <Route path="/occasions/:categoryName" element={<Occasion/>} />
               <Route path="/cart" element={<Cart/>} />
               <Route path="/placeorder" element={<PlaceOrder/>} />
               <Route path="/verify" element={<Verify/>} />
               <Route path="/myorders" element={<MyOrders/>} />
+              <Route path="/search" element={<SearchResults/>} />
           </Routes>
         </div>
       </div>

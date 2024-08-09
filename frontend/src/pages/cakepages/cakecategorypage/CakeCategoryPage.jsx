@@ -12,13 +12,13 @@ const CakeCategoryPage = () => {
   const filtered_Cakes = cake_list.filter(item =>
     item.type.map(type => type.toLowerCase()).includes(cakeGroup.toLowerCase()) || item.flavour.toLowerCase() === cakeGroup.toLowerCase())
 
-  const location = useLocation();
+    const location = useLocation();
 
-  useEffect(() => {
-    const pathParts = location.pathname.split('/');
-    const category = pathParts[pathParts.length - 1];
-    setCakeGroup(decodeURIComponent(category));
-    }, [location.pathname, setCakeGroup]);
+    useEffect(() => {
+      const pathParts = location.pathname.split('/');
+      const category = pathParts[pathParts.length - 1];
+      setCakeGroup(decodeURIComponent(category));
+      }, [location.pathname, setCakeGroup]);
 
     if (loading) {
       return (

@@ -30,13 +30,18 @@
     padding: 10px;
 }
 
-.add-category {
-    display: flex;
-    gap: 50px;
+.add-type{
+    width: 150px;
+    margin-bottom: 30px;
 }
 
-.add-type {
-    width: 100px;
+.add-color {
+    width: 150px;
+    margin-bottom: 30px;
+}
+
+.add-occasion {
+    margin-bottom: 30px;
 }
 
 

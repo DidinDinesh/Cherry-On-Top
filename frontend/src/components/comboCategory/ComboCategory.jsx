@@ -1,7 +1,7 @@
 import './ComboCategory.css'
 import { combo_cat_list } from '../../assets/assets'
 import { useNavigate, useLocation } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
 
 const ComboCategory = () => {
@@ -18,16 +18,6 @@ const ComboCategory = () => {
       handleScrollToTop();
     }
   };
-
-  useEffect(() => {
-    const pathParts = location.pathname.split('/');
-    const category = pathParts[pathParts.length - 1];
-    if (location.pathname === '/combos') {
-      setComboGroup('All');
-    } else {
-      setComboGroup(decodeURIComponent(category));
-    }
-  }, [location.pathname, setComboGroup]);
 
   return (
     <div className="combo-category">

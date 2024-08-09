@@ -7,7 +7,8 @@ const cakeSchema = new mongoose.Schema({
     image : {type:String, required:true},
     category : {type:String, required:true},
     flavour : {type:String, required:true},
-    type : {type:Array, required:true}
+    type : {type:Array, required:true},
+    occasion : {type:Array, required:true}
 })
 
 const cakeModel = mongoose.models.cake || mongoose.model("cake", cakeSchema)

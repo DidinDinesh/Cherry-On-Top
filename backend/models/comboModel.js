@@ -6,7 +6,8 @@ const comboSchema = new mongoose.Schema({
     price : {type:Number, required:true},
     image : {type:String, required:true},
     category : {type:String, required:true},
-    type : {type:String, required:true}
+    type : {type:String, required:true},
+    occasion : {type:Array, required:true}
 })
 
 const comboModel = mongoose.models.combo || mongoose.model("combo", comboSchema)

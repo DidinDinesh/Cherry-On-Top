@@ -41,6 +41,10 @@
     cursor: pointer;
 }
 
+.occasion-category-card.active {
+    background-color: #3eb6f3;
+}
+
 .occasion-category-card:hover {
     transform: translateY(-5px);
 }
