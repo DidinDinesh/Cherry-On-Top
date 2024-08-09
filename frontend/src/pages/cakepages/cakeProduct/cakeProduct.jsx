@@ -1,5 +1,5 @@
 
-import './CakeProduct.css'
+import './cakeProduct.css'
 import { useContext } from "react"
 import { StoreContext } from "../../../context/StoreContext"
 import { useParams } from "react-router-dom";
