@@ -22,7 +22,7 @@ import EditCombo from "./pages/edit/editcombo/EditCombo"
 
 const App = () => {
 
-  const url = "http://localhost:4000";
+  const url = "https://cherry-on-top-backend.onrender.com";
 
 
   return (
