@@ -3,25 +3,39 @@ import { useContext } from "react";
 import { Link, NavLink } from 'react-router-dom'
 import { StoreContext } from "../../context/StoreContext";
 import { assets } from '../../assets/assets'
+import { useState } from "react";
 
 const Sidebar = ({handleToggleMenu, toggle}) => {
 
     const { setCakeGroup, setGiftGroup, setFlowerGroup, setComboGroup, setOccasionGroup, handleScrollToTop } = useContext(StoreContext);
+
+    const [activeDropdown, setActiveDropdown] = useState(null);
 
     const handleCategoryClick = (setGroupFunction, category) => {
       setGroupFunction(category);
       handleScrollToTop();
     };
 
+    const toggleDropdown = (menuName) => {
+        setActiveDropdown(activeDropdown === menuName ? null : menuName);
+    };
+
   return (
     <div className={`sidebar ${toggle}`}>
+        <div className="sidebar-navbar-logo">
+            <img src={assets.logo} alt="" />
+        </div>
         <div className="sidebar-navbar-close" onClick={handleToggleMenu}>
             <img src={assets.close_icon} alt="" />
         </div>
         <div className="sidebar-navbar-small">
-            <div className="sidebar-nav-menu">
-                <Link className="sidebar-menu-title" to="/cakes" onClick={() => handleCategoryClick(setCakeGroup, "All")}>Cakes</Link>
-                <div className="sidebar-dropdown">
+            <div className="sidebar-navbar-menu">
+                <div className="sidebar-menu-title" onClick={() => toggleDropdown('Cakes')}>
+                    <p> Cakes </p>
+                    <img className={`sidebar-icon-down ${activeDropdown === 'Cakes' ? 'active' : ''}`} src={assets.down_icon} alt="" />
+                    <img className={`sidebar-icon-up ${activeDropdown === 'Cakes' ? 'active' : ''}`} src={assets.up_icon} alt="" />
+                </div>
+                <div className={`sidebar-dropdown ${activeDropdown === 'Cakes' ? 'active' : ''}`}>
                     <div className="sidebar-dropdown-column">
                         <strong>By type</strong>
                         <ul className="sidebar-dropdown-column-lists">
@@ -59,9 +73,13 @@ const Sidebar = ({handleToggleMenu, toggle}) => {
                 </div>
             </div>
             
-            <div className="sidebar-nav-menu">
-                <Link className="sidebar-menu-title" to="/gifts" onClick={() => handleCategoryClick(setGiftGroup, "All")}>Gifts</Link>
-                <div className="sidebar-dropdown">
+            <div className="sidebar-navbar-menu">
+                <div className="sidebar-menu-title" onClick={() => toggleDropdown('Gifts')}>
+                    <p> Gifts </p>
+                    <img className={`sidebar-icon-down ${activeDropdown === 'Gifts' ? 'active' : ''}`} src={assets.down_icon} alt="" />
+                    <img className={`sidebar-icon-up ${activeDropdown === 'Gifts' ? 'active' : ''}`} src={assets.up_icon} alt="" />
+                </div>
+                <div className={`sidebar-dropdown ${activeDropdown === 'Gifts' ? 'active' : ''}`}>
                     <div className="sidebar-dropdown-column">
                         <strong>By type</strong>
                         <ul className="sidebar-dropdown-column-lists">
@@ -83,9 +101,13 @@ const Sidebar = ({handleToggleMenu, toggle}) => {
                 </div>
             </div>
 
-            <div className="sidebar-nav-menu">
-                <Link className="sidebar-menu-title" to="/flowers" onClick={() => handleCategoryClick(setFlowerGroup, "All")}>Flowers</Link>
-                <div className="sidebar-dropdown">
+            <div className="sidebar-navbar-menu">
+                <div className="sidebar-menu-title" onClick={() => toggleDropdown('Flowers')}>
+                    <p> Flowers </p>
+                    <img className={`sidebar-icon-down ${activeDropdown === 'Flowers' ? 'active' : ''}`} src={assets.down_icon} alt="" />
+                    <img className={`sidebar-icon-up ${activeDropdown === 'Flowers' ? 'active' : ''}`} src={assets.up_icon} alt="" />
+                </div>
+                <div className={`sidebar-dropdown ${activeDropdown === 'Flowers' ? 'active' : ''}`}>
                     <div className="sidebar-dropdown-column">
                         <strong>By type</strong>
                         <ul className="sidebar-dropdown-column-lists">
@@ -109,35 +131,40 @@ const Sidebar = ({handleToggleMenu, toggle}) => {
                 </div>
             </div>
 
-            <div className="sidebar-nav-menu">
-                <Link className="sidebar-menu-title" to="/combos" onClick={() => handleCategoryClick(setComboGroup, "All")}>Combos</Link>
-                <div className="sidebar-dropdown">
+            <div className="sidebar-navbar-menu">
+                <div className="sidebar-menu-title" onClick={() => toggleDropdown('Combos')}>
+                    <p> Combos </p>
+                    <img className={`sidebar-icon-down ${activeDropdown === 'Combos' ? 'active' : ''}`} src={assets.down_icon} alt="" />
+                    <img className={`sidebar-icon-up ${activeDropdown === 'Combos' ? 'active' : ''}`} src={assets.up_icon} alt="" />
+                </div>
+                <div className={`sidebar-dropdown ${activeDropdown === 'Combos' ? 'active' : ''}`}>
                     <div className="sidebar-dropdown-column">
-                        <strong>By type</strong>
+                        <strong>Cake combo</strong>
                         <ul className="sidebar-dropdown-column-lists">
-                            <Link to="/combos" onClick={() => handleCategoryClick(setComboGroup, "All")}>All Combos</Link>
-                            <Link to={`/combos/category/${encodeURIComponent("Flower Combos")}`} onClick={() => handleCategoryClick(setComboGroup, "Flower Combos")}>Flower Combos</Link>
-                            <Link to={`/combos/category/${encodeURIComponent("Gift Combos")}`} onClick={() => handleCategoryClick(setComboGroup, "Gift Combos")}>Gift Combos</Link>
-                            <Link to={`/combos/category/${encodeURIComponent("Chocolate Combos")}`} onClick={() => handleCategoryClick(setComboGroup, "Chocolate Combos")}>Chocolate Combos</Link>
-                            <Link to={`/combos/category/${encodeURIComponent("Cake Combos")}`} onClick={() => handleCategoryClick(setComboGroup, "Cake Combos")}>Cake Combos</Link>
+                            <Link to="/combos" onClick={() => handleCategoryClick(setComboGroup, "All")}>All combo</Link>
+                            <Link to={`/combos/category/${encodeURIComponent("Cake & Flower")}`} onClick={() => handleCategoryClick(setComboGroup, "Cake & Flower")}>Cake & Flower</Link>
+                            <Link to={`/combos/category/${encodeURIComponent("Cake & Gift")}`} onClick={() => handleCategoryClick(setComboGroup, "Cake & Gift")}>Cake & Gift</Link>
+                            <Link to={`/combos/category/${encodeURIComponent("Cake & Choclate")}`} onClick={() => handleCategoryClick(setComboGroup, "Cake & Choclate")}>Cake & Choclate</Link>
                         </ul>
                     </div>
                     <div className="sidebar-dropdown-column">
-                        <strong>By Occasion</strong>
+                        <strong>Other Combos</strong>
                         <ul className="sidebar-dropdown-column-lists">
-                            <Link to={`/combos/category/${encodeURIComponent("Birthday")}`} onClick={() => handleCategoryClick(setComboGroup, "Birthday")}>Birthday</Link>
-                            <Link to={`/combos/category/${encodeURIComponent("Anniversary")}`} onClick={() => handleCategoryClick(setComboGroup, "Anniversary")}>Anniversary</Link>
-                            <Link to={`/combos/category/${encodeURIComponent("Valentine's Day")}`} onClick={() => handleCategoryClick(setComboGroup, "Valentine's Day")}>Valentine's Day</Link>
-                            <Link to={`/combos/category/${encodeURIComponent("Congratulations")}`} onClick={() => handleCategoryClick(setComboGroup, "Congratulations")}>Congratulations</Link>
-                            <Link to={`/combos/category/${encodeURIComponent("Wedding")}`} onClick={() => handleCategoryClick(setComboGroup, "Wedding")}>Wedding</Link>
+                            <Link to={`/combos/category/${encodeURIComponent("Flower & Gift")}`} onClick={() => handleCategoryClick(setComboGroup, "Flower & Gift")}>Flower & Gift</Link>
+                            <Link to={`/combos/category/${encodeURIComponent("Flower & Choclate")}`} onClick={() => handleCategoryClick(setComboGroup, "Flower & Choclate")}>Flower & Choclate</Link>
+                            <Link to={`/combos/category/${encodeURIComponent("Gift & Choclate")}`} onClick={() => handleCategoryClick(setComboGroup, "Gift & Choclate")}>Gift & Choclate</Link>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div className="sidebar-nav-menu">
-                <Link className="sidebar-menu-title" to="/occasions" onClick={() => handleCategoryClick(setOccasionGroup, "All")}>Occasions</Link>
-                <div className="sidebar-dropdown">
+            <div className="sidebar-navbar-menu">
+                <div className="sidebar-menu-title" onClick={() => toggleDropdown('Occasions')}>
+                    <p> Occasions </p>
+                    <img className={`sidebar-icon-down ${activeDropdown === 'Occasions' ? 'active' : ''}`} src={assets.down_icon} alt="" />
+                    <img className={`sidebar-icon-up ${activeDropdown === 'Occasions' ? 'active' : ''}`} src={assets.up_icon} alt="" />
+                </div>
+                <div className={`sidebar-dropdown ${activeDropdown === 'Occasions' ? 'active' : ''}`}>
                     <div className="sidebar-dropdown-column">
                     <strong>Personal</strong>
                         <ul className="sidebar-dropdown-column-lists">
@@ -151,7 +178,7 @@ const Sidebar = ({handleToggleMenu, toggle}) => {
                     </div>
                     <div className="sidebar-dropdown-column">
                         <strong>Festivals</strong>
-                        <ul className="dropdown-column-lists">
+                        <ul className="sidebar-dropdown-column-lists">
                             <Link to={`/occasions/${encodeURIComponent("Christmas")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Christmas")}>Christmas</Link>
                             <Link to={`/occasions/${encodeURIComponent("New year")}`} onClick={() => handleCategoryClick(setOccasionGroup, "New year")}>New year</Link>
                             <Link to={`/occasions/${encodeURIComponent("Onam")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Onam")}>Onam</Link>
@@ -167,7 +194,7 @@ const Sidebar = ({handleToggleMenu, toggle}) => {
                 <NavLink to="/about" >About us</NavLink>
                 <NavLink to="/Contact" >Conatct us</NavLink>
             </ul>
-            </div>
+        </div>
     </div>
   )
 }

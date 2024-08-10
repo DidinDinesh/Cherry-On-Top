@@ -38,8 +38,8 @@ import user_icon from './icons/icons8-user-32.png'
 import order_icon from './icons/icons8-shopping-bag-32.png'
 import logout_icon from './icons/icons8-logout-32.png'
 import parcel_icon from './icons/icons8-parcel-96.png'
-
-
+import down_icon from './icons/bx-chevron-down .svg'
+import up_icon from './icons/bx-chevron-up.svg'
 
 
 import cake from './category/cake.png'
@@ -157,7 +157,9 @@ export const assets = {
     user_icon,
     order_icon,
     logout_icon,
-    parcel_icon
+    parcel_icon,
+    down_icon,
+    up_icon
 }
 
 export const banners = [
