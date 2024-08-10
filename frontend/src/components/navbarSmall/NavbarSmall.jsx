@@ -141,7 +141,14 @@ const NavbarSmall = () => {
                 <Link to={`/occasions/${encodeURIComponent("Wedding")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Wedding")}>Wedding</Link>
               </ul>
             </div>
-            
+            <div className="dropdown-column">
+              <ul className="dropdown-column-lists">
+                <Link to={`/occasions/${encodeURIComponent("Housewarming")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Housewarming")}>Housewarming</Link>
+                <Link to={`/occasions/${encodeURIComponent("Christmas")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Christmas")}>Christmas</Link>
+                <Link to={`/occasions/${encodeURIComponent("New year")}`} onClick={() => handleCategoryClick(setOccasionGroup, "New year")}>New year</Link>
+                <Link to={`/occasions/${encodeURIComponent("Onam")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Onam")}>Onam</Link>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
