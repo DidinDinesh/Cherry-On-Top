@@ -110,6 +110,20 @@
     border-radius: 4px;
 }
 
+.cart-empty-message {
+    display: none;
+}
+
+.cart-empty-message h2 {
+    color: tomato;
+    text-align: center;
+    padding: 40px 40px;
+}
+
+.cart-empty-message.active{
+    display: block;
+}
+
 @media (max-width:750px) {
     .cart-bottom {
         flex-direction: column-reverse;

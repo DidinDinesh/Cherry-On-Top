@@ -68,6 +68,9 @@ const Cart = () => {
           }8n
         })}
       </div>
+      <div className={`cart-empty-message ${getTotalCartAmount() === 0 ? 'active' : ''}`}>
+        <h2>Your cart is empty</h2>
+      </div>
       <div className="cart-bottom">
         <div className="cart-total">
           <h2>Cart Total</h2>

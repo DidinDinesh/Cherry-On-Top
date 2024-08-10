@@ -48,7 +48,21 @@
 
 .my-orders-order button:hover {
     background-color: rgb(243, 180, 180);
- }
+}
+
+.order-empty-message {
+    display: none;
+}
+
+.order-empty-message h2 {
+    color: tomato;
+    text-align: center;
+    padding: 40px 40px;
+}
+
+.order-empty-message.active{
+    display: block;
+}
 
 @media (max-width:900px) {
     .my-orders-order{

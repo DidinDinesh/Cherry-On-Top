@@ -14,6 +14,7 @@ const Sidebar = ({handleToggleMenu, toggle}) => {
     const handleCategoryClick = (setGroupFunction, category) => {
       setGroupFunction(category);
       handleScrollToTop();
+      handleToggleMenu();
     };
 
     const toggleDropdown = (menuName) => {
@@ -189,10 +190,10 @@ const Sidebar = ({handleToggleMenu, toggle}) => {
         </div>
         <div className="sidebar-navbar-middle">
             <ul className="sidebar-navbar-menu">
-                <NavLink to="/" >Home</NavLink>
-                <NavLink to="/blog" >Blog</NavLink>
-                <NavLink to="/about" >About us</NavLink>
-                <NavLink to="/Contact" >Conatct us</NavLink>
+                <NavLink to="/" onClick={handleToggleMenu}>Home</NavLink>
+                <NavLink to="/blog" onClick={handleToggleMenu} >Blog</NavLink>
+                <NavLink to="/about" onClick={handleToggleMenu} >About us</NavLink>
+                <NavLink to="/Contact" onClick={handleToggleMenu} >Conatct us</NavLink>
             </ul>
         </div>
     </div>

@@ -11,7 +11,7 @@
     align-items: center;
     height: 12vh;
     padding: 20px 0;
-    z-index: 1;
+    z-index: 2;
     border-bottom: 1px solid tomato;
 }
 
@@ -28,7 +28,7 @@
 
 .navbar-left {
     width: 35%;
-    padding: 10px 5px 10px 10px;
+    padding: 10px 5px 10px 15px;
 }
 
 .navbar-search {
@@ -148,7 +148,7 @@
 .navbar-profile-dropdown {
     position: absolute;
     display: none;
-    z-index: 5;
+    z-index: 10;
     top: 40px;
 }
 
