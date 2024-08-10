@@ -166,6 +166,19 @@
         width: 350px;
         height: 350px;
     }
+}
+
+@media (max-width:430px) {
+
+    .cakeproductdisplay-img-list img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .cakeproductdisplay-main-img {
+        width: 310px;
+        height: 310px;
+    }
 
 
 }
