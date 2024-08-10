@@ -124,3 +124,16 @@
         height: 350px;
     }
 }
+
+@media (max-width:430px) {
+
+    .comboproductdisplay-img-list img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .comboproductdisplay-main-img {
+        width: 310px;
+        height: 310px;
+    }
+}

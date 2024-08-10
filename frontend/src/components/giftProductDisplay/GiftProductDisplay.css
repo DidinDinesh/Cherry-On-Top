@@ -128,3 +128,16 @@
         height: 350px;
     }
 }
+
+@media (max-width:430px) {
+
+    .giftproductdisplay-img-list img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .giftproductdisplay-main-img {
+        width: 310px;
+        height: 310px;
+    }
+}

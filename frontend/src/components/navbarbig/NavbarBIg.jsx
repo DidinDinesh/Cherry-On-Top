@@ -5,16 +5,13 @@ import { useContext, useState } from "react"
 import { StoreContext } from "../../context/StoreContext"
 
 
-const NavbarBIg = ({setShowLogin}) => {
+const NavbarBIg = ({setShowLogin, handleToggleMenu}) => {
 
-  const [ toggle, setToggle ] = useState('');
+  
 
   const [searchQuery, setSearchQuery] = useState('');
 
-  const handleToggleMenu = () => {
-  setToggle(toggle === '' ? 'show-menu' : '');
-  };
-
+  
   const { getTotalCartItems, token, setToken, handleScrollToTop } = useContext(StoreContext);
 
   const navigate = useNavigate();
@@ -34,16 +31,19 @@ const NavbarBIg = ({setShowLogin}) => {
 
   return (
       <div className="navbar-big">
+        <div>
+          <img onClick={handleToggleMenu} className="toggle-icon" src={assets.menu_icon} alt="" />
+        </div>
         <Link to="/"><img src={assets.logo} alt="" className="logo" /></Link>
         <div className="navbar-left">
           <form onSubmit={handleSearchSubmit} className="navbar-search">
             <input onChange={(event) => setSearchQuery(event.target.value)} value={searchQuery} type="text" placeholder='Search a product'/>
-            <button onClick={handleScrollToTop} type="sumbit" className="search-btn">
+            <button onClick={handleScrollToTop} type="submit" className="search-btn">
               <img src={assets.search_icon} alt="search"/>
           </button>
           </form>
         </div>
-        <div className={`navbar-middle ${toggle}`}>
+        <div className={"navbar-middle"}>
           <div className="navbar-close" onClick={handleToggleMenu}>
             <img src={assets.close_icon} alt="" />
           </div>
@@ -70,9 +70,6 @@ const NavbarBIg = ({setShowLogin}) => {
               <img src={assets.cart_icon} alt="" />
             </Link>
             <div className= "navbar-cart-count">{getTotalCartItems()}</div>
-          </div>
-          <div>
-            <img onClick={handleToggleMenu} className="toggle-icon" src={assets.menu_icon} alt="" />
           </div>
         </div>
       </div>

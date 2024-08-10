@@ -133,21 +133,23 @@ const NavbarSmall = () => {
           <Link className="menu-title" to="/occasions" onClick={() => handleCategoryClick(setOccasionGroup, "All")}>Occasions</Link>
           <div className="dropdown">
             <div className="dropdown-column">
+              <strong>Personal</strong>
               <ul className="dropdown-column-lists">
                 <Link to={`/occasions/${encodeURIComponent("Birthday")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Birthday")}>Birthday</Link>
                 <Link to={`/occasions/${encodeURIComponent("Anniversary")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Anniversary")}>Anniversary</Link>
                 <Link to={`/occasions/${encodeURIComponent("Valentines day")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Valentines day")}>Valentines day</Link>
                 <Link to={`/occasions/${encodeURIComponent("Engagement")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Engagement")}>Engagement</Link>
                 <Link to={`/occasions/${encodeURIComponent("Wedding")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Wedding")}>Wedding</Link>
+                <Link to={`/occasions/${encodeURIComponent("Housewarming")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Housewarming")}>Housewarming</Link>
               </ul>
             </div>
             <div className="dropdown-column">
-              <ul className="dropdown-column-lists">
-                <Link to={`/occasions/${encodeURIComponent("Housewarming")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Housewarming")}>Housewarming</Link>
-                <Link to={`/occasions/${encodeURIComponent("Christmas")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Christmas")}>Christmas</Link>
-                <Link to={`/occasions/${encodeURIComponent("New year")}`} onClick={() => handleCategoryClick(setOccasionGroup, "New year")}>New year</Link>
-                <Link to={`/occasions/${encodeURIComponent("Onam")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Onam")}>Onam</Link>
-              </ul>
+              <strong>Festivals</strong>
+                <ul className="dropdown-column-lists">
+                  <Link to={`/occasions/${encodeURIComponent("Christmas")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Christmas")}>Christmas</Link>
+                  <Link to={`/occasions/${encodeURIComponent("New year")}`} onClick={() => handleCategoryClick(setOccasionGroup, "New year")}>New year</Link>
+                  <Link to={`/occasions/${encodeURIComponent("Onam")}`} onClick={() => handleCategoryClick(setOccasionGroup, "Onam")}>Onam</Link>
+                </ul>
             </div>
           </div>
         </div>

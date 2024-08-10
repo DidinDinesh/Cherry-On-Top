@@ -1,19 +1,29 @@
 
 .navbar-big {
-    width: 90%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: white;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 5px;
     align-items: center;
     height: 12vh;
     padding: 20px 0;
+    z-index: 1;
+    border-bottom: 1px solid tomato;
+}
+
+
+.toggle-icon {
+    display: none;
 }
 
 .navbar-big .logo {
     width: 180px;
-    margin-top: 10px;
-    margin-bottom: 10
-    px;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 .navbar-left {
@@ -54,6 +64,10 @@
     width: 30%;
     display: flex;
     justify-content: center;
+}
+
+.navbar-big .navbarsmall-inside {
+    display: none;
 }
 
 .navbar-menu {
@@ -122,9 +136,6 @@
     align-items: center;
 }
 
-.navbar-right .toggle-icon {
-    display: none;
-}
 
 .navbar-profile {
     position: relative;
@@ -190,8 +201,11 @@
 
 @media (max-width:900px) {
 
-    .navbar-big {
-        height: 8vh;
+    .toggle-icon {
+        display: flex;
+        align-items: center;
+        width: 30px;
+        margin: 0 20px;
     }
 
     .navbar-big .logo {
@@ -212,51 +226,9 @@
     }
 
     .navbar-middle {
-        position: fixed;
-        top: 0;
-        right: 0;
-        transform: translateX(100%);
-        background-color: rgb(243, 200, 200);
-        width: 30%; 
-        height: 100%;
-        padding: 6rem 0;
-        transition: transform 0.3s ease-in-out;
-        z-index: 999;
+        display: none;
     }
-
-    .navbar-menu {
-        display: flex;
-        flex-direction: column;
-        row-gap: 3rem;
-        text-align: center;
-    }
-
-    .navbar-menu .active {
-        border: 1px solid tomato;
-        border-radius: 5px;
-    }
-
-    .navbar-middle .navbar-close {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    .navbar-middle .navbar-close:hover {
-        transform: scale(1.2);
-    }
-
-    .navbar-middle .navbar-close img {
-        width: 30px;
-    }
-
-    .navbar-middle.show-menu {
-        transform: translateX(0);
-    }
-
+    
     .navbar-right {
         width: 30%;
     }
@@ -284,12 +256,6 @@
         top: -4px;
     }
 
-    .navbar-right .toggle-icon {
-        display: flex;
-        align-items: center;
-        width: 30px;
-    }
-
     .navbar-profile img{
         width: 30px;
     }
@@ -309,8 +275,13 @@
 
 @media (max-width:600px) {
 
+    .toggle-icon {
+        width: 20px;
+        margin: 0 10px;
+    }
+
     .navbar-big{
-        height: 6vh;
+        height: 8vh;
     }
 
     .navbar-big .logo {
@@ -351,11 +322,6 @@
     .navbar-cart .dot {
         min-height: 5px;
         min-width: 5px;
-    }
-
-    
-    .navbar-right .toggle-icon {
-        width: 20px;
     }
 
     .navbar-profile img{

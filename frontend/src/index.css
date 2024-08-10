@@ -54,7 +54,7 @@ a {
 }
 
 @media (max-width:900px) {
-  
+
   body {
     padding-top: 12vh;
   }
@@ -63,6 +63,6 @@ a {
 @media (max-width:600px) {
   
   body {
-    padding-top: 10vh;
+    padding-top: 8vh;
   }
 }
