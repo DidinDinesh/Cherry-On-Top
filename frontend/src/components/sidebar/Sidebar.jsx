@@ -1,5 +1,5 @@
 import './Sidebar.css'
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, NavLink } from 'react-router-dom'
 import { StoreContext } from "../../context/StoreContext";
 import { assets } from '../../assets/assets'
@@ -20,6 +20,23 @@ const Sidebar = ({handleToggleMenu, toggle}) => {
     const toggleDropdown = (menuName) => {
         setActiveDropdown(activeDropdown === menuName ? null : menuName);
     };
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            const sidebarElement = document.querySelector('.sidebar');
+            if (sidebarElement && !sidebarElement.contains(event.target)) {
+                handleToggleMenu();
+            }
+        };
+
+        if (toggle) {
+            document.addEventListener('pointerdown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('pointerdown', handleClickOutside);
+        };
+    }, [toggle]);
 
   return (
     <div className={`sidebar ${toggle}`}>
