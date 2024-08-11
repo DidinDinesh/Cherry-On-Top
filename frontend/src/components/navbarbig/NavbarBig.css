@@ -276,17 +276,19 @@
 
     @media (max-width:600px) {
 
+
+        .navbar-big{
+            height: 8vh;
+            padding-bottom: 15px;
+        }
+
         .toggle-icon {
             width: 20px;
             margin: 0 10px;
         }
 
-        .navbar-big{
-            height: 8vh;
-        }
-
         .navbar-big .logo {
-            width: 80px;
+            width: 70px;
         }
 
         .navbar-right {
@@ -317,13 +319,16 @@
             padding: 3px 6px;
         }
 
+        .navbar-cart {
+            padding-top: 4px;
+        }
+
         .navbar-cart img {
             width: 20px;
         }
 
-        .navbar-cart .dot {
-            min-height: 5px;
-            min-width: 5px;
+        .navbar-cart-count {
+            top: -3px;
         }
 
         .navbar-profile img{
