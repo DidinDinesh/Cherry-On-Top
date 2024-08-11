@@ -11,6 +11,8 @@ const NavbarBIg = ({setShowLogin, handleToggleMenu}) => {
 
   const [searchQuery, setSearchQuery] = useState('');
 
+  const [ profileClick, setProfileClick ] = useState(false);
+
   
   const { getTotalCartItems, token, setToken, handleScrollToTop } = useContext(StoreContext);
 
@@ -34,7 +36,7 @@ const NavbarBIg = ({setShowLogin, handleToggleMenu}) => {
         <div>
           <img onClick={handleToggleMenu} className="toggle-icon" src={assets.menu_icon} alt="" />
         </div>
-        <Link to="/"><img src={assets.logo} alt="" className="logo" /></Link>
+        <Link to="/" onClick={handleScrollToTop}><img src={assets.logo} alt="" className="logo" /></Link>
         <div className="navbar-left">
           <form onSubmit={handleSearchSubmit} className="navbar-search">
             <input onChange={(event) => setSearchQuery(event.target.value)} value={searchQuery} type="text" placeholder='Search a product'/>
@@ -44,24 +46,21 @@ const NavbarBIg = ({setShowLogin, handleToggleMenu}) => {
           </form>
         </div>
         <div className={"navbar-middle"}>
-          <div className="navbar-close" onClick={handleToggleMenu}>
-            <img src={assets.close_icon} alt="" />
-          </div>
           <ul className="navbar-menu">
-              <NavLink to="/" >Home</NavLink>
-              <NavLink to="/blog" >Blog</NavLink>
-              <NavLink to="/about" >About us</NavLink>
-              <NavLink to="/Contact" >Conatct us</NavLink>
+              <NavLink to="/" onClick={handleScrollToTop}>Home</NavLink>
+              <NavLink to="/blog" onClick={handleScrollToTop}>Blog</NavLink>
+              <NavLink to="/about" onClick={handleScrollToTop}>About us</NavLink>
+              <NavLink to="/Contact" onClick={handleScrollToTop}>Conatct us</NavLink>
           </ul>
         </div>       
         <div className="navbar-right">
           {!token? <button onClick={() => setShowLogin(true)}>Sign In</button> : 
-          <div className="navbar-profile">
+          <div onClick={() => setProfileClick(!profileClick)} className="navbar-profile">
             <img src={assets.user_icon} alt="" />
-            <ul className="navbar-profile-dropdown">
-              <li onClick={() => navigate("/myorders")}><img src={assets.order_icon} alt="" /><p>Orders</p></li>
+            <ul className={`navbar-profile-dropdown ${profileClick? 'active' : ''}`}>
+              <Link to="/myorders" onClick={handleScrollToTop}><img src={assets.order_icon} alt="" /><p>Orders</p></Link>
               <hr />
-              <li onClick={logout}><img src={assets.logout_icon} alt="" /><p>Logout</p></li>
+              <Link onClick={logout}><img src={assets.logout_icon} alt="" /><p>Logout</p></Link>
             </ul>
           </div>
           }           
