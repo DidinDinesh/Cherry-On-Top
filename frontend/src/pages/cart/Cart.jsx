@@ -1,5 +1,5 @@
 import './Cart.css'
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { StoreContext } from "../../context/StoreContext"
 import { useNavigate } from "react-router-dom"
 
@@ -9,22 +9,33 @@ const Cart = () => {
 
   const navigate = useNavigate();
 
+  const [tempValues, setTempValues] = useState({});
+
   const handleInputChange = (event, id) => {
-    const value = parseInt(event.target.value);
-    if (value > 0) {
-    updateCartItem(id, value);
-    }
-    else {
-      event.target.value = cartItems[id];
+    const value = (event.target.value);
+    
+    if (value === "" || !isNaN(value)) {
+      setTempValues({ ...tempValues, [id]: value });
     }
   };
 
-  const handleKeyDown = (event) => {
-    const invalidKeys = ["-", ".", "e"];
-
-    if (invalidKeys.includes(event.key))  {
-      event.preventDefault();
+  const updateQuantity = (id) => {
+    const value = parseInt(tempValues[id]);
+    if (!isNaN(value) && value > 0) {
+      updateCartItem(id, value);
+    } else {
+      setTempValues({ ...tempValues, [id]: cartItems[id] });
     }
+  };
+
+  const handleKeyDown = (event, id) => {
+    if (event.key === 'Enter') {
+      updateQuantity(id);
+    }
+  };
+
+  const handleBlur = (id) => {
+    updateQuantity(id);
   };
 
   const handleProceedToCheckout = () => {
@@ -58,7 +69,8 @@ const Cart = () => {
                   <img src={url + "/images/" + item.image} alt="" />
                   <p>{item.name}</p>
                   <p>&#8377;{item.price}</p>             
-                  <input onChange={(e) => handleInputChange(e,item._id)} onKeyDown={handleKeyDown} type="number" className="counter" value={cartItems[item._id]} />
+                  <input onChange={(e) => handleInputChange(e,item._id)} onKeyDown={(e) => handleKeyDown(e,item._id)} 
+                  onBlur={() => handleBlur(item._id)} type="number" className="counter" value={tempValues[item._id] !== undefined ? tempValues[item._id] : cartItems[item._id]} />
                   <p>&#8377;{item.price * cartItems[item._id]}</p>
                   <button onClick={() => removeFromCart(item._id)} className="cross">X</button> 
                 </div>

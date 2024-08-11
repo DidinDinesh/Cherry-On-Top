@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import './CakeProductDisplay.css'
 import { StoreContext } from "../../context/StoreContext";
 

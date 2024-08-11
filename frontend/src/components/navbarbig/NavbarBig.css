@@ -319,6 +319,10 @@
             padding: 3px 6px;
         }
 
+        .navbar-profile {
+            padding-top: 4px;
+        }
+
         .navbar-cart {
             padding-top: 4px;
         }

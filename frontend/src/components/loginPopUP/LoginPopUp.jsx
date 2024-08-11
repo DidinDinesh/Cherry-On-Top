@@ -9,6 +9,7 @@ const LoginPopUp = ({setShowLogin, showLogin}) => {
     const {url, setToken} = useContext(StoreContext);
 
     const [ currentState, setCurrentState ] = useState("Login");
+    const [errorMessage, setErrorMessage] = useState("");
 
     const [data, setData ] = useState({
         name:"",
@@ -54,7 +55,7 @@ const LoginPopUp = ({setShowLogin, showLogin}) => {
             setShowLogin(false)
         }
         else {
-            alert(response.data.message)
+            setErrorMessage(response.data.message)
         }
 
     }
@@ -65,6 +66,9 @@ const LoginPopUp = ({setShowLogin, showLogin}) => {
             <div className="login-popup-title">
                 <h2>{currentState}</h2>
                 <img onClick={() => setShowLogin(false)} src={assets.close_icon} alt="" />
+            </div>
+            <div className="error-message">
+                {errorMessage && <p>{errorMessage}</p>}
             </div>
             <div className="login-popup-inputs">
                 { currentState === "Login"? <></> 
