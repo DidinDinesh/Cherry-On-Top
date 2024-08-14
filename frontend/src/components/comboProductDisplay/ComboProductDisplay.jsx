@@ -8,7 +8,7 @@ const ComboProductDisplay = ({product}) => {
 
     if (loading) {
         return <p>Loading...</p>; 
-      }
+    }
 
   return (
     <div className="comboproductdisplay">

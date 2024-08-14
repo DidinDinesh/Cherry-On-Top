@@ -8,13 +8,12 @@ import { StoreContext } from "../../context/StoreContext"
 const NavbarBIg = ({setShowLogin, handleToggleMenu}) => {
 
   
-
   const [searchQuery, setSearchQuery] = useState('');
 
   const [ profileClick, setProfileClick ] = useState(false);
 
   
-  const { getTotalCartItems, token, setToken, handleScrollToTop } = useContext(StoreContext);
+  const { getTotalCartItems, token, setToken, handleScrollToTop} = useContext(StoreContext);
 
   const navigate = useNavigate();
 

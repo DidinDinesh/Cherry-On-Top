@@ -11,7 +11,7 @@ const SearchResults = () => {
 
   const query = new URLSearchParams(search).get('query'); 
 
-  const { Total_Product_List, handleScrollToTop, url } = useContext(StoreContext)
+  const { Total_Product_List, handleScrollToTop, url, loading} = useContext(StoreContext)
 
   const [results, setResults] = useState([]);
 
@@ -23,6 +23,10 @@ const SearchResults = () => {
       setResults(filteredResults);
     }
   }, [query, Total_Product_List]);
+
+  if (loading) {
+    return <p>Loading...</p>; 
+}
 
   return (
     <div>
