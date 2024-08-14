@@ -25,8 +25,12 @@ const SearchResults = () => {
   }, [query, Total_Product_List]);
 
   if (loading) {
-    return <p>Loading...</p>; 
-}
+    return (
+      <div className="loading">
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div>
