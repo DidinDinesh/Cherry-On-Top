@@ -130,7 +130,7 @@ const NavbarSmall = () => {
         </div>
         
         <div className="nav-menu">
-          <Link className="menu-title" to="/occasions" onClick={() => handleCategoryClick(setOccasionGroup, "All")}>Occasions</Link>
+          <Link className="menu-title">Occasions</Link>
           <div className="dropdown">
             <div className="dropdown-column">
               <strong>Personal</strong>
