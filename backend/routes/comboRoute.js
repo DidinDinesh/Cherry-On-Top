@@ -18,6 +18,6 @@ const upload = multer({storage:storage})
 comboRouter.post("/add", upload.single("image"), addCombo)
 comboRouter.get("/list", listCombo)
 comboRouter.post("/remove", removeCombo)
-comboRouter.post("/edit", updateCombo)
+comboRouter.post("/edit", upload.single("image"), updateCombo)
 
 export default comboRouter;

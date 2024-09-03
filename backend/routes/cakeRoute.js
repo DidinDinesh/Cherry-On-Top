@@ -18,7 +18,7 @@ const upload = multer({storage:storage})
 cakeRouter.post("/add", upload.single("image"), addCake)
 cakeRouter.get("/list",listCake)
 cakeRouter.post("/remove",removeCake)
-cakeRouter.post("/edit", updateCake)
+cakeRouter.post("/edit",upload.single("image"), updateCake)
 
 
 

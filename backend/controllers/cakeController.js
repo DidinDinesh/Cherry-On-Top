@@ -63,20 +63,41 @@ const removeCake = async (req,res) => {
 
 const updateCake = async (req, res) => {
     try {
-        if ( req.body.type.length === 0) {
-            return res.status(400).json({ success: false, message: "Type array cannot be empty" });
+        
+        const { type, price, itemId} = req.body;
+
+        let updateData = {};
+
+        const cake = await cakeModel.findById(itemId);
+        
+        if (!cake) {
+            return res.status(404).json({ success: false, message: "Cake not found" });
         }
 
-        if (req.body.price <= 0) {
-            return res.status(400).json({ success: false, message: "Price must be greater than zero" });
+        if (req.file) {
+
+            const image_filename = `${req.file.filename}`;
+
+            fs.unlink(`uploads/${cake.image}`, (err) => {
+                if (err) {
+                    console.error("Failed to delete old image", err);
+                }
+            });
+
+            updateData.image = image_filename;
+        }
+
+        if ( type && type.length > 0) {
+            updateData.type = type;
+        }
+
+        if (price && Number(price) > 0) {
+            updateData.price = Number(price);
         }
 
         // Update the cake
         
-        await cakeModel.findByIdAndUpdate(req.body.itemId, {
-            type: req.body.type,
-            price: req.body.price
-        });
+        await cakeModel.findByIdAndUpdate(itemId, updateData);
 
         res.json({ success: true, message: "Item updated" });
     } catch (error) {
