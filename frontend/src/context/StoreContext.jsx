@@ -1,4 +1,5 @@
-import { createContext, useEffect, useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { createContext, useEffect, useMemo, useState } from 'react';
 import axios from 'axios'
 
 
@@ -86,49 +87,39 @@ const StoreContextProvider = (props) => {
         return totalItem;
     }
 
-    const fetchCakeList = async () => {
-        setLoading(true);
-        const response = await axios.get(url+"/api/cakes/list")
-        setCake_list(response.data.data)
-        setLoading(false);
-    }
-    const fetchGiftrList = async () => {
-        setLoading(true);
-        const response = await axios.get(url+"/api/gifts/list")
-        setGift_list(response.data.data)
-        setLoading(false);
-    }
-
-    const fetchFlowerList = async () => {
-        setLoading(true);
-        const response = await axios.get(url+"/api/flowers/list")
-        setFlower_list(response.data.data)
-        setLoading(false);
-    }
-
-    const fetchComboList = async () => {
-        setLoading(true);
-        const response = await axios.get(url+"/api/combos/list")
-        setCombo_list(response.data.data)
-        setLoading(false);
-    }
-
     const fetchCartData = async (token) => {
         const response = await axios.post(url+"/api/cart/get", {}, {headers:{token}})
         setCartItems(response.data.cartData);
     }
 
+    const loadAllData = async () => {
+
+        setLoading(true);
+
+        try {
+            const [cakes, gifts, flowers, combos] = await Promise.all([
+                axios.get(url + "/api/cakes/list"),
+                axios.get(url + "/api/gifts/list"),
+                axios.get(url + "/api/flowers/list"),
+                axios.get(url + "/api/combos/list")
+            ]);
+            setCake_list(cakes.data.data);
+            setGift_list(gifts.data.data);
+            setFlower_list(flowers.data.data);
+            setCombo_list(combos.data.data);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
 
     useEffect(() => {
         async function loadData() {
-            await fetchCakeList();
-  
-            await fetchGiftrList();
-      
-            await fetchFlowerList();
-      
-            await fetchComboList();
-        
+            
+            await loadAllData();
+
         if (localStorage.getItem("token")) {
             setToken(localStorage.getItem("token"));
             await fetchCartData(localStorage.getItem("token"));
@@ -137,37 +128,56 @@ const StoreContextProvider = (props) => {
         loadData();
     },[])
 
-    const Total_Product_List = [...cake_list, ...gift_list, ...flower_list, ...combo_list];
+    const Total_Product_List = useMemo(() => {
+        return [...cake_list, ...gift_list, ...flower_list, ...combo_list];
+    }, [cake_list, gift_list, flower_list, combo_list]);
 
 
-  const contextValue= {
-    url,
-    handleScrollToTop,
-    token,
-    setToken,
-    cake_list,
-    gift_list,
-    flower_list,
-    combo_list,
-    cakeGroup,
-    setCakeGroup,
-    giftGroup,
-    setGiftGroup,
-    flowerGroup,
-    setFlowerGroup,
-    comboGroup,
-    setComboGroup,
-    occasionGroup,
-    setOccasionGroup,
-    cartItems,
-    addToCart,
-    removeFromCart,
-    updateCartItem,
-    getTotalCartAmount,   
-    getTotalCartItems,
-    loading,
-    Total_Product_List
-  }
+    const contextValue = useMemo(() => ({
+        url,
+        handleScrollToTop,
+        token,
+        setToken,
+        cake_list,
+        gift_list,
+        flower_list,
+        combo_list,
+        cakeGroup,
+        setCakeGroup,
+        giftGroup,
+        setGiftGroup,
+        flowerGroup,
+        setFlowerGroup,
+        comboGroup,
+        setComboGroup,
+        occasionGroup,
+        setOccasionGroup,
+        cartItems,
+        addToCart,
+        removeFromCart,
+        updateCartItem,
+        getTotalCartAmount,   
+        getTotalCartItems,
+        loading,
+        Total_Product_List
+    }), [
+        url,
+        handleScrollToTop,
+        token,
+        cake_list,
+        gift_list,
+        flower_list,
+        combo_list,
+        cakeGroup,
+        giftGroup,
+        flowerGroup,
+        comboGroup,
+        occasionGroup,
+        cartItems,
+        loading,
+        Total_Product_List
+    ]);
+
   
   return (
       <StoreContext.Provider value={contextValue}>
