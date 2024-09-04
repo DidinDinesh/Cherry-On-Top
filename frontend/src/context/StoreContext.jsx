@@ -98,10 +98,10 @@ const StoreContextProvider = (props) => {
 
         try {
             const [cakes, gifts, flowers, combos] = await Promise.all([
-                axios.get(url + "/api/cakes/list"),
-                axios.get(url + "/api/gifts/list"),
-                axios.get(url + "/api/flowers/list"),
-                axios.get(url + "/api/combos/list")
+                axios.get(url + "/api/cakes/list", { params: { limit: 10 } }),
+                axios.get(url + "/api/gifts/list", { params: { limit: 10 } }),
+                axios.get(url + "/api/flowers/list", { params: { limit: 10 } }),
+                axios.get(url + "/api/combos/list", { params: { limit: 10 } }),
             ]);
             setCake_list(cakes.data.data);
             setGift_list(gifts.data.data);
