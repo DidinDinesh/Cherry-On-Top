@@ -9,10 +9,14 @@ const Orders = ({url}) => {
 
   const [ orders, setOrders ] = useState([]);
 
+  const [loading, setLoading] = useState(true);
+
   const fetchAllOrders = async () => {
+    setLoading(true);
     const response = await axios.get(url+"/api/order/list");
     if (response.data.success) {
     setOrders(response.data.data);
+    setLoading(false);
     }
     else {
     toast.error("Error");
@@ -32,6 +36,14 @@ const Orders = ({url}) => {
   useEffect(() => {
     fetchAllOrders();
   },[])
+
+  if (loading) {
+    return (
+      <div className="loading">
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="order add">

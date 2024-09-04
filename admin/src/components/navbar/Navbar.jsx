@@ -1,12 +1,13 @@
 
 import './Navbar.css'
 import {assets} from '../../assets/assets'
+import { Link } from "react-router-dom"
 
 export const Navbar = () => {
   return (
     <div className="navbar">
       <div className="logo-container">
-        <img className="logo" src={assets.logo} alt="" />
+        <Link to={"/"}><img className="logo" src={assets.logo} alt="" /></Link>
         <p>Admin Panel</p>
       </div>
       

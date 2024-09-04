@@ -8,10 +8,14 @@ const ListFlowers = ({url}) => {
 
   const [ list, setList ] = useState([]);
 
+  const [loading, setLoading] = useState(true);
+
   const fetchList = async () => {
+    setLoading(true);
     const response = await axios.get(`${url}/api/flowers/list`);
     if(response.data.success) {
      setList(response.data.data); 
+     setLoading(true);
     }
     else {
       toast.error("Error")
@@ -33,6 +37,13 @@ const ListFlowers = ({url}) => {
     fetchList();
   }, [])
 
+  if (loading) {
+    return (
+      <div className="loading">
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="flowerlist">

@@ -2,6 +2,7 @@
 import { Navbar } from './components/navbar/Navbar'
 import { SideBar } from './components/sidebar/Sidebar'
 import { Route, Routes } from 'react-router-dom'
+import Home from "./pages/home/Home"
 import AddCake from './pages/add/addCake/AddCake'
 import AddGift from './pages/add/addGift/AddGift'
 import AddFlower from './pages/add/addFlower/AddFlower'
@@ -20,6 +21,7 @@ import EditCombo from "./pages/edit/editcombo/EditCombo"
 
 
 
+
 const App = () => {
 
   const url = "https://cherry-on-top-backend.onrender.com";
@@ -31,22 +33,23 @@ const App = () => {
       <Navbar />
       <hr />
       <div className="app-content">
-      <SideBar />
-      <Routes>
-        <Route path="/addcake" element={<AddCake url={url}/>} />
-        <Route path="/addgift" element={<AddGift url={url}/>} />
-        <Route path="/addflower" element={<AddFlower url={url}/>} />
-        <Route path="/addcombo" element={<AddCombo url={url}/>} />
-        <Route path="/listcakes" element={<ListCakes url={url}/>} />
-        <Route path="/listgifts" element={<ListGifts url={url}/>} />
-        <Route path="/listflowers" element={<ListFlowers url={url}/>} />
-        <Route path="/listcombos" element={<ListCombos url={url}/>} />
-        <Route path="/order" element={<Orders url={url}/>} />
-        <Route path="/editcake/:itemId" element={<EditCake url={url} />} />
-        <Route path="/editgift/:itemId" element={<EditGift url={url} />} />
-        <Route path="/editflower/:itemId" element={<EditFlower url={url} />} />
-        <Route path="/editcombo/:itemId" element={<EditCombo url={url} />} />
-      </Routes>
+        <SideBar />
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/addcake" element={<AddCake url={url}/>} />
+          <Route path="/addgift" element={<AddGift url={url}/>} />
+          <Route path="/addflower" element={<AddFlower url={url}/>} />
+          <Route path="/addcombo" element={<AddCombo url={url}/>} />
+          <Route path="/listcakes" element={<ListCakes url={url}/>} />
+          <Route path="/listgifts" element={<ListGifts url={url}/>} />
+          <Route path="/listflowers" element={<ListFlowers url={url}/>} />
+          <Route path="/listcombos" element={<ListCombos url={url}/>} />
+          <Route path="/order" element={<Orders url={url}/>} />
+          <Route path="/editcake/:itemId" element={<EditCake url={url} />} />
+          <Route path="/editgift/:itemId" element={<EditGift url={url} />} />
+          <Route path="/editflower/:itemId" element={<EditFlower url={url} />} />
+          <Route path="/editcombo/:itemId" element={<EditCombo url={url} />} />
+        </Routes>
       </div>
     </div>
   )
