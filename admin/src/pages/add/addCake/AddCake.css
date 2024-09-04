@@ -23,7 +23,7 @@
 
 .add-product-name,
 .add-product-desc {
-    width: max(38%,280px);
+    width: 280px;
 }
 
 .add-product-name input,
@@ -57,4 +57,11 @@
     background-color: black;
     color: white;
     cursor: pointer;
+}
+
+@media(max-width: 460px) {
+    .add-product-name input,
+    .add-product-desc textarea {
+        width: 200px;
+    }
 }

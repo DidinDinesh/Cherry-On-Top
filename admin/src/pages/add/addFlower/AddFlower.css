@@ -22,7 +22,7 @@
 
 .add-product-name,
 .add-product-desc {
-    width: max(38%,280px);
+    width: 280px;
 }
 
 .add-product-name input,
