@@ -7,7 +7,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
 
-    const url = "https://cherry-on-top-backend.onrender.com"
+    const url = "http://localhost:4000"
 
     const handleScrollToTop = () => {
         window.scrollTo(0, 0);

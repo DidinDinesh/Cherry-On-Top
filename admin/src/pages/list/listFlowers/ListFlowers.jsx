@@ -15,7 +15,7 @@ const ListFlowers = ({url}) => {
     const response = await axios.get(`${url}/api/flowers/list`);
     if(response.data.success) {
      setList(response.data.data); 
-     setLoading(true);
+     setLoading(false);
     }
     else {
       toast.error("Error")
