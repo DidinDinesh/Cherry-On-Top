@@ -1,6 +1,6 @@
 
 import admin from 'firebase-admin';
-import serviceAccount from './cherry-on-top-590e0-firebase-adminsdk-r7ls2-a00306ab43.json' assert { type: "json" }
+import serviceAccount from './serviceAccount.json' assert { type: "json" }
 
 
 admin.initializeApp({
