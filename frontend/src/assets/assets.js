@@ -40,6 +40,7 @@ import logout_icon from './icons/icons8-logout-32.png'
 import parcel_icon from './icons/icons8-parcel-96.png'
 import down_icon from './icons/bx-chevron-down .svg'
 import up_icon from './icons/bx-chevron-up.svg'
+import google_icon from './icons/icons8-google.svg'
 
 
 import cake from './category/cake.png'
@@ -159,7 +160,8 @@ export const assets = {
     logout_icon,
     parcel_icon,
     down_icon,
-    up_icon
+    up_icon,
+    google_icon
 }
 
 export const banners = [

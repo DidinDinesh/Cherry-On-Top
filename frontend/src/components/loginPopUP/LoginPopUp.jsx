@@ -3,6 +3,8 @@ import './LoginPopUp.css'
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 import axios from 'axios'
+import { auth, googleProvider } from '../../config/firebase.js'; // Import Firebase config
+import { signInWithPopup } from "firebase/auth";
 
 const LoginPopUp = ({setShowLogin, showLogin}) => {
 
@@ -60,6 +62,30 @@ const LoginPopUp = ({setShowLogin, showLogin}) => {
 
     }
 
+    // Google Sign-In Handler
+
+    const handleGoogleSignIn = async () => {
+        try {
+        const result = await signInWithPopup(auth, googleProvider);
+        const token = await result.user.getIdToken();
+
+        const response = await axios.post(`${url}/api/user/google-login`, {
+            idToken: token,
+        });
+
+        if (response.data.success) {
+            setToken(response.data.token);
+            localStorage.setItem("token", response.data.token);
+            setShowLogin(false);
+        } else {
+            setErrorMessage(response.data.message);
+        }
+        } catch (error) {
+        console.error("Google Sign-In Error:", error);
+        setErrorMessage("Google Sign-In Failed");
+        }
+    };
+
   return (
     <div className="login-popup">
         <form onSubmit={onLogin} className="login-popup-container" >
@@ -76,16 +102,12 @@ const LoginPopUp = ({setShowLogin, showLogin}) => {
                 <input name="email" onChange={onChangeHandler} value={data.email}  type="text" placeholder="Your Email"  required/>
                 <input name="password" onChange={onChangeHandler} value={data.password} type="password" placeholder="Password" required />
             </div>
-            <button type="submit">{currentState === "Sign up"? "Create account" : "Login"}</button>
-            <div className="login-popup-condition">
-                { currentState === "Login" ? <></>
-                : <div className="checkbox">
-                    <input type="checkbox" required/>
-                    <p>By continuing i agree to the terms of use 
-                    & privacy policy</p>
-                  </div>
-                }
-            </div>
+            <button className="normal-btn" type="submit">{currentState === "Sign up"? "Create account" : "Login"}</button>
+            <button className="google-signin-btn" onClick={handleGoogleSignIn}>
+                <img src={assets.google_icon} alt="Google Logo" />
+                <p>Sign in with Google</p>
+            </button>
+            
             { currentState === "Login"? 
             <p>Create a new Accout? <span onClick={() => setCurrentState("Sign up")}>Sign up here</span></p>
             : <p>Allready have an account?<span onClick={() => setCurrentState("Login")}>Login here</span></p> 

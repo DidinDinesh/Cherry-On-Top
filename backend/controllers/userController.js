@@ -2,6 +2,7 @@ import userModel from '../models/userModel.js'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 import validator from 'validator'
+import { verifyGoogleToken } from '../firebase.js';
 
 
 const createToken = (id) => {
@@ -84,6 +85,40 @@ const registerUser = async (req, res) => {
     }
 }
 
+// Google login/signup handler
 
-export { loginUser, registerUser }
+const googleAuth = async (req, res) => {
+    const { idToken } = req.body; // Get the token from the frontend
+  
+    try {
+      // Verify Google token
+      const googleUser = await verifyGoogleToken(idToken);
+  
+      const { email, name, picture, sub: googleId } = googleUser; // Extract user details
+  
+      // Check if the user already exists in MongoDB
+      let user = await userModel.findOne({ email });
+  
+      if (!user) {
+        // If the user does not exist, create a new one
+        user = new userModel({
+          name,
+          email,
+          password: '', // Password will be empty since it's a Google sign-in
+        });
+        await user.save();
+      }
+  
+      // Generate JWT token
+      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+  
+      res.json({ success: true, token, user: { name: user.name, email: user.email } });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ success: false, message: 'Authentication failed' });
+    }
+  };
+
+
+export { loginUser, registerUser, googleAuth }
 

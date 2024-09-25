@@ -59,7 +59,7 @@
     border-radius: 4px;
 }
 
-.login-popup-container button {
+.login-popup-container .normal-btn {
     border: none;
     padding: 10px;
     border-radius: 4px;
@@ -68,16 +68,6 @@
     cursor: pointer;
 }
 
-.login-popup-condition .checkbox {
-    display: flex;
-    align-items: start;
-    gap: 8px;
-    margin-top: -15px;
-}
-
-.login-popup-condition input {
-    margin-top: 5px;
-}
 
 .login-popup p  span {
     color: rgb(244, 66, 66);
@@ -85,3 +75,38 @@
     cursor: pointer;
 }
 
+.google-signin-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    background-color: #c0d3f1; /* Google Blue */
+    color: rgb(60, 37, 37);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.google-signin-btn:hover {
+    background-color: #a1c0f1; /* Darker blue for hover effect */
+}
+
+.google-signin-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.google-signin-btn p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.google-signin-btn:active {
+    background-color: #2c6bed;
+    transform: scale(0.98); /* Button press effect */
+}
