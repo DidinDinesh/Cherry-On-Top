@@ -1,8 +1,9 @@
 import './NavbarBig.css'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { assets } from '../../assets/assets'
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { StoreContext } from "../../context/StoreContext"
+import { auth } from '../../config/firebase.js';
 
 
 const NavbarBIg = ({setShowLogin, handleToggleMenu}) => {
@@ -12,10 +13,23 @@ const NavbarBIg = ({setShowLogin, handleToggleMenu}) => {
 
   const [ profileClick, setProfileClick ] = useState(false);
 
+  const [user, setUser] = useState(null);
+
   
   const { getTotalCartItems, token, setToken, handleScrollToTop} = useContext(StoreContext);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user); // Set user info when logged in
+      } else {
+        setUser(null); // Clear user info when logged out
+      }
+    });
+    return () => unsubscribe(); // Cleanup the listener when component unmounts
+  }, []);
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -55,7 +69,7 @@ const NavbarBIg = ({setShowLogin, handleToggleMenu}) => {
         <div className="navbar-right">
           {!token? <button onClick={() => setShowLogin(true)}>Sign In</button> : 
           <div onClick={() => setProfileClick(!profileClick)} className="navbar-profile">
-            <img src={assets.user_icon} alt="" />
+            <img src={user?.photoURL || assets.user_icon} className="profile-img" />
             <ul className={`navbar-profile-dropdown ${profileClick? 'active' : ''}`}>
               <Link to="/myorders" onClick={handleScrollToTop}><img src={assets.order_icon} alt="" /><p>Orders</p></Link>
               <hr />

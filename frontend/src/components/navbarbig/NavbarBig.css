@@ -141,8 +141,9 @@
         position: relative;
     }
 
-    .navbar-profile img {
+    .navbar-profile .profile-img {
         width: 40px;
+        border-radius: 50%;
     }
 
     .navbar-profile-dropdown {
