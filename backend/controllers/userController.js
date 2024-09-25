@@ -93,6 +93,7 @@ const googleAuth = async (req, res) => {
     try {
       // Verify Google token
       const googleUser = await verifyGoogleToken(idToken);
+      console.log('Google User:', googleUser); // Log the Google user info
   
       const { email, name, picture, sub: googleId } = googleUser; // Extract user details
   
@@ -107,10 +108,12 @@ const googleAuth = async (req, res) => {
           password: '', // Password will be empty since it's a Google sign-in
         });
         await user.save();
+        console.log('New user created:', user);
       }
   
       // Generate JWT token
       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+      console.log('Generated Token:', token); // Log the generated token
   
       res.json({ success: true, token, user: { name: user.name, email: user.email } });
     } catch (error) {
