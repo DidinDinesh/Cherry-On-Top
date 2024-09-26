@@ -4,7 +4,7 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 import axios from 'axios'
 import { auth, googleProvider } from '../../config/firebase.js'; // Import Firebase config
-import { signInWithPopup } from "firebase/auth";
+import { signInWithRedirect  } from "firebase/auth";
 
 const LoginPopUp = ({setShowLogin, showLogin}) => {
 
@@ -66,7 +66,7 @@ const LoginPopUp = ({setShowLogin, showLogin}) => {
 
     const handleGoogleSignIn = async () => {
         try {
-        const result = await signInWithPopup(auth, googleProvider);
+        const result = await signInWithRedirect (auth, googleProvider);
         const token = await result.user.getIdToken();
 
         const response = await axios.post(`${url}/api/user/google-login`, {
