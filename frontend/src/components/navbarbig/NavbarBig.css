@@ -240,6 +240,10 @@
             padding: 5px 15px;
         }
 
+        .navbar-profile .profile-img {
+            width: 30px;
+        }
+
         .navbar-cart img {
             width: 30px;
         }
@@ -322,6 +326,10 @@
 
         .navbar-profile {
             padding-top: 4px;
+        }
+
+        .navbar-profile .profile-img {
+            width: 20px;
         }
 
         .navbar-cart {
